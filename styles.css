@@ -1,0 +1,555 @@
+/* =======================================================
+   1. VARIABLES
+======================================================= */
+:root {
+  --c-primario: #38939b;
+  --c-oscuro: #001f3f;
+  --c-blanco: #fff;
+  --c-hover: #ffe0cc;
+}
+
+/* =======================================================
+   2. BODY
+======================================================= */
+body {
+  background-color: #fff;
+  color: #333;
+  font-family: 'Times New Roman', Times, serif, sans-serif;
+  margin: 0;
+  padding-top: 50px;
+}
+@media (max-width: 992px) {
+  body { padding-top: 110%; }
+}
+@media (max-width: 576px) {
+  body { padding-top: 100px; }
+}
+
+/* =======================================================
+   3. NAVBAR (FIJA + LOGO FLOTANTE ANIMADO)
+======================================================= */
+.navbar {
+  background-color: transparent !important;
+  padding: 0.2rem 1rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transform: translateY(0);
+  transition: transform .3s ease, background-color .3s ease, box-shadow .3s ease;
+}
+
+.navbar.hide { transform: translateY(-100%); }
+
+/* NUEVO → para compatibilidad con JS */
+.navbar-hidden { transform: translateY(-100%); }
+
+.navbar.scrolled {
+  background-color: var(--c-primario) !important;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Logo flotante animado dentro de la navbar */
+.navbar-brand img,
+.navbar .imagen-flotante {
+  height: clamp(60px, 12vw, 160px); /* mínimo 60px, preferido 12vw, máximo 160px */
+  width: auto;
+  animation: caerExpandir 3s ease-in-out infinite;
+}
+
+
+/* Animación: caída desde arriba + expansión */
+@keyframes caerExpandir {
+  0% { opacity: 0; transform: translateY(-50px) scale(0.8); }
+  20% { opacity: 1; transform: translateY(0) scale(1.05); }
+  40% { transform: translateY(0) scale(1); }
+  80% { opacity: 1; transform: translateY(0) scale(1); }
+  100% { opacity: 0; transform: translateY(-50px) scale(0.8); }
+}
+
+/* Ajuste para móviles */
+@media (max-width: 992px) {
+  .navbar-brand img,
+  .navbar .imagen-flotante { height: 15vh; max-height: 130px; }
+}
+@media (max-width: 576px) {
+  .navbar-brand img,
+  .navbar .imagen-flotante { height: 12vh; max-height: 100px; }
+}
+
+/* Mostrar submenús en móviles cuando tengan la clase show */
+@media (max-width: 991px) {
+  .dropdown-submenu > .dropdown-menu.show {
+    display: block;
+    position: relative; 
+    left: 0 !important;
+    top: 0 !important;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+/* ===== Dropdown general ===== */
+.navbar .dropdown-menu {
+  background-color: #fff;
+  border-radius: 8px;
+  border: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  top: 100% !important;  
+  transform: none !important;
+  inset: auto auto auto 0 !important;
+  z-index: 2000;
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* NUEVO → Mostrar menú en móvil si tiene clase .show */
+.navbar .dropdown-menu.show {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ===== Submenú derecho (abre a la derecha) ===== */
+.dropdown-submenu { position: relative; }
+
+.dropdown-submenu > .dropdown-menu {
+  position: absolute !important;
+  top: 0 !important;      
+  left: 100% !important;  
+  margin-left: 0.1rem;
+  margin-right: 0.1rem;
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Hover en PC */
+@media (min-width: 992px) {
+  .navbar .dropdown:hover > .dropdown-menu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    margin-top: 0;
+  }
+
+  .dropdown-submenu:hover > .dropdown-menu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/* ===== Colores y hover de los items ===== */
+.navbar .dropdown-item,
+.navbar .nav-link {
+  color: #333 !important;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar .dropdown-item:hover,
+.navbar .nav-link:hover {
+  background-color: var(--c-hover);
+  color: #000;
+}
+
+.navbar .dropdown-item.active,
+.navbar .dropdown-item:active {
+  background-color: var(--c-primario) !important;
+  color: var(--c-blanco) !important;
+}
+
+/* ===== Botón hamburguesa ===== */
+.navbar-toggler { border-color: var(--c-blanco); }
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* =======================================================
+   4. HOME / WELCOME
+======================================================= */
+.welcome-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  padding: 40px;
+  text-align: center;
+  flex-direction: column;
+}
+
+.welcome-box-right h1 {
+  font-size: clamp(1.8rem, 5vw, 3.5rem); /* tamaño adaptable */
+  font-weight: 850;
+  margin-bottom: 20px;
+  color: var(--c-oscuro);
+  animation: float 3s ease-in-out infinite;
+}
+
+.welcome-box-right p {
+  font-size: clamp(1rem, 3vw, 1.6rem); /* tamaño adaptable */
+  margin-top: 20px;
+  color: var(--c-primario);
+  opacity: 0;
+  animation: fadeInRight 4s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+.welcome-text-box {
+  border: 2px solid var(--c-primario);
+  padding: clamp(15px, 4vw, 50px) clamp(20px, 6vw, 80px); /* padding adaptable */
+  border-radius: 10px;
+  display: inline-block;
+  text-align: center;
+  background: #e4c6b8;
+  backdrop-filter: blur(4px);
+  width: clamp(280px, 80%, 800px); /* mínimo 280px, fluido hasta 80%, máximo 800px */
+}
+
+
+@media (min-width: 992px) { /* Estilos para pantallas grandes */
+  .welcome-text-box {
+    padding: 50px 80px; /* Más padding en pantallas grandes */
+    max-width: 800px;   /* Hacemos la caja más ancha */
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes fadeInRight {
+  0% { opacity: 0; transform: translateX(100px); }
+  20%, 80% { opacity: 1; transform: translateX(0); }
+  100% { opacity: 0; transform: translateX(100px); }
+}
+
+/* =======================================================
+   5. CARDS (Other Treatments)
+======================================================= */
+.treatment-box {
+  background-color: #e4c6b8;
+  border: 1px solid var(--c-primario);
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 700px;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.treatment-box h3 {
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  color: var(--c-oscuro);
+}
+
+.treatment-box p { font-size: 1rem; color: #444; margin-bottom: 0.5rem; }
+.treatment-box ul { margin: 0; padding-left: 1.2rem; }
+.treatment-box img { max-height: 200px; object-fit: contain; }
+
+/* Flechas carrusel */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background-size: 60%;
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover { background-color: var(--c-primario); }
+
+.carousel-control-prev,
+.carousel-control-next { width: 10%; }
+
+@media (max-width: 768px) {
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon { width: 60px; height: 60px; background-size: 70%; }
+}
+
+/* =======================================================
+   6. FOOTER
+======================================================= */
+.footer {
+  background-color: var(--c-primario);
+  color: var(--c-blanco);
+  padding: 40px 20px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer h4 { margin-bottom: 15px; }
+.footer p { margin: 0; line-height: 1.6; }
+
+.footer-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 250px;
+}
+
+.footer-form input,
+.footer-form textarea {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.footer-form textarea { min-height: 80px; resize: none; }
+
+.footer-form button {
+  padding: 10px;
+  background-color: var(--c-primario);
+  color: var(--c-blanco);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+.footer-form button:hover { background-color: #052c65; }
+
+/* =======================================================
+   7. SOCIAL
+======================================================= */
+.social-buttons {
+  margin-top: 20px;
+  text-align: center;
+}
+.social-buttons a { margin: 0 10px; display: inline-block; }
+.social-buttons img {
+  width: auto; max-height: 50px;
+  transition: transform 0.2s ease;
+}
+.social-buttons img:hover { transform: scale(1.1); }
+
+/* =======================================================
+   8. RESPONSIVE
+======================================================= */
+@media (max-width: 992px) {
+  .welcome-section { padding: 20px; min-height: auto; }
+  .welcome-text-box { width: 100%; max-width: 90%; padding: 15px 20px; }
+  .welcome-box-right h1 { font-size: 2.2rem; }
+  .welcome-box-right p { font-size: 1.2rem; }
+  .navbar { padding: 0.5rem 1rem; }
+  .footer-container { flex-direction: column; align-items: center; text-align: center; }
+  .footer-form { width: 100%; max-width: 300px; }
+}
+
+@media (max-width: 576px) {
+  .welcome-text-box { padding: 12px 15px; }
+  .welcome-box-right h1 { font-size: 1.8rem; }
+  .welcome-box-right p { font-size: 1rem; }
+  .navbar-brand img { max-height: 40px; }
+  .hero-video { height: 60vh; }
+  .hero-overlay { font-size: 1.5rem; padding: 0 15px; }
+}
+
+/* =======================================================
+   9. HERO VIDEO
+======================================================= */
+ .hero-video {
+  position: relative;
+  width: 100%;
+  height: clamp(60vh, 80vh, 100vh); /* mínimo 60%, preferido 80%, máximo 100% */
+  overflow: hidden;
+}
+
+.hero-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Aumentamos la opacidad para disimular la calidad */
+}
+
+@media (max-width: 576px) {
+  .hero-video { height: 60vh; margin-top: 0; }
+  .hero-overlay { font-size: 1.5rem; padding: 0 15px; }
+}
+
+/* =======================================================
+   10. ANIMACIONES GENERALES
+======================================================= */
+.fade-in {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =======================================================
+   11. PROCEDURES / PROCEDIMIENTOS
+======================================================= */
+.procedures-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px 20px;
+  background-color: #f5f0ec;
+}
+
+.procedure-card {
+  background-color: #fff;
+  border: 1px solid var(--c-primario);
+  border-radius: 12px;
+  width: 300px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.procedure-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.procedure-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.procedure-card h4 {
+  font-size: 1.5rem;
+  color: var(--c-oscuro);
+  margin-bottom: 10px;
+}
+
+.procedure-card p {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.5;
+}
+
+/* Responsive Procedures */
+@media (max-width: 768px) {
+  .procedure-card {
+    width: 45%;
+  }
+}
+
+@media (max-width: 576px) {
+  .procedure-card {
+    width: 90%;
+  }
+}
+/* ===== FIX SUBMENÚ EN MÓVIL ===== */
+@media (max-width: 991px) {
+  .dropdown-menu .dropdown-toggle::after {
+    transform: rotate(-90deg);
+  }
+  
+  .dropdown-menu .dropdown-menu {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
+/* =======================================================
+   12. IMAGENES FLOTANTE EN PROCEDIMIENTOS
+   =======================================================*/
+
+.procedure-img {
+  max-width: 100%;
+  height: auto;
+  max-height: 200px; /* Ajusta según lo que necesites */
+  object-fit: cover;
+  margin-top: 20px;
+}
+.procedure-box {
+  max-width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+.procedure-box img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+  margin-bottom: 1rem;
+}
+.procedure-box-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+  margin-bottom: 1rem;
+}
+.skin-tightening-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+/* =======================================================
+   Imagen complementaria en Body Contouring
+   =======================================================*/ 
+.body-contouring-extra-img {
+  max-width: 100%;
+  height: auto;
+  max-height: 350px; /* Puedes ajustar este valor según tu diseño */
+  object-fit: cover;
+  border-radius: 10px;
+  margin-top: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* =======================================================
+   13. MICRONEEDLING - VIDEO
+   =======================================================*/
+
+ .video-box {
+  max-width: 500px;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.video-box video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
