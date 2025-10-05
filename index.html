@@ -3,49 +3,394 @@
 <head>
   <meta charset="UTF-8">
   <title>GBYSkincare</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Bootstrap -->
+  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-  <link rel="stylesheet" href="style.css">
+  <!-- CSS externo -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<!-- Botón menú hamburguesa en móviles -->
-<button class="btn btn-outline-dark d-md-none m-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar">
-  ☰ Menú
-</button>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+      <!-- Logo -->
+      <img src="assets/logoletra.png" alt="Decorativa" class="imagen-flotante">
+      <!-- Botón hamburguesa -->
+      <button class="navbar-toggler me-2" type="button"
+        data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Abrir menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-<!-- Menú lateral -->
-<div class="offcanvas offcanvas-start d-md-block" tabindex="-1" id="sidebar">
-  <div class="offcanvas-header d-md-none">
-    <h5 class="offcanvas-title">Menú</h5>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+      <!-- Menú (envuelto en el collapse que controla el hamburguesa) -->
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About us</a></li>
+
+          <!-- Procedures -->
+          
+<li class="nav-item dropdown" data-bs-auto-close="outside">
+  <a class="nav-link dropdown-toggle" href="treatments/procedures.html" id="treatmentsDropdown"
+     role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Procedures
+  </a>
+  <ul class="dropdown-menu" aria-labelledby="treatmentsDropdown">
+
+      <!-- Dermal Fillers con submenú -->
+    <li class="dropdown-submenu">
+      <a class="dropdown-item dropdown-toggle" href="javascript:void(0)">Dermal Fillers</a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="Dermal fillers/lips-filler.html">Lips Filler</a></li>
+        <li><a class="dropdown-item" href="Dermal fillers/juvederm.html">Juvéderm®</a></li>
+        <li><a class="dropdown-item" href="Dermal fillers/restylane.html">Restylane</a></li>
+        <li><a class="dropdown-item" href="Dermal fillers/sculptra.html">Sculptra</a></li>
+        <li><a class="dropdown-item" href="Dermal fillers/radiesse.html">Radiesse</a></li>
+        <li><a class="dropdown-item" href="Dermal fillers/voluma.html">Voluma</a></li>
+
+      </ul>
+    </li> 
+    <!-- Neurotixin con submenú -->
+    <li class="dropdown-submenu">
+      <a class="dropdown-item dropdown-toggle" href="javascript:void(0)">Neurotoxins</a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="Neurotoxins/dysport.html">Dysport</a></li>
+        <li><a class="dropdown-item" href="Neurotoxins/xeomin.html">Xeomin</a></li>
+        <li><a class="dropdown-item" href="Neurotoxins/jeuveau.html">Jeuveau</a></li>
+        <li><a class="dropdown-item" href="Neurotoxins/botox.html">Botox</a></li>
+      </ul>
+    </li> 
+
+    <li><a class="dropdown-item" href="treatments/acne-treatment.html">Acne Treatment</a></li>
+    <li><a class="dropdown-item" href="treatments/microneedling.html">Microneedling</a></li>
+    <li><a class="dropdown-item" href="treatments/skin-tightening.html">Skin Tightening</a></li>
+    <li><a class="dropdown-item" href="treatments/chemical-peel.html">Chemical peel</a></li>
+    <li><a class="dropdown-item" href="treatments/prp.html">Platelet Rich Plasma (PRP)</a></li>
+    <li><a class="dropdown-item" href="treatments/oxygeneo.html">Oxygeneo</a></li>
+    <li><a class="dropdown-item" href="treatments/lips-filler.html">Lips filler</a></li>
+    <li><a class="dropdown-item" href="treatments/hydrafacial.html">HydraFacial®</a></li>
+    <li><a class="dropdown-item" href="treatments/dermaplaning.html">Dermaplaning</a></li>
+    <li><a class="dropdown-item" href="treatments/hair-loss-treatment.html">Hair loss treatment</a></li>
+    <li><a class="dropdown-item" href="treatments/body-countouring.html">Body Contouring</a></li>
+    <li><a class="dropdown-item" href="treatments/skin-tag-removal.html">Skin tag removal-cauterization</a></li>
+    <li><a class="dropdown-item" href="../treatments/light-therapy.html">Ligh Therapy</a></li>
+    <!-- Nuevo botón dentro del menú -->
+    <li><hr class="dropdown-divider"></li>
+    <li><a class="dropdown-item" href="#other-treatments">Other Treatments</a></li>
+  </ul>
+</li>
+
+          <!-- Spa Service -->
+          <li class="nav-item dropdown" data-bs-auto-close="outside">
+            <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="SpaserviceDropdown"
+               role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Spa Service
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="SpaserviceDropdown">
+              <li><a class="dropdown-item" href="spa_service/eyebrow-lamination.html">Eyebrow lamination</a></li>
+              <li><a class="dropdown-item" href="spa_service/head-service.html">Head Service</a></li>
+              <li><a class="dropdown-item" href="spa_service/hair-treatments.html">Hair Treatments</a></li>
+              <li><a class="dropdown-item" href="spa_service/hair-loss-solutions.html">Hair loss solutions</a></li>
+              <li><a class="dropdown-item" href="spa_service/scalp-treatments.html">Keravive Scalp Treatments</a></li>
+              <li><a class="dropdown-item" href="spa_service/scalp-care.html">Scalp care</a></li>
+            </ul>
+          </li>
+
+          <!-- Wellness Service Dropdown -->
+          <li class="nav-item dropdown" data-bs-auto-close="outside">
+            <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="wellnessDropdown"
+               role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Wellness Service
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="wellnessDropdown">
+              <li><a class="dropdown-item" href="wellness_service/iv-therapy.html">IV Therapy</a></li>
+            </ul>
+          </li>
+
+          <!-- Conditions -->
+          <li class="nav-item dropdown" data-bs-auto-close="outside">
+            <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="conditionsDropdown"
+               role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Conditions
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="conditionsDropdown">
+              <li><a class="dropdown-item" href="conditions/acne-blemishes.html">Acne & Blemishes</a></li>
+              <li><a class="dropdown-item" href="conditions/complexion.html">Complexion</a></li>
+              <li><a class="dropdown-item" href="conditions/sun-damage-hyperpigmentation.html">Sun damage/Hyperpigmentation</a></li>
+              <li><a class="dropdown-item" href="conditions/skin-tone-texture.html">Skin tone & Texture</a></li>
+              <li><a class="dropdown-item" href="conditions/scars.html">Scars</a></li>
+              <li><a class="dropdown-item" href="conditions/fine-lines-wrinkles.html">Fine lines & Wrinkles</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a class="nav-link" href="policies.html">Policies</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div> <!-- /.collapse .navbar-collapse -->
+    </div> <!-- /.container-fluid -->
+  </nav>
+ 
+  <!-- Home Section -->
+  <section id="welcome" class="welcome-section">
+  <div class="welcome-box-left">
+    <div class="line"></div>
+    <div class="line"></div>
   </div>
-  <div class="offcanvas-body p-0">
-    <nav class="nav flex-column nav-pills p-3">
-      <a class="nav-link" href="#">HOME</a>
-      <a class="nav-link" href="#">WELCOME</a>
-      <a class="nav-link" href="#">ABOUT US</a>
-      <a class="nav-link" href="#">OUR SERVICES</a>
-      <a class="nav-link" href="#">PERSONALIZED CONSULTATIONS</a>
-      <a class="nav-link" href="#">CONTACT US</a>
-      <a class="nav-link" href="#">GIFT CARD</a>
-      <a class="nav-link" href="#">PLANS AND PRICINGS</a>
-    </nav>
+  <div class="welcome-box-right">
+    <div class="welcome-text-box">
+    <h1>Welcome to Gbyskincare</h1>
+    <p>✨ Facials aren't Luxury they're wellness.✨ </p>
+    <p>Be part of our  movement at Gbyskincare </p>
   </div>
-</div>
+  </div>
+</section>
 
-<!-- Contenido principal -->
-<main class="main-content p-4 text-center">
-  <h1 class="display-4">Bienvenido a GBY Skincare</h1>
-  <p class="lead">Página construida con Bootstrap y GitHub Pages</p>
+<section class="welcome-section-bottom">
+  <div class="welcome-box-center">
+    <div class="line">Website in working</div>
+    <div class="line">come back soon......</div>
+  </div>
+</section>
 
-  <button class="btn btn-primary mt-4" onclick="saludo()">Haz clic</button>
-</main>
+ 
+ <!-- ===== HERO VIDEO ===== -->
+<section class="hero-video">
+  <video class="w-100" autoplay muted loop playsinline>
+    <source src="assets/lv-0-20250910211621_SykHnZlW.mp4" type="video/mp4">
+    Tu navegador no soporta el video.
+  </video>
+  <div class="hero-overlay"></div>
+</section>
 
-<script src="script.js"></script>
+  <!-- About Us Section -->
+<section id="about" class="py-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6 d-flex flex-column gap-3">
+        <img src="img/about1.jpg" alt="Imagen 1" class="img-fluid rounded shadow fade-in">
+        <img src="img/about2.jpg" alt="Imagen 2" class="img-fluid rounded shadow fade-in">
+      </div>
+      <div class="col-lg-6 fade-in">
+        <h2 class="mb-4">About Us</h2>
+        <p>At GBYSkincare, we are dedicated to offering the best skincare treatments, combining innovation, nature, and science. Our commitment is to help you feel more confident and radiant every day.</p>
+        <p>With a team of passionate professionals and high-quality products, we strive to make each experience unique and personalized for you.</p>
+        <div class="text-center mt-4">
+          <a href="https://us.shaklee.com/en_US/ivy/c/30-Day-Protein-Power-Up/p/89836" class="btn btn-primary mt-3">BOOK NOW!!</a>
+        </div>
+      </div>
+  </div>
+</section>
+
+
+ <!-- Other Treatments Section -->
+<section id="other-treatments" class="py-5">
+  <div class="container fade-in">
+    <div class="text-center mb-5">
+      <h2>Other Treatments</h2>
+      <p class="text-muted">Discover more ways to care for your skin and wellness</p>
+    </div>
+
+    <div id="treatmentsCarousel" class="carousel slide fade-in" data-bs-ride="carousel">
+      <div class="carousel-inner">
+
+        <!-- Glo2facial -->
+        <div class="carousel-item active">
+          <div class="d-block w-100 d-flex justify-content-center">
+            <div class="treatment-box text-center fade-in">
+              <img src="assets/Glo2facial.png" class="img-fluid rounded mb-3" alt="Glo2facial by Geneo">
+              <h3>Glo2facial by Geneo</h3>
+              <p><strong>✨ What it is:</strong> A next-generation, medical-grade facial that cleanses, exfoliates, hydrates, 
+                and revitalizes the skin in one session.</p>
+              <p><strong>🔬 How it works:</strong> It combines three core steps:</p>
+              <p>
+                <strong>Oxfoliation –</strong> Oxygenating exfoliation with OxyPods + Primer Gel.<br>
+                <strong>Lite Ultrasound (LUX) –</strong> Micro-vibrations that smooth skin and enhance absorption.<br>
+                <strong>Lymphatic Massage –</strong> Detoxifies, reduces puffiness, and sculpts contours.
+              </p>
+              <p><strong>💧 Benefits:</strong></p>
+              <ul class="text-start">
+                <li>Brighter, more even skin tone</li>
+                <li>Smoother texture & reduced fine lines</li>
+                <li>Calms breakouts & hydrates deeply</li>
+                <li>Zero downtime, instant results</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Light Therapy -->
+        <div class="carousel-item">
+          <div class="d-block w-100 d-flex justify-content-center">
+            <div class="treatment-box text-center fade-in">
+              <img src="assets/Celuma.webp" class="img-fluid rounded mb-3" alt="Light Therapy">
+              <h3>Light Therapy</h3>
+              <p><strong>✨ What it is:</strong> A non-invasive treatment that uses specific wavelengths of light to target skin concerns and stimulate healing.</p>
+              <p><strong>🔬 How it works:</strong></p>
+              <p>
+                <strong>Red light –</strong> Boosts collagen, reduces inflammation.<br>
+                <strong>Blue light –</strong> Kills acne bacteria, calms breakouts.<br>
+                <strong>Yellow light –</strong> Improves circulation, reduces redness.<br>
+                <strong>Near-infrared –</strong> Deep penetration, repairs tissue.
+              </p>
+              <p><strong>💧 Benefits:</strong></p>
+              <ul class="text-start">
+                <li>Reduces fine lines & wrinkles</li>
+                <li>Clears acne & prevents breakouts</li>
+                <li>Calms redness, rosacea & irritation</li>
+                <li>Speeds up wound healing</li>
+                <li>Improves overall skin tone</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Vasculyse -->
+        <div class="carousel-item">
+          <div class="d-block w-100 d-flex justify-content-center">
+            <div class="treatment-box text-center fade-in">
+              <img src="assets/Vasculyse.webp" class="img-fluid rounded mb-3" alt="Vasculyse">
+              <h3>Vasculyse</h3>
+              <p><strong>🩸 What it is:</strong> Non-invasive treatment using radiofrequency thermocoagulation to eliminate small vascular & skin irregularities.</p>
+              <p><strong>🔬 How it works:</strong></p>
+              <p>
+                <strong>A fine probe</strong> delivers high-frequency current to coagulate blood in tiny vessels.<br>
+                <strong>The body reabsorbs treated tissue</strong>, regenerating healthy skin.<br>
+                Only touches the skin surface — no piercing.
+              </p>
+              <p><strong>✨ Common conditions treated:</strong></p>
+              <ul class="text-start">
+                <li>Spider veins</li>
+                <li>Broken capillaries</li>
+                <li>Cherry angiomas</li>
+                <li>Skin tags</li>
+                <li>Milia</li>
+                <li>Cholesterol deposits</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#treatmentsCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#treatmentsCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================
+     SECCIÓN ADD-ONS
+=========================== -->
+<section class="py-5 bg-light">
+  <div class="container text-center">
+    <h2 class="mb-4">Who doesn’t love a good add-on?</h2>
+    <div class="row g-4">
+
+      <!-- Acne Back Peel -->
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="p-4 h-100 shadow-sm rounded bg-white">
+          <div class="mb-3">
+            <img src="../assets/acne-back.png" alt="Acne Back Peel" width="60">
+          </div>
+          <h5 class="fw-bold">Acne Back Peel</h5>
+          <p class="small text-muted">
+            Like our acne facial peels, our back peels treat those hard-to-reach spots with acids at varying concentrations to heal acne, scars and fade hyperpigmentation.
+          </p>
+        </div>
+      </div>
+
+      <!-- Extractions -->
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="p-4 h-100 shadow-sm rounded bg-white">
+          <div class="mb-3">
+            <img src="../assets/Extractions.png" alt="Extractions" width="60">
+          </div>
+          <h5 class="fw-bold">Extractions</h5>
+          <p class="small text-muted">
+            While our recommended skincare products are strong in their own right, extractions can help clear out those pesky pores to help reduce blackheads and blemishes.
+          </p>
+        </div>
+      </div>
+
+      <!-- Dermaplaning -->
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="p-4 h-100 shadow-sm rounded bg-white">
+          <div class="mb-3">
+            <img src="../assets/dermaplani.png" alt="Dermaplaning" width="60">
+          </div>
+          <h5 class="fw-bold">Dermaplaning</h5>
+          <p class="small text-muted">
+            Say hello to skin that's never felt so smooth. Let's even your skin tone and texture with a gentle blade to take away any dead skin and wispy facial hair.
+          </p>
+        </div>
+      </div>
+
+      <!-- LED Light Therapy -->
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="p-4 h-100 shadow-sm rounded bg-white">
+          <div class="mb-3">
+            <img src="../assets/fisio.png" alt="LED Light Therapy" width="60">
+          </div>
+          <h5 class="fw-bold">LED Light Therapy</h5>
+          <p class="small text-muted">
+            Light-emitting diode therapy uses varying wavelengths that can help your skin rejuvenate and heal while treating skin conditions including acne, aging, dull skin, and more.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- Footer -->
+  <footer id="contact" class="footer">
+    <div class="footer-container">
+      <div>
+        <h4>Address</h4>
+        <p>2977 Goodlette-Frank Road North,<br>Naples, Florida, 34103</p>
+      </div>
+      <div>
+        <h4>Contact Us</h4>
+        <p>📞 +1 (239)-2006264</p>
+        <p>📧 gbyskincare@gmail.com</p>
+      </div>
+      <div>
+        <h4>Get in Touch</h4>
+        <form class="footer-form" action="https://formspree.io/f/xdkdvrky" method="POST">
+          <input type="text" name="firstName" placeholder="First Name*" required>
+          <input type="text" name="lastName" placeholder="Last Name*" required>
+          <input type="email" name="email" placeholder="Email*" required>
+          <textarea name="message" placeholder="Message" required></textarea>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+    <div class="social-buttons">
+      <a href="https://wa.me/12392006264?text=Welcome,%20to%20Gbyskincare%20How%20we%20can%20help%20you" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=100088137746606&ref=pl_edit_xav_ig_profile_page_web" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+      </a>
+      <a href="https://www.instagram.com/gbyskincare" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram">
+      </a>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="scripts.js" defer></script>
+
 </body>
 </html>
