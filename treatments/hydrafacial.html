@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HydraFacial® | GBYSkincare</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Estilos propios -->
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container-fluid">
+      <!-- Botón hamburguesa -->
+      <button class="navbar-toggler me-2" type="button"
+        data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Abrir menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Logo -->
+      <a class="navbar-brand" href="../index.html">
+        <img src="../assets/logoletra.png" alt="GBYSkincare" class="imagen-flotante">
+      </a>
+
+      <!-- Menú -->
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="../index.html#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="../index.html#about">About Us</a></li>
+
+           <!-- Procedures dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="../treatments/procedures.html" id="treatmentsDropdown"
+               role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Procedures
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="treatmentsDropdown">
+              <li class="dropdown-submenu">
+                <a class="dropdown-item dropdown-toggle" href="javascript:void(0)">Dermal Fillers</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="../Dermal fillers/lips-filler.html">Lips Filler</a></li>
+                  <li><a class="dropdown-item" href="../Dermal fillers/juvederm.html">Juvéderm®</a></li>
+                  <li><a class="dropdown-item" href="../Dermal fillers/restylane.html">Restylane</a></li>
+                  <li><a class="dropdown-item" href="../Dermal fillers/sculptra.html">Sculptra</a></li>
+                  <li><a class="dropdown-item" href="../Dermal fillers/radiesse.html">Radiesse</a></li>
+                  <li><a class="dropdown-item" href="../Dermal fillers/voluma.html">Voluma</a></li>
+                </ul>
+              </li>
+               <!-- Neurotixin con submenú -->
+    <li class="dropdown-submenu">
+      <a class="dropdown-item dropdown-toggle" href="javascript:void(0)">Neurotoxins</a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="../Neurotoxins/dysport.html">Dysport</a></li>
+        <li><a class="dropdown-item" href="../Neurotoxins/xeomin.html">Xeomin</a></li>
+        <li><a class="dropdown-item" href="../Neurotoxins/jeuveau.html">Jeuveau</a></li>
+        <li><a class="dropdown-item" href="../Neurotoxins/botox.html">Botox</a></li>
+      </ul>
+    </li> 
+
+    <li><a class="dropdown-item" href="../treatments/acne-treatment.html">Acne Treatment</a></li>
+    <li><a class="dropdown-item" href="../treatments/microneedling.html">Microneedling</a></li>
+    <li><a class="dropdown-item" href="../treatments/skin-tightening.html">Skin Tightening</a></li>
+    <li><a class="dropdown-item" href="../treatments/chemical-peel.html">Chemical peel</a></li>
+    <li><a class="dropdown-item" href="../treatments/prp.html">Platelet Rich Plasma (PRP)</a></li>
+    <li><a class="dropdown-item" href="../treatments/oxygeneo.html">Oxygeneo</a></li>
+    <li><a class="dropdown-item" href="../treatments/hydrafacial.html">HydraFacial®</a></li>
+    <li><a class="dropdown-item" href="../treatments/dermaplaning.html">Dermaplaning</a></li>
+    <li><a class="dropdown-item" href="../treatments/hair-loss-treatment.html">Hair loss treatment</a></li>
+    <li><a class="dropdown-item" href="../treatments/body-countouring.html">Body Contouring</a></li>
+    <li><a class="dropdown-item" href="../treatments/skin-tag-removal.html">Skin tag removal-cauterization</a></li>
+    <li><a class="dropdown-item" href="../treatments/light-therapy.html">Ligh Therapy</a></li>
+    <li><hr class="dropdown-divider"></li>
+    <li><a class="dropdown-item" href="../index.html#other-treatments">Other Treatments</a></li>
+  </ul>
+</li>
+
+          <!-- Spa Service -->
+          <li class="nav-item dropdown" data-bs-auto-close="outside">
+            <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="SpaserviceDropdown"
+               role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Spa Service
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="SpaserviceDropdown">
+              <li><a class="dropdown-item" href="../spa_service/eyebrow-lamination.html">Eyebrow lamination</a></li>
+              <li><a class="dropdown-item" href="../spa_service/head-service.html">Head Service</a></li>
+              <li><a class="dropdown-item" href="../spa_service/hair-treatments.html">Hair Treatments</a></li>
+              <li><a class="dropdown-item" href="../spa_service/hair-loss-solutions.html">Hair loss solutions</a></li>
+              <li><a class="dropdown-item" href="../spa_service/scalp-treatments.html">Keravive Scalp Treatments</a></li>
+              <li><a class="dropdown-item" href="../spa_service/scalp-care.html">Scalp care</a></li>
+            </ul>
+          </li>
+
+          <!-- Wellness Service Dropdown -->
+          <li class="nav-item dropdown" data-bs-auto-close="outside">
+            <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="wellnessDropdown"
+               role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Wellness Service
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="wellnessDropdown">
+              <li><a class="dropdown-item" href="../wellness_service/iv-therapy.html">IV Therapy</a></li>
+            </ul>
+          </li>
+
+          <!-- Conditions -->
+          <li class="nav-item dropdown" data-bs-auto-close="outside">
+            <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="conditionsDropdown"
+               role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Conditions
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="conditionsDropdown">
+              <li><a class="dropdown-item" href="../conditions/acne-blemishes.html">Acne & Blemishes</a></li>
+              <li><a class="dropdown-item" href="../conditions/complexion.html">Complexion</a></li>
+              <li><a class="dropdown-item" href="../conditions/sun-damage-hyperpigmentation.html">Sun damage/Hyperpigmentation</a></li>
+              <li><a class="dropdown-item" href="../conditions/skin-tone-texture.html">Skin tone & Texture</a></li>
+              <li><a class="dropdown-item" href="../conditions/scars.html">Scars</a></li>
+              <li><a class="dropdown-item" href="../conditions/fine-lines-wrinkles.html">Fine lines & Wrinkles</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="../policies.html">Policies</a></li>
+          <li class="nav-item"><a class="nav-link" href="../#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+ <!-- ===== SECCIÓN HYDRAFACIAL ===== -->
+<section class="container my-5" style="padding-top: 100px;">
+  <div class="row align-items-center">
+    
+    <!-- Video -->
+    <div class="col-lg-6 col-md-12 mb-4 mb-lg-0 text-center" data-aos="fade-left">
+      <div class="video-box rounded shadow overflow-hidden mx-auto">
+        <video class="w-100" autoplay muted loop playsinline aria-label="Hydrafacial treatment overview video">
+          <source src="../assets/Hydrafacial Overview Office Video Loop - Long.mp4" type="video/mp4">
+          Tu navegador no soporta el video.
+        </video>
+      </div>
+    </div>
+
+    <div class="col-lg-6 col-md-12" data-aos="fade-right">
+      <h1 class="mb-4">HydraFacial®</h1>
+      <p>
+        A Hydrafacial is a skincare treatment that combines cleansing, exfoliation, impurity extraction, hydration, and antioxidant protection, utilizing vortex suction technology and various tips to customize the treatment. 
+        It is a non-invasive, non-surgical procedure that seeks to improve the appearance of the skin, leaving it clearer, more hydrated, brighter, and with a smoother texture.
+      </p>
+      <p>
+        This non-invasive treatment improves skin tone, reduces fine lines, and enhances hydration for an instant glow. 
+        Suitable for all skin types, Hydrafacial is gentle yet effective, providing long-lasting results.
+      </p>
+
+      
+      <div class="mt-4">
+        <a href="../#contact" class="btn btn-primary mt-3">Book your appointment</a>
+      </div>
+    </div>
+  </div>
+</section>
+  <!-- ===== HYDRAFACIAL OPTIONS ===== -->
+<section id="hydrafacial-options" class="py-5">
+  <div class="container fade-in">
+    <div class="text-center mb-5">
+      <h2>HydraFacial® Options</h2>
+      <p class="text-muted">Explore the perfect HydraFacial for your skin goals</p>
+    </div>
+
+    <div id="hydrafacialCarousel" class="carousel slide fade-in" data-bs-ride="carousel">
+      <div class="carousel-inner">
+
+        <!-- Signature HydraFacial -->
+        <div class="carousel-item active">
+          <div class="d-block w-100 d-flex justify-content-center">
+            <div class="treatment-box text-center fade-in">
+              <img src="../assets/hydrafacial-signature.webp" class="img-fluid rounded mb-3" alt="Signature HydraFacial">
+              <h3>Signature HydraFacial</h3>
+              <p><strong>✨ What it is:</strong> A foundational facial that deeply cleanses, exfoliates, and hydrates.</p>
+              <p><strong>🔬 How it works:</strong> Uses patented vortex technology to remove impurities and infuse nourishing serums.</p>
+              <p><strong>💧 Benefits:</strong></p>
+              <ul class="text-start">
+                <li>Instant glow and hydration</li>
+                <li>Improved skin texture</li>
+                <li>Gentle and non-invasive</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Deluxe HydraFacial -->
+        <div class="carousel-item">
+          <div class="d-block w-100 d-flex justify-content-center">
+            <div class="treatment-box text-center fade-in">
+              <img src="../assets/deluxe-hydrafacial.webp" class="img-fluid rounded mb-3" alt="Deluxe HydraFacial">
+              <h3>Deluxe HydraFacial</h3>
+              <p><strong>✨ What it is:</strong> A personalized facial with targeted boosters and LED therapy.</p>
+              <p><strong>🔬 How it works:</strong> Includes Signature steps plus LED Light Therapy and a Booster for specific concerns.</p>
+              <p><strong>💧 Benefits:</strong></p>
+              <ul class="text-start">
+                <li>Targets fine lines and pigmentation</li>
+                <li>Boosts collagen and calms skin</li>
+                <li>Customizable for all skin types</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Luxe HydraFacial -->
+        <div class="carousel-item">
+          <div class="d-block w-100 d-flex justify-content-center">
+            <div class="treatment-box text-center fade-in">
+              <img src="../assets/hydrafacial-luxe.webp" class="img-fluid rounded mb-3" alt="Luxe HydraFacial">
+              <h3>Luxe HydraFacial</h3>
+              <p><strong>✨ What it is:</strong> The ultimate HydraFacial experience with lymphatic drainage.</p>
+              <p><strong>🔬 How it works:</strong> Combines Deluxe features with detoxifying massage to sculpt and refresh.</p>
+              <p><strong>💧 Benefits:</strong></p>
+              <ul class="text-start">
+                <li>Reduces puffiness and toxins</li>
+                <li>Enhances circulation and glow</li>
+                <li>Deep rejuvenation and relaxation</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Back HydraFacial -->
+        <div class="carousel-item">
+          <div class="d-block w-100 d-flex justify-content-center">
+            <div class="treatment-box text-center fade-in">
+              <img src="../assets/the-back-facial.jpg" class="img-fluid rounded mb-3" alt="Back HydraFacial">
+              <h3>Back HydraFacial</h3>
+              <p><strong>✨ What it is:</strong> A targeted treatment for back acne and congestion.</p>
+              <p><strong>🔬 How it works:</strong> Cleanses, exfoliates, and hydrates the back using vortex fusion technology.</p>
+              <p><strong>💧 Benefits:</strong></p>
+              <ul class="text-start">
+                <li>Clears clogged pores</li>
+                <li>Improves back texture</li>
+                <li>Reduces breakouts and inflammation</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Express HydraFacial -->
+        <div class="carousel-item">
+          <div class="d-block w-100 d-flex justify-content-center">
+            <div class="treatment-box text-center fade-in">
+              <img src="../assets/hydrafacial-express.jpg" class="img-fluid rounded mb-3" alt="Express HydraFacial">
+              <h3>Express HydraFacial</h3>
+              <p><strong>✨ What it is:</strong> A quick, effective facial for busy schedules.</p>
+              <p><strong>🔬 How it works:</strong> Three essential steps—cleanse, extract, hydrate—in under 30 minutes.</p>
+              <p><strong>💧 Benefits:</strong></p>
+              <ul class="text-start">
+                <li>Fast refresh with visible results</li>
+                <li>Perfect for monthly maintenance</li>
+                <li>No downtime, instant glow</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#hydrafacialCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#hydrafacialCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </div>
+</section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer id="contact" class="footer">
+    <div class="container text-center py-4">
+      <p>&copy; 2025 GBYSkincare - Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../scripts.js" defer></script> 
+</body>
+</html>
