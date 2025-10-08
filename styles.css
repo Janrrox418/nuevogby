@@ -2,10 +2,12 @@
    1. VARIABLES
 ======================================================= */
 :root {
-  --c-primario: #38939b;
+  --c-primario: #8D7B68; /* Un tono tierra más sofisticado */
+  --c-secundario: #A4907C;
   --c-oscuro: #001f3f;
   --c-blanco: #fff;
-  --c-hover: #ffe0cc;
+  --c-hover: #F1DEC9; /* Un hover más sutil */
+  --c-fondo-claro: #F9F5F0; /* Fondo ligeramente cálido */
 }
 
 /* =======================================================
@@ -13,7 +15,7 @@
 ======================================================= */
 body {
   background-color: #fff;
-  color: #333;
+  color: #4a4a4a; /* Un gris más suave que el negro puro */
   font-family: 'Times New Roman', Times, serif, sans-serif;
   margin: 0;
   padding-top: 50px;
@@ -42,7 +44,7 @@ body {
 .navbar.hide { transform: translateY(-100%); }
 
 /* NUEVO → para compatibilidad con JS */
-.navbar-hidden { transform: translateY(-100%); }
+.navbar-hidden { transform: translateY(-110%); } /* Ocultar completamente */
 
 .navbar.scrolled {
   background-color: var(--c-primario) !important;
@@ -53,15 +55,15 @@ body {
 .navbar-brand img,
 .navbar .imagen-flotante {
   height: clamp(60px, 12vw, 160px); /* mínimo 60px, preferido 12vw, máximo 160px */
-  width: auto;
-  animation: caerExpandir 3s ease-in-out infinite;
+  width: auto; 
+  animation: caerExpandir 4s ease-in-out infinite; /* Animación más lenta */
 }
 
 
 /* Animación: caída desde arriba + expansión */
 @keyframes caerExpandir {
   0% { opacity: 0; transform: translateY(-50px) scale(0.8); }
-  20% { opacity: 1; transform: translateY(0) scale(1.05); }
+  20% { opacity: 1; transform: translateY(0) scale(1.02); } /* Efecto más sutil */
   40% { transform: translateY(0) scale(1); }
   80% { opacity: 1; transform: translateY(0) scale(1); }
   100% { opacity: 0; transform: translateY(-50px) scale(0.8); }
@@ -153,7 +155,7 @@ body {
 
 .navbar .dropdown-item:hover,
 .navbar .nav-link:hover {
-  background-color: var(--c-hover);
+  background-color: var(--c-hover) !important;
   color: #000;
 }
 
@@ -186,7 +188,7 @@ body {
   font-size: clamp(1.8rem, 5vw, 3.5rem); /* tamaño adaptable */
   font-weight: 850;
   margin-bottom: 20px;
-  color: var(--c-oscuro);
+  color: var(--c-primario);
   animation: float 3s ease-in-out infinite;
 }
 
@@ -204,8 +206,8 @@ body {
   padding: clamp(15px, 4vw, 50px) clamp(20px, 6vw, 80px); /* padding adaptable */
   border-radius: 10px;
   display: inline-block;
-  text-align: center;
-  background: #e4c6b8;
+  text-align: center; 
+  background: rgba(255, 255, 255, 0.6); /* Fondo semitransparente */
   backdrop-filter: blur(4px);
   width: clamp(280px, 80%, 800px); /* mínimo 280px, fluido hasta 80%, máximo 800px */
 }
@@ -233,7 +235,7 @@ body {
    5. CARDS (Other Treatments)
 ======================================================= */
 .treatment-box {
-  background-color: #e4c6b8;
+  background-color: var(--c-fondo-claro);
   border: 1px solid var(--c-primario);
   border-radius: 12px;
   padding: 2rem;
@@ -244,6 +246,7 @@ body {
   justify-content: flex-start;
   align-items: center;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .treatment-box h3 {
@@ -254,6 +257,11 @@ body {
 
 .treatment-box p { font-size: 1rem; color: #444; margin-bottom: 0.5rem; }
 .treatment-box ul { margin: 0; padding-left: 1.2rem; }
+.treatment-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
 .treatment-box img { max-height: 200px; object-fit: contain; }
 
 /* Flechas carrusel */
@@ -324,8 +332,7 @@ body {
   cursor: pointer;
   font-weight: bold;
   transition: background 0.3s ease;
-}
-.footer-form button:hover { background-color: #052c65; }
+}.footer-form button:hover { background-color: var(--c-secundario); }
 
 /* =======================================================
    7. SOCIAL
@@ -385,7 +392,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100%; 
   background: rgba(0, 0, 0, 0.4); /* Aumentamos la opacidad para disimular la calidad */
 }
 
@@ -416,7 +423,7 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   gap: 30px;
-  padding: 40px 20px;
+  padding: 40px 20px; 
   background-color: #f5f0ec;
 }
 
@@ -505,9 +512,24 @@ body {
   width: 100%;
   height: 200px;
   object-fit: cover;
-  border-radius: 8px;
-  display: block;
+}
+
+/* =======================================================
+   14. ADD-ONS SECTION
+   =======================================================*/
+.addon-icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background-color: var(--c-fondo-claro);
+  border-radius: 50%;
   margin-bottom: 1rem;
+}
+.addon-icon-wrapper img {
+  width: 45px;
+  height: auto;
 }
 .procedure-box-img {
   width: 100%;
