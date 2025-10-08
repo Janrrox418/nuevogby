@@ -2,11 +2,11 @@
    1. VARIABLES
 ======================================================= */
 :root {
-  --c-primario: #8D7B68; /* Un tono tierra más sofisticado */
-  --c-secundario: #A4907C;
+  --c-primario: #38939b; /* Restaurado al color original */
+  --c-secundario: #052c65; /* Un azul más oscuro para contrastes */
   --c-oscuro: #001f3f;
   --c-blanco: #fff;
-  --c-hover: #F1DEC9; /* Un hover más sutil */
+  --c-hover: #ffe0cc; /* Restaurado al hover original */
   --c-fondo-claro: #F9F5F0; /* Fondo ligeramente cálido */
 }
 
@@ -235,7 +235,7 @@ body {
    5. CARDS (Other Treatments)
 ======================================================= */
 .treatment-box {
-  background-color: var(--c-fondo-claro);
+  background-color: #e4c6b8; /* Restaurado al fondo de tarjeta original */
   border: 1px solid var(--c-primario);
   border-radius: 12px;
   padding: 2rem;
@@ -332,7 +332,7 @@ body {
   cursor: pointer;
   font-weight: bold;
   transition: background 0.3s ease;
-}.footer-form button:hover { background-color: var(--c-secundario); }
+}.footer-form button:hover { background-color: #052c65; } /* Restaurado hover del botón */
 
 /* =======================================================
    7. SOCIAL
