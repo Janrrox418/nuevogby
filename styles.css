@@ -20,7 +20,7 @@ body {
 }
 @media (max-width: 992px) {
   body { padding-top: 110%; }
-}
+} /* Este porcentaje parece muy alto, podrías considerar usar vh o px */
 @media (max-width: 576px) {
   body { padding-top: 100px; }
 }
@@ -42,7 +42,7 @@ body {
 .navbar.hide { transform: translateY(-100%); }
 
 /* NUEVO → para compatibilidad con JS */
-.navbar-hidden { transform: translateY(-100%); }
+.navbar-hidden { transform: translateY(-110%); } /* Ocultar completamente */
 
 .navbar.scrolled {
   background-color: var(--c-primario) !important;
@@ -205,7 +205,7 @@ body {
   border-radius: 10px;
   display: inline-block;
   text-align: center;
-  background: #e4c6b8;
+  background: rgba(228, 198, 184, 0.85); /* Mismo color pero con ligera transparencia */
   backdrop-filter: blur(4px);
   width: clamp(280px, 80%, 800px); /* mínimo 280px, fluido hasta 80%, máximo 800px */
 }
@@ -244,6 +244,7 @@ body {
   justify-content: flex-start;
   align-items: center;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .treatment-box h3 {
@@ -254,6 +255,11 @@ body {
 
 .treatment-box p { font-size: 1rem; color: #444; margin-bottom: 0.5rem; }
 .treatment-box ul { margin: 0; padding-left: 1.2rem; }
+.treatment-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
 .treatment-box img { max-height: 200px; object-fit: contain; }
 
 /* Flechas carrusel */
@@ -552,4 +558,31 @@ body {
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+/* =======================================================
+   14. ADD-ONS SECTION
+   =======================================================*/
+.addon-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.addon-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12) !important;
+}
+
+.addon-icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background-color: #f8f9fa; /* bg-light de bootstrap */
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+.addon-icon-wrapper img {
+  width: 45px;
+  height: auto;
 }
