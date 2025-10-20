@@ -173,53 +173,60 @@ body {
    4. HOME / WELCOME
 ======================================================= */
 .welcome-section {
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 90vh;
-  padding: 2rem;
+  min-height: 80vh;
+  padding: 40px;
   text-align: center;
-  background: url('assets/welcome-bg.jpg') no-repeat center center/cover;
-  overflow: hidden;
+  flex-direction: column;
 }
 
-.welcome-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
-  z-index: 1;
+.welcome-box-right h1 {
+  font-size: clamp(1.8rem, 5vw, 3.5rem); /* tamaño adaptable */
+  font-weight: 850;
+  margin-bottom: 20px;
+  color: var(--c-oscuro);
+  animation: float 3s ease-in-out infinite;
 }
 
-.welcome-content {
-  position: relative;
-  z-index: 2;
-  padding: clamp(1.5rem, 5vw, 3rem);
-  background: rgba(228, 198, 184, 0.6); /* Color base con transparencia */
-  backdrop-filter: blur(10px); /* Efecto vidrio esmerilado */
-  -webkit-backdrop-filter: blur(10px);
+.welcome-box-right p {
+  font-size: clamp(1rem, 3vw, 1.6rem); /* tamaño adaptable */
+  margin-top: 20px;
+  color: var(--c-primario);
+  opacity: 0;
+  animation: fadeInRight 4s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+.welcome-text-box {
   border: 2px solid var(--c-primario);
-  border-radius: 15px;
-  max-width: 900px;
-  width: 90%;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+  padding: clamp(15px, 4vw, 50px) clamp(20px, 6vw, 80px); /* padding adaptable */
+  border-radius: 10px;
+  display: inline-block;
+  text-align: center;
+  background: rgba(228, 198, 184, 0.85); /* Mismo color pero con ligera transparencia */
+  backdrop-filter: blur(4px);
+  width: clamp(280px, 80%, 800px); /* mínimo 280px, fluido hasta 80%, máximo 800px */
 }
 
-.welcome-content h1 {
-  font-size: clamp(2.2rem, 6vw, 4rem);
-  font-weight: 700;
-  color: var(--c-oscuro);
-  margin-bottom: 1rem;
+
+@media (min-width: 992px) { /* Estilos para pantallas grandes */
+  .welcome-text-box {
+    padding: 50px 80px; /* Más padding en pantallas grandes */
+    max-width: 800px;   /* Hacemos la caja más ancha */
+  }
 }
 
-.welcome-content p {
-  font-size: clamp(1.1rem, 3vw, 1.5rem);
-  color: var(--c-oscuro);
-  font-weight: 500;
-  margin-bottom: 0.5rem;
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes fadeInRight {
+  0% { opacity: 0; transform: translateX(100px); }
+  20%, 80% { opacity: 1; transform: translateX(0); }
+  100% { opacity: 0; transform: translateX(100px); }
 }
 
 /* =======================================================
