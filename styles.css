@@ -181,7 +181,7 @@ body {
   text-align: center;
   flex-direction: column;
   position: relative;
-  background: linear-gradient(135deg, #fdfbfb 0%, #e2d1c3 100%);
+  background-color: var(--c-primario);
 }
 
 .welcome-box-right h1 {
@@ -202,15 +202,15 @@ body {
 }
 
 .welcome-text-box {
-  border: 3px solid var(--c-primario); /* Borde más grueso */
-  padding: clamp(2rem, 6vw, 4rem); /* Más espaciado interno */
-  border-radius: 8px; /* Bordes suavemente redondeados */
+  border: 2px solid var(--c-blanco); /* Borde blanco para contraste */
+  padding: clamp(1.5rem, 5vw, 3rem); /* Padding más ajustado */
+  border-radius: 4px; /* Bordes rectos */
   display: inline-block;
   text-align: center;
   background: rgba(228, 198, 184, 0.85); /* Mismo color pero con ligera transparencia */
   backdrop-filter: blur(4px);
-  width: clamp(300px, 90%, 850px); /* Ancho ajustado */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+  width: clamp(280px, 85%, 800px); /* Ancho reducido */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Sombra sutil */
   position: relative;
   z-index: 2;
 }
@@ -218,8 +218,8 @@ body {
 
 @media (min-width: 992px) { /* Estilos para pantallas grandes */
   .welcome-text-box {
-    padding: 4rem 6rem; /* Padding generoso en pantallas grandes */
-    max-width: 850px;   /* Ancho máximo ajustado */
+    padding: 3rem 5rem; /* Padding ajustado */
+    max-width: 800px;   /* Ancho máximo reducido */
   }
 }
 
