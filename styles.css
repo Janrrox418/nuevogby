@@ -177,13 +177,15 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 80vh;
-  padding: 40px;
+  padding: 2rem;
   text-align: center;
   flex-direction: column;
+  background: url('assets/welcome-bg-2.jpg') no-repeat center center/cover;
+  position: relative;
 }
 
 .welcome-box-right h1 {
-  font-size: clamp(1.8rem, 5vw, 3.5rem); /* tamaño adaptable */
+  font-size: clamp(2rem, 6vw, 3.8rem); /* Un poco más grande */
   font-weight: 850;
   margin-bottom: 20px;
   color: var(--c-oscuro);
@@ -191,7 +193,7 @@ body {
 }
 
 .welcome-box-right p {
-  font-size: clamp(1rem, 3vw, 1.6rem); /* tamaño adaptable */
+  font-size: clamp(1.1rem, 4vw, 1.5rem); /* Un poco más grande y legible */
   margin-top: 20px;
   color: var(--c-primario);
   opacity: 0;
@@ -200,21 +202,24 @@ body {
 }
 
 .welcome-text-box {
-  border: 2px solid var(--c-primario);
-  padding: clamp(1.5rem, 5vw, 3rem); /* Padding más ajustado */
-  border-radius: 4px; /* Bordes más rectos */
+  border: 3px solid var(--c-primario); /* Borde más grueso */
+  padding: clamp(2rem, 6vw, 4rem); /* Más espaciado interno */
+  border-radius: 8px; /* Bordes suavemente redondeados */
   display: inline-block;
   text-align: center;
   background: rgba(228, 198, 184, 0.85); /* Mismo color pero con ligera transparencia */
   backdrop-filter: blur(4px);
-  width: clamp(280px, 85%, 800px); /* Caja más compacta */
+  width: clamp(300px, 90%, 850px); /* Ancho ajustado */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+  position: relative;
+  z-index: 2;
 }
 
 
 @media (min-width: 992px) { /* Estilos para pantallas grandes */
   .welcome-text-box {
-    padding: 3rem 5rem; /* Padding ajustado en pantallas grandes */
-    max-width: 800px;   /* Ancho máximo reducido */
+    padding: 4rem 6rem; /* Padding generoso en pantallas grandes */
+    max-width: 850px;   /* Ancho máximo ajustado */
   }
 }
 
