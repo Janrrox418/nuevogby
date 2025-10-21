@@ -201,20 +201,20 @@ body {
 
 .welcome-text-box {
   border: 2px solid var(--c-primario);
-  padding: clamp(15px, 4vw, 50px) clamp(20px, 6vw, 80px); /* padding adaptable */
-  border-radius: 10px;
+  padding: clamp(2rem, 6vw, 4rem); /* Aumentamos el padding para un look más espacioso */
+  border-radius: 4px; /* Bordes más rectos */
   display: inline-block;
   text-align: center;
   background: rgba(228, 198, 184, 0.85); /* Mismo color pero con ligera transparencia */
   backdrop-filter: blur(4px);
-  width: clamp(280px, 80%, 800px); /* mínimo 280px, fluido hasta 80%, máximo 800px */
+  width: clamp(300px, 90%, 950px); /* Hacemos la caja un poco más ancha */
 }
 
 
 @media (min-width: 992px) { /* Estilos para pantallas grandes */
   .welcome-text-box {
-    padding: 50px 80px; /* Más padding en pantallas grandes */
-    max-width: 800px;   /* Hacemos la caja más ancha */
+    padding: 4rem 6rem; /* Padding generoso en pantallas grandes */
+    max-width: 950px;   /* Hacemos la caja más ancha */
   }
 }
 
