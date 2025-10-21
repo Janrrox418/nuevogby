@@ -180,8 +180,8 @@ body {
   padding: 2rem;
   text-align: center;
   flex-direction: column;
-  background: url('assets/welcome-bg-2.jpg') no-repeat center center/cover;
   position: relative;
+  background: linear-gradient(135deg, #fdfbfb 0%, #e2d1c3 100%);
 }
 
 .welcome-box-right h1 {
