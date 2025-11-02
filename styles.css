@@ -189,19 +189,19 @@ body {
   font-weight: 850;
   margin-bottom: 20px;
   color: var(--c-oscuro);
-  animation: fadeInDown 1.2s ease-out;
+  animation: float 3s ease-in-out infinite;
 }
 
 .welcome-subtitle {
   font-size: clamp(1.1rem, 4vw, 1.5rem); /* Un poco más grande y legible */
   margin-top: 20px;
-  color: #333;
-  animation: fadeInUp 1.2s ease-out 0.5s;
-  animation-fill-mode: backwards; /* Inicia invisible antes de la animación */
+  color: var(--c-primario);
+  opacity: 0;
+  animation: fadeInRight 4s ease-in-out infinite;
+  animation-delay: 1s;
 }
 .welcome-text-box .btn {
-  animation: fadeInUp 1.2s ease-out 1s;
-  animation-fill-mode: backwards;
+  /* No animation needed for the button in this style */
 }
 
 .welcome-text-box {
@@ -226,14 +226,15 @@ body {
   }
 }
 
-@keyframes fadeInDown {
-  from { opacity: 0; transform: translateY(-30px); }
-  to { opacity: 1; transform: translateY(0); }
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
 }
 
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+@keyframes fadeInRight {
+  0% { opacity: 0; transform: translateX(100px); }
+  20%, 80% { opacity: 1; transform: translateX(0); }
+  100% { opacity: 0; transform: translateX(100px); }
 }
 
 
