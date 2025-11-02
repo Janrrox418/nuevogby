@@ -210,7 +210,7 @@ body {
   border-radius: 4px; /* Bordes rectos */
   display: inline-block;
   text-align: center;
-  background: rgba(228, 198, 184, 0.85); /* Mismo color pero con ligera transparencia */
+  background: #ffe0cc; /* Mismo color pero con ligera transparencia */
   backdrop-filter: blur(4px);
   width: clamp(280px, 85%, 800px); /* Ancho reducido */
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Sombra sutil */
