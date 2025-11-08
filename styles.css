@@ -203,13 +203,13 @@ body {
 
 .welcome-text-box {
   border: 2px solid var(--c-blanco); /* Borde blanco para contraste */
-  padding: clamp(1.5rem, 5vw, 3rem); /* Padding más ajustado */
+  padding: clamp(1rem, 4vw, 2rem); /* Padding reducido */
   border-radius: 4px; /* Bordes rectos */
   display: inline-block;
   text-align: center;
   background: #e4c6b8; /* Mismo color pero con ligera transparencia */
   backdrop-filter: blur(4px);
-  width: clamp(280px, 80%, 700px); /* Ancho más reducido */
+  width: clamp(280px, 70vw, 600px); /* Ancho más reducido */
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Sombra sutil */
   position: relative;
   z-index: 2;
@@ -218,8 +218,8 @@ body {
 
 @media (min-width: 992px) { /* Estilos para pantallas grandes */
   .welcome-text-box {
-    padding: 3rem 5rem; /* Padding ajustado */
-    max-width: 800px;   /* Ancho máximo reducido */
+    padding: 2rem 3rem; /* Padding ajustado para pantallas grandes */
+    max-width: 650px;   /* Ancho máximo reducido */
   }
 }
 
