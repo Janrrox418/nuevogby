@@ -237,6 +237,59 @@ body {
   20%, 80% { opacity: 1; transform: translateX(0); }
   100% { opacity: 0; transform: translateX(100px); }
 }
+/* =======================================================
+   5. CARDS (Other Treatments)
+======================================================= */
+.treatment-box {
+  background-color: #e4c6b8;
+  border: 1px solid var(--c-primario);
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 700px;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.treatment-box h3 {
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  color: var(--c-oscuro);
+}
+
+.treatment-box p { font-size: 1rem; color: #444; margin-bottom: 0.5rem; }
+.treatment-box ul { margin: 0; padding-left: 1.2rem; }
+.treatment-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.treatment-box img { max-height: 200px; object-fit: contain; }
+
+/* Flechas carrusel */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background-size: 60%;
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover { background-color: var(--c-primario); }
+
+.carousel-control-prev,
+.carousel-control-next { width: 10%; }
+
+@media (max-width: 768px) {
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon { width: 60px; height: 60px; background-size: 70%; }
+}
 
 /* =======================================================
    6. FOOTER
