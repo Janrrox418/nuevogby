@@ -52,7 +52,7 @@ body {
 /* Logo flotante animado dentro de la navbar */
 .navbar-brand img,
 .navbar .imagen-flotante {
-  height: clamp(60px, 12vw, 160px); 
+  height: clamp(60px, 12vw, 160px); /* mínimo 60px, preferido 12vw, máximo 160px */
   width: auto;
   animation: caerExpandir 3s ease-in-out infinite;
 }
@@ -173,15 +173,15 @@ body {
    4. HOME / WELCOME
 ======================================================= */
 .welcome-section {
-  position: relative; /* Para que se superponga al video */
-  z-index: 2; /* Para estar por encima del overlay del video */
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh; /* Ocupa toda la altura de la ventana */
+  min-height: 80vh;
   padding: 2rem;
   text-align: center;
   flex-direction: column;
+  position: relative;
+  background-color: var(--c-primario);
 }
 
 .welcome-title {
@@ -200,16 +200,19 @@ body {
   animation: fadeInRight 4s ease-in-out infinite;
   animation-delay: 1s;
 }
+.welcome-text-box .btn {
+  /* No animation needed for the button in this style */
+}
 
 .welcome-text-box {
   border: 2px solid var(--c-blanco); /* Borde blanco para contraste */
-  padding: clamp(1rem, 4vw, 2rem); /* Padding reducido */
+  padding: clamp(1.5rem, 5vw, 3rem); /* Padding más ajustado */
   border-radius: 4px; /* Bordes rectos */
   display: inline-block;
   text-align: center;
-  background: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente */
+  background: #e4c6b8; /* Mismo color pero con ligera transparencia */
   backdrop-filter: blur(4px);
-  width: clamp(280px, 60vw, 500px); /* Ancho aún más reducido */
+  width: clamp(280px, 85%, 800px); /* Ancho reducido */
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Sombra sutil */
   position: relative;
   z-index: 2;
@@ -218,8 +221,8 @@ body {
 
 @media (min-width: 992px) { /* Estilos para pantallas grandes */
   .welcome-text-box {
-    padding: 1.5rem 2.5rem; /* Padding ajustado para pantallas grandes */
-    max-width: 550px;   /* Ancho máximo reducido */
+    padding: 3rem 5rem; /* Padding ajustado */
+    max-width: 800px;   /* Ancho máximo reducido */
   }
 }
 
@@ -390,18 +393,10 @@ body {
     height: 100vh; /* El video ocupará toda la altura de la pantalla */
   }
 }
-
 .hero-video video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  transform: translate(-50%, -50%);
-  z-index: -1; /* Para que esté detrás del overlay */
 }
 
 
