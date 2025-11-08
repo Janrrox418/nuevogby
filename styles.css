@@ -175,13 +175,11 @@ body {
 .welcome-section {
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* Alineado arriba */
-  min-height: 90vh;
-  padding: 120px 2rem 2rem; /* Añadido padding-top para evitar choque */
+  justify-content: center; /* Centrado verticalmente */
+  min-height: 100vh; /* Ocupa toda la altura de la ventana */
+  padding: 2rem; /* Padding general */
   text-align: center;
   flex-direction: column;
-  position: absolute; /* Posicionado sobre el video */
-  background-color: var(--c-primario);
 }
 
 .welcome-title {
@@ -209,7 +207,7 @@ body {
   text-align: center;
   background: #e4c6b8; /* Mismo color pero con ligera transparencia */
   backdrop-filter: blur(4px);
-  width: clamp(280px, 70vw, 600px); /* Ancho más reducido */
+  width: clamp(280px, 60vw, 500px); /* Ancho aún más reducido */
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Sombra sutil */
   position: relative;
   z-index: 2;
@@ -218,8 +216,8 @@ body {
 
 @media (min-width: 992px) { /* Estilos para pantallas grandes */
   .welcome-text-box {
-    padding: 2rem 3rem; /* Padding ajustado para pantallas grandes */
-    max-width: 650px;   /* Ancho máximo reducido */
+    padding: 1.5rem 2.5rem; /* Padding ajustado para pantallas grandes */
+    max-width: 550px;   /* Ancho máximo reducido */
   }
 }
 

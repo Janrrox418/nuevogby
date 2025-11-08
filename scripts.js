@@ -176,12 +176,12 @@ window.addEventListener("scroll", () => {
 function adjustBodyPadding() {
   const navbar = document.querySelector('.navbar');
   if (navbar) {
-    const navbarHeight = navbar.offsetHeight;
-    // No aplicar padding-top al index.html que tiene secciones de altura completa
-    if (!document.querySelector('.hero-video') && !document.querySelector('.welcome-section')) {
-      document.body.style.paddingTop = `${navbarHeight}px`;
-    } else {
-      document.body.style.paddingTop = '0';
+    const navbarHeight = navbar.offsetHeight; // Obtener la altura de la barra de navegación
+    const welcomeSection = document.getElementById('welcome');
+    if (welcomeSection) {
+      welcomeSection.style.paddingTop = `${navbarHeight + 20}px`; // Añadir padding a la sección de bienvenida + un extra
+    } else { // Para otras páginas, aplicar al body
+      document.body.style.paddingTop = `${navbarHeight}px`; 
     }
   }
 }
