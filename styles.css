@@ -175,12 +175,12 @@ body {
 .welcome-section {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start; /* Alineado arriba */
   min-height: 90vh;
-  padding: 2rem;
+  padding: 120px 2rem 2rem; /* Añadido padding-top para evitar choque */
   text-align: center;
   flex-direction: column;
-  position: relative;
+  position: absolute; /* Posicionado sobre el video */
   background-color: var(--c-primario);
 }
 
@@ -200,9 +200,6 @@ body {
   animation: fadeInRight 4s ease-in-out infinite;
   animation-delay: 1s;
 }
-.welcome-text-box .btn {
-  /* No animation needed for the button in this style */
-}
 
 .welcome-text-box {
   border: 2px solid var(--c-blanco); /* Borde blanco para contraste */
@@ -212,7 +209,7 @@ body {
   text-align: center;
   background: #e4c6b8; /* Mismo color pero con ligera transparencia */
   backdrop-filter: blur(4px);
-  width: clamp(280px, 85%, 800px); /* Ancho reducido */
+  width: clamp(280px, 80%, 700px); /* Ancho más reducido */
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Sombra sutil */
   position: relative;
   z-index: 2;
