@@ -18,6 +18,12 @@ body {
   margin: 0;
   padding-top: 50px;
 }
+@media (max-width: 992px) {
+  body { padding-top: 110%; }
+} /* Este porcentaje parece muy alto, podrías considerar usar vh o px */
+@media (max-width: 576px) {
+  body { padding-top: 100px; }
+}
 
 /* =======================================================
    3. NAVBAR (FIJA + LOGO FLOTANTE ANIMADO)
@@ -46,15 +52,9 @@ body {
 /* Logo flotante animado dentro de la navbar */
 .navbar-brand img,
 .navbar .imagen-flotante {
-  height: clamp(50px, 8vw, 120px); /* Reducido: mínimo 50px, preferido 8vw, máximo 120px */
+  height: clamp(60px, 12vw, 160px); /* mínimo 60px, preferido 12vw, máximo 160px */
   width: auto;
   animation: caerExpandir 3s ease-in-out infinite;
-}
-
-/* Estilo específico para el logo en la página de inicio (index.html) */
-.navbar:not(.fixed-top) .navbar-brand img,
-.navbar:not(.fixed-top) .imagen-flotante {
-  height: clamp(40px, 6vw, 90px); /* Tamaño más reducido para la página principal */
 }
 
 
@@ -176,7 +176,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 80vh;
+  min-height: 90vh;
   padding: 2rem;
   text-align: center;
   flex-direction: column;
@@ -199,6 +199,9 @@ body {
   opacity: 0;
   animation: fadeInRight 4s ease-in-out infinite;
   animation-delay: 1s;
+}
+.welcome-text-box .btn {
+  /* No animation needed for the button in this style */
 }
 
 .welcome-text-box {
