@@ -51,6 +51,12 @@ body {
   animation: caerExpandir 3s ease-in-out infinite;
 }
 
+/* Estilo específico para el logo en la página de inicio (index.html) */
+.navbar:not(.fixed-top) .navbar-brand img,
+.navbar:not(.fixed-top) .imagen-flotante {
+  height: clamp(40px, 6vw, 90px); /* Tamaño más reducido para la página principal */
+}
+
 
 /* Animación: caída desde arriba + expansión */
 @keyframes caerExpandir {
