@@ -173,11 +173,13 @@ body {
    4. HOME / WELCOME
 ======================================================= */
 .welcome-section {
+  position: relative; /* Para que se superponga al video */
+  z-index: 2; /* Para estar por encima del overlay del video */
   display: flex;
   align-items: center;
-  justify-content: center; /* Centrado verticalmente */
+  justify-content: center;
   min-height: 100vh; /* Ocupa toda la altura de la ventana */
-  padding: 2rem; /* Padding general */
+  padding: 2rem;
   text-align: center;
   flex-direction: column;
 }
@@ -205,7 +207,7 @@ body {
   border-radius: 4px; /* Bordes rectos */
   display: inline-block;
   text-align: center;
-  background: #e4c6b8; /* Mismo color pero con ligera transparencia */
+  background: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente */
   backdrop-filter: blur(4px);
   width: clamp(280px, 60vw, 500px); /* Ancho aún más reducido */
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Sombra sutil */
