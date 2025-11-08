@@ -44,12 +44,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // ===== AJUSTAR PADDING EN HOME SEGÚN NAVBAR =====
-  const navbar = document.querySelector(".navbar");
-  const homeSection = document.querySelector(".home");
-  if (homeSection) {
-    homeSection.style.paddingTop = `${navbar.offsetHeight}px`;
-  }
 
   // ===== SUBMENÚS: CLICK EN MÓVIL / HOVER EN PC =====
 const dropdowns = document.querySelectorAll(".dropdown");
@@ -177,3 +171,20 @@ window.addEventListener("scroll", () => {
     ticking = true;
   }
 }, { passive: true });
+
+// ===== AJUSTAR PADDING DEL BODY SEGÚN ALTURA DEL NAVBAR =====
+function adjustBodyPadding() {
+  const navbar = document.querySelector('.navbar');
+  if (navbar) {
+    const navbarHeight = navbar.offsetHeight;
+    // No aplicar padding-top al index.html que tiene secciones de altura completa
+    if (!document.querySelector('.hero-video') && !document.querySelector('.welcome-section')) {
+      document.body.style.paddingTop = `${navbarHeight}px`;
+    } else {
+      document.body.style.paddingTop = '0';
+    }
+  }
+}
+
+window.addEventListener('load', adjustBodyPadding);
+window.addEventListener('resize', adjustBodyPadding);
