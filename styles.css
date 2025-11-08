@@ -46,7 +46,7 @@ body {
 /* Logo flotante animado dentro de la navbar */
 .navbar-brand img,
 .navbar .imagen-flotante {
-  height: clamp(60px, 12vw, 160px); /* mínimo 60px, preferido 12vw, máximo 160px */
+  height: clamp(50px, 8vw, 120px); /* Reducido: mínimo 50px, preferido 8vw, máximo 120px */
   width: auto;
   animation: caerExpandir 3s ease-in-out infinite;
 }
