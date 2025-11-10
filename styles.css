@@ -586,3 +586,53 @@ body {
   width: 45px;
   height: auto;
 }
+
+/* =======================================================
+   15. PRODUCTS SECTION
+   =======================================================*/
+.product-card {
+  position: relative;
+  height: 350px;
+  border-radius: 12px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: var(--c-blanco);
+  text-decoration: none;
+}
+
+.product-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  transition: background 0.3s ease;
+}
+
+.product-card h3 {
+  position: relative;
+  z-index: 2;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+}
+
+.product-card-link:hover .product-card {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.product-card-link:hover .product-card::before {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.product-card-link {
+  text-decoration: none;
+}
