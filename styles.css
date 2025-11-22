@@ -177,7 +177,7 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 80vh;
-  padding: 100px 2rem 2rem; /* Ajuste de padding para no chocar con navbar */
+  padding: 80px 2rem 2rem; /* Ajuste de padding para no chocar con navbar */
   text-align: center;
   flex-direction: column;
   position: relative;
