@@ -176,8 +176,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 45vh; /* Reducido para hacerlo más pequeño */
-  padding: 120px 2rem 4rem; /* Aumentado el padding superior para bajar el contenido */
+  min-height: 30vh; /* Reducido para hacerlo más pequeño */
+  padding: 150px 2rem 4rem; /* Aumentado el padding superior para bajar el contenido */
   text-align: center;
   flex-direction: column;
   position: relative;
@@ -198,9 +198,6 @@ body {
   opacity: 0;
   animation: fadeInRight 4s ease-in-out infinite;
   animation-delay: 1s;
-}
-.welcome-text-box .btn {
-  /* No animation needed for the button in this style */
 }
 
 .welcome-text-box {
