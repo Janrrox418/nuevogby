@@ -633,3 +633,76 @@ body {
 .product-card-link {
   text-decoration: none;
 }
+/* ===========================
+     OUR TEAM SECTION
+=========================== */
+
+.our-team-section {
+  background-color: #f5f0ec;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.team-title {
+  font-size: 2.5rem;
+  color: var(--c-oscuro);
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+
+.team-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+/* Card con estilo parecido a tus .procedure-card y .treatment-box */
+.team-card {
+  background-color: #fff;
+  border: 1px solid var(--c-primario);
+  width: 300px;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.team-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.team-card h3 {
+  font-size: 1.6rem;
+  color: var(--c-oscuro);
+  margin-bottom: 5px;
+}
+
+.team-role {
+  color: var(--c-primario);
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.team-info {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+  .team-card {
+    width: 90%;
+  }
+}
