@@ -176,8 +176,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 30vh; /* Reducido para hacerlo más pequeño */
-  padding: 150px 2rem 4rem; /* Aumentado el padding superior para bajar el contenido */
+  min-height: 50vh;
+  padding: 80px 2rem 2rem; /* Ajuste de padding para no chocar con navbar */
   text-align: center;
   flex-direction: column;
   position: relative;
@@ -186,7 +186,7 @@ body {
 
 .welcome-title {
   font-size: clamp(2rem, 6vw, 3.8rem); /* Un poco más grande */
-  font-weight: 850;
+  font-weight: 800;
   margin-bottom: 20px;
   animation: float 3s ease-in-out infinite;
 }
