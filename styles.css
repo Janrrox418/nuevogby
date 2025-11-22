@@ -176,7 +176,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 80vh;
+  min-height: 50vh;
   padding: 80px 2rem 2rem; /* Ajuste de padding para no chocar con navbar */
   text-align: center;
   flex-direction: column;
