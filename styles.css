@@ -176,7 +176,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 50vh;
+  min-height: 80vh;
   padding: 80px 2rem 2rem; /* Ajuste de padding para no chocar con navbar */
   text-align: center;
   flex-direction: column;
@@ -185,7 +185,7 @@ body {
 }
 
 .welcome-title {
-  font-size: clamp(2rem, 6vw, 3.8rem); /* Un poco más grande */
+  font-size: clamp(1.5rem, 5vw, 2.8rem); /* Tamaño reducido */
   font-weight: 800;
   margin-bottom: 20px;
   animation: float 3s ease-in-out infinite;
