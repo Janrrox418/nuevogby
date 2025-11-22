@@ -14,7 +14,7 @@
 <body>
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container-fluid">
       <!-- Logo -->
       <a class="navbar-brand" href="index.html">
@@ -138,24 +138,34 @@
   </nav>
  
   <!-- Home Section -->
-<section id="home" class="hero-video-section">
-  <video autoplay muted loop playsinline class="hero-video">
-      <source src="assets/videos/lv-0-20250910211621_SykHnZlW.mp4" type="video/mp4">
-      Your browser does not support the video tag.
+<section id="welcome" class="welcome-section">
+    <div class="welcome-box-right">
+        <div class="welcome-text-box">
+            <h1 class="welcome-title">Welcome to Gbyskincare</h1>
+            <p class="welcome-subtitle">✨ Facials aren't Luxury they're wellness.✨</p>
+            <p class="welcome-subtitle">Be part of our movement at Gbyskincare</p>
+            <a href="#other-treatments" class="btn btn-primary btn-lg mt-3">Explore Treatments</a>
+        </div>
+    </div>
+</section>
+
+<!-- Hero Video Section -->
+<section class="hero-video">
+  <video class="w-100" autoplay muted loop playsinline>
+    <source src="assets/videos/playaintro.mp4" type="video/mp4">
+    Tu navegador no soporta el video.
   </video>
   <div class="hero-overlay"></div>
-  <div class="hero-content text-center text-white">
-      <h1 class="welcome-title">Welcome to Gbyskincare</h1>
-      <p class="welcome-subtitle">✨ Facials aren't Luxury they're wellness.✨</p>
-      <p class="welcome-subtitle">Be part of our movement at Gbyskincare</p>
-      <a href="#other-treatments" class="btn btn-primary btn-lg mt-3">Explore Treatments</a>
-  </div>
   </section>
 
   <!-- About Us Section -->
 <section id="about" class="py-5">
   <div class="container">
     <div class="row align-items-center">
+      <div class="col-lg-6 d-flex flex-column gap-3">
+        <img src="img/about1.jpg" alt="Imagen 1" class="img-fluid rounded shadow fade-in">
+        <img src="img/about2.jpg" alt="Imagen 2" class="img-fluid rounded shadow fade-in">
+      </div>
       <div class="col-lg-6 fade-in">
         <h2 class="mb-4">About Us</h2>
         <p>At GBYSkincare, we are dedicated to offering the best skincare treatments, combining innovation, nature, and science. Our commitment is to help you feel more confident and radiant every day.</p>
@@ -164,16 +174,12 @@
           <a href="#contact" class="btn btn-primary mt-3">BOOK</a>
         </div>
       </div>
-      <div class="col-lg-6 d-flex flex-column gap-3 mt-4 mt-lg-0">
-        <img src="img/about1.jpg" alt="Imagen 1" class="img-fluid rounded shadow fade-in">
-        <img src="img/about2.jpg" alt="Imagen 2" class="img-fluid rounded shadow fade-in">
-      </div>
   </div>
 </section>
 
 
  <!-- Other Treatments Section -->
-<section id="other-treatments" class="py-5 bg-light">
+<section id="other-treatments" class="py-5">
   <div class="container fade-in">
     <div class="text-center mb-5">
       <h2>Other Treatments</h2>
