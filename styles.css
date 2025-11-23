@@ -381,8 +381,8 @@ body {
     width: 100% !important;
     height: auto !important;
     max-height: 70vh !important;
-    object-fit: none !important;
-    object-position: center center !important;
+    object-fit: cover !important; /* scale and crop minimally to fill */
+    object-position: center top !important; /* prioritize top of frame */
     transform: none !important;
   }
   .hero-overlay { font-size: 1.5rem; padding: 0 15px; }
