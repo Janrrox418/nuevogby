@@ -582,6 +582,19 @@ body {
   display: block;
   margin-bottom: 1rem;
 }
+
+/* CO2LIFT PRO: imagen lateral junto al texto */
+.co2-side-img img {
+  max-width: 320px;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+@media (max-width: 767px) {
+  .co2-side-img { width: 100%; }
+  .co2-side-img img { max-width: 100%; }
+}
 .procedure-box-img {
   width: 100%;
   height: 200px;
