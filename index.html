@@ -175,6 +175,54 @@
 
   <div class="hero-overlay"></div>
 </section>
+<!-- Script: swap hero video source on small screens to avoid duplicate videos -->
+<script>
+  (function(){
+    var desktopVideo = document.querySelector('.hero-video-desktop');
+    if (!desktopVideo) return;
+
+    // If a mobile-specific element exists, take its source and remove the element
+    var mobileEl = document.querySelector('.hero-video-mobile');
+    var mobileSrc = null;
+    if (mobileEl) {
+      var s = mobileEl.querySelector('source');
+      if (s && s.src) mobileSrc = s.getAttribute('src');
+      mobileEl.parentNode.removeChild(mobileEl);
+    }
+
+    // store original desktop source
+    var desktopSource = desktopVideo.querySelector('source');
+    if (!desktopSource) return;
+    var origSrc = desktopSource.getAttribute('src');
+
+    function applySource(src) {
+      if (!src) return;
+      desktopSource.setAttribute('src', src);
+      // reload the video
+      try {
+        desktopVideo.load();
+        var p = desktopVideo.play();
+        if (p && p.catch) p.catch(function(){/* ignore autoplay block */});
+      } catch(e) { console.warn(e); }
+    }
+
+    function update() {
+      var isSmall = window.matchMedia('(max-width: 576px)').matches;
+      if (isSmall && mobileSrc) {
+        if (desktopSource.getAttribute('src') !== mobileSrc) applySource(mobileSrc);
+      } else {
+        if (desktopSource.getAttribute('src') !== origSrc) applySource(origSrc);
+      }
+    }
+
+    window.addEventListener('load', update);
+    window.addEventListener('resize', function(){
+      // debounce resize
+      clearTimeout(window._heroResizeTimer);
+      window._heroResizeTimer = setTimeout(update, 200);
+    });
+  })();
+</script>
   
 
   <!-- About Us Section -->
