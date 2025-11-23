@@ -634,75 +634,102 @@ body {
   text-decoration: none;
 }
 /* ===========================
-     OUR TEAM SECTION
+      OUR TEAM SECTION
 =========================== */
 
 .our-team-section {
-  background-color: #f5f0ec;
-  padding: 60px 20px;
-  text-align: center;
+    background-color: #f5f0ec;
+    padding: 60px 20px;
+    text-align: center;
 }
 
 .team-title {
-  font-size: 2.5rem;
-  color: var(--c-oscuro);
-  margin-bottom: 40px;
-  font-weight: bold;
+    font-size: 2.5rem;
+    color: var(--c-oscuro);
+    margin-bottom: 40px;
+    font-weight: bold;
 }
 
-.team-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 30px;
-}
+/* La clase .team-container en el HTML ya usa el grid de Bootstrap, así que estas reglas de Flexbox ya no son necesarias. */
+/* Si aún las usas, asegúrate de tener una regla var(--c-oscuro) definida en otra parte de tu CSS. */
+/* .team-container {
+     display: flex;
+     justify-content: center;
+     flex-wrap: wrap;
+     gap: 30px;
+} */
 
-/* Card con estilo parecido a tus .procedure-card y .treatment-box */
+
+/* Card: Modificada para asegurar altura uniforme y estructura interna de columna */
 .team-card {
-  background-color: #fff;
-  border: 1px solid var(--c-primario);
-  width: 300px;
-  padding: 20px;
-  border-radius: 12px;
-  text-align: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff;
+    border: 1px solid var(--c-primario);
+    /* ELIMINADO: width: 300px; - Bootstrap maneja el ancho (col-lg-3) */
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    /* Reglas para la uniformidad de altura */
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Asegura que la tarjeta tome la altura completa de la columna d-flex */
 }
 
 .team-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
 .team-card img {
-  width: 100%;
-  height: 260px;
-  object-fit: cover;
-  border-radius: 12px;
-  margin-bottom: 15px;
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 15px;
 }
 
-.team-card h3 {
-  font-size: 1.6rem;
-  color: var(--c-oscuro);
-  margin-bottom: 5px;
+.team-card h4 { /* Cambiado de h3 a h4 para coincidir con tu HTML */
+    font-size: 1.6rem;
+    color: var(--c-oscuro);
+    margin-bottom: 5px;
 }
 
 .team-role {
-  color: var(--c-primario);
-  font-weight: bold;
-  margin-bottom: 10px;
+    color: var(--c-primario);
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
-.team-info {
-  font-size: 1rem;
-  color: #444;
-  line-height: 1.5;
+/* NUEVAS REGLAS: Limita la altura de la biografía y permite scroll */
+.team-bio-scroll {
+    /* Altura máxima del área de texto (ajusta si es necesario) */
+    max-height: 200px; 
+    overflow-y: auto; /* Muestra scrollbar vertical si el contenido excede la altura */
+    padding-right: 5px; /* Pequeño espacio para el scrollbar */
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    
+    /* Opcional: Asegura que la biografía ocupe todo el espacio restante para empujar el footer */
+    flex-grow: 1; 
 }
+
+
+/* Estilos de la barra de desplazamiento para navegadores Webkit (Chrome, Safari, etc.) */
+.team-bio-scroll::-webkit-scrollbar {
+    width: 6px;
+}
+
+.team-bio-scroll::-webkit-scrollbar-thumb {
+    background: #ccc; 
+    border-radius: 10px;
+}
+
 
 /* Responsive */
 @media (max-width: 576px) {
-  .team-card {
-    width: 90%;
-  }
+    /* Aquí permitimos que Bootstrap maneje el ancho 100% en móvil */
+    /* .team-card ya no necesita un ancho fijo de 90% si Bootstrap lo maneja bien */
+    /* Dejamos esta media query vacía si confías en col-12, col-md-6 */
 }
