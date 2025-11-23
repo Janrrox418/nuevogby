@@ -371,6 +371,16 @@ body {
   .welcome-box-right p { font-size: 1rem; }
   .navbar-brand img { max-height: 40px; }
   .hero-video { height: 60vh; }
+  .hero-video video {
+    /* Alinea la parte superior del video con el contenedor en móviles
+       para evitar recortes importantes del rostro/área importante */
+    top: 0 !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: auto !important;
+    height: 100% !important;
+    object-position: center top !important;
+  }
   .hero-overlay { font-size: 1.5rem; padding: 0 15px; }
 }
 
