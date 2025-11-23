@@ -417,18 +417,25 @@ body {
 
 @media (max-width: 576px) {
   /* hide desktop video on small screens and show mobile video */
-  .hero-video .hero-video-desktop { display: none !important; }
-  .hero-video .hero-video-mobile {
-    display: block !important;
-    position: relative !important;
-    inset: auto !important;
-    width: 100% !important;
-    height: auto !important;
-    max-height: 70vh !important;
-    object-fit: cover !important;
-    object-position: center top !important;
-    transform: none !important;
-    z-index: -2 !important;
+  .hero-video .hero-video-desktop { display: block; }
+  .hero-video .hero-video-mobile { display: none; }
+
+  @media (max-width: 576px) {
+    /* Ensure the desktop video remains visible but behaves well on small screens
+       since we swap its source via JS. */
+    .hero-video .hero-video-desktop {
+      display: block !important;
+      position: relative !important;
+      inset: auto !important;
+      width: 100% !important;
+      height: auto !important;
+      max-height: 70vh !important;
+      object-fit: cover !important;
+      object-position: center top !important;
+      transform: none !important;
+      z-index: -2 !important;
+    }
+    .hero-video .hero-video-mobile { display: none !important; }
   }
 }
 
