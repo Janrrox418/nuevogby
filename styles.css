@@ -804,49 +804,38 @@ body {
 =========================== */
 
 /* 1. Esconde el cursor por defecto en el cuerpo */
-body {
-    cursor: none;
-}
+/* Keep system cursor visible for interactive elements but hide default only when using custom dot.
+   We implement a small circular dot follower for visual polish and keep pointer behavior on links/buttons. */
 
-/* 2. Estilos base del cursor personalizado con IMAGEN */
+/* Ensure body uses default cursor; the small dot is decorative only */
+body { cursor: auto; }
+
+/* 2. Estilos base del cursor personalizado: pequeño punto animado */
 .custom-cursor {
-    position: fixed;
-    top: 0;
-    left: 0;
-    
-    /* Tamaño inicial del cursor con la imagen del dermapen */
-    width: 60px; /* Ajusta este valor según el tamaño deseado de la imagen */
-    height: 60px; /* Debe ser igual al ancho para mantener proporción si la imagen es cuadrada */
-    
-    /* Configuración de la imagen */
-    background-image: url('assets/dermapenmouse.png'); /* ¡IMPORTANTE: Asegúrate de que esta ruta sea correcta! */
-    background-size: contain; /* Ajusta la imagen al contenedor */
-    background-repeat: no-repeat; /* No repite la imagen */
-    background-position: center; /* Centra la imagen dentro del div */
-    
-    pointer-events: none; /* Crucial: asegura que no bloquee los clics */
-    z-index: 9999;
-    
-    /* Mantiene el efecto de contraste si te gusta */
-    mix-blend-mode: difference; 
-    
-    /* Centra el cursor en la punta del ratón y permite transiciones */
-    transform: translate(-50%, -50%);
-    transition: transform 0.2s ease-out, opacity 0.2s ease-out, filter 0.2s ease-out; /* Ajustes de transición */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: rgba(56, 147, 155, 0.95); /* primary color */
+  box-shadow: 0 4px 10px rgba(56,147,155,0.25), 0 0 0 6px rgba(56,147,155,0.08);
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 150ms cubic-bezier(.2,.8,.2,1), opacity 150ms ease;
+  will-change: transform, opacity;
 }
 
-/* 3. Estilo para el efecto de expansión (cuando el ratón está sobre un link) */
-/* Podemos hacer que la imagen se haga un poco más grande o tenga un efecto diferente */
+/* Expansión al estar sobre elementos interactivos */
 .custom-cursor.expanded {
-    transform: translate(-50%, -50%) scale(1.2); /* Aumenta el tamaño un 20% */
-    opacity: 0.8; /* Lo hacemos un poco más opaco */
-    filter: brightness(1.2); /* Opcional: un ligero brillo al expandirse */
+  transform: translate(-50%, -50%) scale(2.2);
+  opacity: 0.95;
+  box-shadow: 0 6px 18px rgba(56,147,155,0.28), 0 0 0 10px rgba(56,147,155,0.06);
 }
 
-/* 4. Asegura que los elementos interactivos sigan ocultando el cursor por defecto */
-a, button, .btn, .nav-link, .dropdown-item, .treatment-box {
-    cursor: none; /* También puedes usar cursor: url('assets/blank.cur'), none; si tienes un cursor en blanco */
-}
+/* Keep interactive elements with normal pointer so users get expected cursor feedback */
+a, button, .btn, .nav-link, .dropdown-item, .treatment-box { cursor: pointer; }
 /* ===========================
       ESTILOS HERO VIDEO BACKGROUND
 =========================== */
