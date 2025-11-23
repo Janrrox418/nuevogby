@@ -10,21 +10,122 @@
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-  <!-- NAVBAR (copiado del resto de la carpeta) -->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-    <div class="container-fluid">
-      <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Abrir menú">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <a class="navbar-brand" href="../index.html">
-        <img src="../assets/logoletra.png" alt="GBYSkincare" class="imagen-flotante">
-      </a>
+    <div class="custom-cursor"></div>
+  <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container-fluid">
+    <!-- Botón hamburguesa -->
+    <button class="navbar-toggler me-2" type="button"
+      data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Abrir menú">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Logo -->
+    <a class="navbar-brand" href="../index.html">
+      <img src="../assets/logoletra.png" alt="GBYSkincare" class="imagen-flotante">
+    </a>
+
+     
+
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="../index.html#home">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="../index.html#about">About Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="../index.html#other-treatments">Other Treatments</a></li>
+          
+          <!-- Procedures dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="../treatments/procedures.html" id="treatmentsDropdown"
+               role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Procedures
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="treatmentsDropdown">
+              <li class="dropdown-submenu">
+                <a class="dropdown-item dropdown-toggle" href="javascript:void(0)">Dermal Fillers</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="../Dermal fillers/lips-filler.html">Lips Filler</a></li>
+                  <li><a class="dropdown-item" href="../Dermal fillers/juvederm.html">Juvéderm®</a></li>
+                  <li><a class="dropdown-item" href="../Dermal fillers/sculptra.html">Sculptra</a></li>
+                  <li><a class="dropdown-item" href="../Dermal fillers/radiesse.html">Radiesse</a></li>
+                  <li><a class="dropdown-item" href="../Dermal fillers/voluma.html">Voluma</a></li>
+                </ul>
+              </li>
+               <!-- Neurotixin con submenú -->
+    <li class="dropdown-submenu">
+      <a class="dropdown-item dropdown-toggle" href="javascript:void(0)">Neurotoxins</a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="../Neurotoxins/dysport.html">Dysport</a></li>
+        <li><a class="dropdown-item" href="../Neurotoxins/xeomin.html">Xeomin</a></li>
+        <li><a class="dropdown-item" href="../Neurotoxins/jeuveau.html">Jeuveau</a></li>
+        <li><a class="dropdown-item" href="../Neurotoxins/botox.html">Botox</a></li>
+      </ul>
+    </li> 
+
+    <li><a class="dropdown-item" href="../treatments/acne-treatment.html">Acne Treatment</a></li>
+    <li><a class="dropdown-item" href="../treatments/microneedling.html">Microneedling</a></li>
+    <li><a class="dropdown-item" href="../treatments/skin-tightening.html">Skin Tightening</a></li>
+    <li><a class="dropdown-item" href="../treatments/chemical-peel.html">Chemical peel</a></li>
+    <li><a class="dropdown-item" href="../treatments/prp.html">Platelet Rich Plasma (PRP)</a></li>
+    <li><a class="dropdown-item" href="../treatments/oxygeneo.html">Oxygeneo</a></li>
+    <li><a class="dropdown-item" href="../treatments/hydrafacial.html">HydraFacial®</a></li>
+    <li><a class="dropdown-item" href="../treatments/dermaplaning.html">Dermaplaning</a></li>
+    <li><a class="dropdown-item" href="../treatments/hair-loss-treatment.html">Hair loss treatment</a></li>
+    <li><a class="dropdown-item" href="../treatments/body-countouring.html">Body Contouring</a></li>
+    <li><a class="dropdown-item" href="../treatments/skin-tag-removal.html">Skin tag removal-cauterization</a></li>
+    <li><a class="dropdown-item" href="../treatments/light-therapy.html">Ligh Therapy</a></li>
+    <li><hr class="dropdown-divider"></li>
+   <li><a class="dropdown-item" href="../index.html#other-treatments">Other Treatments</a></li>
+  </ul>
+</li>
+
+          <!-- Spa Service -->
+          <li class="nav-item dropdown" data-bs-auto-close="outside">
+            <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="SpaserviceDropdown"
+               role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Spa Service
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="SpaserviceDropdown">
+              <li><a class="dropdown-item" href="../spa_service/eyebrow-lamination.html">Eyebrow lamination</a></li>
+              <li><a class="dropdown-item" href="../spa_service/head-service.html">Head Service</a></li>
+              <li><a class="dropdown-item" href="../spa_service/hair-treatments.html">Hair Treatments</a></li>
+              <li><a class="dropdown-item" href="../spa_service/hair-loss-solutions.html">Hair loss solutions</a></li>
+              <li><a class="dropdown-item" href="../spa_service/scalp-treatments.html">Keravive Scalp Treatments</a></li>
+              <li><a class="dropdown-item" href="../spa_service/scalp-care.html">Scalp care</a></li>
+              <li><a class="dropdown-item" href="../spa_service/Facial-Massage.html">Facial Massage</a></li>
+              <li><a class="dropdown-item" href="../spa_service/touchless-technology.html">Touchless Technology</a></li>
+            </ul>
+          </li>
+
+          <!-- Wellness Service Dropdown -->
+          <li class="nav-item dropdown" data-bs-auto-close="outside">
+            <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="wellnessDropdown"
+               role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Wellness Service
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="wellnessDropdown">
+              <li><a class="dropdown-item" href="../wellness_service/iv-therapy.html">IV Therapy</a></li>
+            </ul>
+          </li>
+
+          <!-- Conditions -->
+          <li class="nav-item dropdown" data-bs-auto-close="outside">
+            <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="conditionsDropdown"
+               role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Conditions
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="conditionsDropdown">
+              <li><a class="dropdown-item" href="../conditions/acne-blemishes.html">Acne & Blemishes</a></li>
+              <li><a class="dropdown-item" href="../conditions/complexion.html">Complexion</a></li>
+              <li><a class="dropdown-item" href="../conditions/sun-damage-hyperpigmentation.html">Sun damage/Hyperpigmentation</a></li>
+              <li><a class="dropdown-item" href="../conditions/skin-tone-texture.html">Skin tone & Texture</a></li>
+              <li><a class="dropdown-item" href="../conditions/scars.html">Scars</a></li>
+              <li><a class="dropdown-item" href="../conditions/fine-lines-wrinkles.html">Fine lines & Wrinkles</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="../gift-cards.html">Gift Cards</a></li>
+          <li class="nav-item"><a class="nav-link" href="../products.html">Products</a></li>
           <li class="nav-item"><a class="nav-link" href="../index.html#contact">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="../policies.html">Policies</a></li>
         </ul>
       </div>
     </div>
@@ -57,12 +158,15 @@
             </div>
           </div>
 
-          <div class="co2-side-img">
-            <img src="../assets/CO2LIFTPROCARBOXI.webp" alt="CO2LIFT PRO" class="img-fluid rounded shadow">
-          </div>
+      <!-- Imagen grande a la derecha en md+ como en otros tratamientos -->
+      <div class="col-lg-6 col-md-12 text-center" data-aos="fade-left">
+        <img src="../assets/CO2LIFTPROCARBOXI.webp" alt="CO2LIFT PRO" class="img-fluid rounded shadow mb-4">
+        <div class="mt-4 d-none d-md-block">
+          <a href="../#contact" class="btn btn-primary mt-3">Book your appointment</a>
         </div>
       </div>
-
+    </div>
+  </section>
 
   <!-- FAQ CO2LIFT PRO -->
   <section class="container my-5">
@@ -132,31 +236,8 @@
 
   <!-- Footer -->
   <footer id="contact" class="footer">
-    <div class="footer-container">
-      <div>
-        <h4>Address</h4>
-        <p>2977 Goodlette-Frank Road North,<br>Naples, Florida, 34103</p>
-      </div>
-      <div>
-        <h4>Contact Us</h4>
-        <p>📞 +1 (239)-2006264</p>
-        <p>📧 gbyskincare@gmail.com</p>
-      </div>
-      <div>
-        <h4>Get in Touch</h4>
-        <form class="footer-form" action="https://formspree.io/f/xdkdvrky" method="POST">
-          <input type="text" name="firstName" placeholder="First Name*" required>
-          <input type="text" name="lastName" placeholder="Last Name*" required>
-          <input type="email" name="email" placeholder="Email*" required>
-          <textarea name="message" placeholder="Message" required></textarea>
-          <button type="submit">Submit</button>
-        </form>
-      </div>
-    </div>
-    <div class="social-buttons">
-      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"></a>
-      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
-      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram"></a>
+    <div class="container text-center py-4">
+      <p>&copy; 2025 GBYSkincare - Todos los derechos reservados</p>
     </div>
   </footer>
 
