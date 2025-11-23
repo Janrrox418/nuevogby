@@ -717,7 +717,7 @@ body {
     border-radius: 10px;
 }
 /* ===========================
-      CUSTOM MOUSE FOLLOWER
+      CUSTOM MOUSE FOLLOWER (con imagen de Dermapen)
 =========================== */
 
 /* 1. Esconde el cursor por defecto en el cuerpo */
@@ -725,37 +725,45 @@ body {
     cursor: none;
 }
 
-/* 2. Estilos base del cursor personalizado */
+/* 2. Estilos base del cursor personalizado con IMAGEN */
 .custom-cursor {
     position: fixed;
     top: 0;
     left: 0;
-    width: 20px; /* Tamaño inicial */
-    height: 20px;
     
-    /* Color Teal Oscuro (Cambia este valor si tienes otro tono) */
-    background-color: #38939b !important;
+    /* Tamaño inicial del cursor con la imagen del dermapen */
+    width: 60px; /* Ajusta este valor según el tamaño deseado de la imagen */
+    height: 60px; /* Debe ser igual al ancho para mantener proporción si la imagen es cuadrada */
     
-    border-radius: 50%;
+    /* Configuración de la imagen */
+    background-image: url('assets/dermapenmouse.png'); /* ¡IMPORTANTE: Asegúrate de que esta ruta sea correcta! */
+    background-size: contain; /* Ajusta la imagen al contenedor */
+    background-repeat: no-repeat; /* No repite la imagen */
+    background-position: center; /* Centra la imagen dentro del div */
+    
+    /* ELIMINADO: background-color: #38939b; */
+    /* ELIMINADO: border-radius: 50%; */
+    
     pointer-events: none; /* Crucial: asegura que no bloquee los clics */
     z-index: 9999;
     
-    /* Para el efecto "brillante" o que se diferencia del fondo, similar al ejemplo */
+    /* Mantiene el efecto de contraste si te gusta */
     mix-blend-mode: difference; 
     
     /* Centra el cursor en la punta del ratón y permite transiciones */
     transform: translate(-50%, -50%);
-    transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
+    transition: transform 0.2s ease-out, opacity 0.2s ease-out, filter 0.2s ease-out; /* Ajustes de transición */
 }
 
 /* 3. Estilo para el efecto de expansión (cuando el ratón está sobre un link) */
+/* Podemos hacer que la imagen se haga un poco más grande o tenga un efecto diferente */
 .custom-cursor.expanded {
-    width: 65px; /* Tamaño expandido al hacer hover */
-    height: 65px;
-    opacity: 0.5; /* Lo hacemos un poco transparente */
+    transform: translate(-50%, -50%) scale(1.2); /* Aumenta el tamaño un 20% */
+    opacity: 0.8; /* Lo hacemos un poco más opaco */
+    filter: brightness(1.2); /* Opcional: un ligero brillo al expandirse */
 }
 
 /* 4. Asegura que los elementos interactivos sigan ocultando el cursor por defecto */
-a, button, .btn, .nav-link, .dropdown-item {
-    cursor: none;
+a, button, .btn, .nav-link, .dropdown-item, .treatment-box {
+    cursor: none; /* También puedes usar cursor: url('assets/blank.cur'), none; si tienes un cursor en blanco */
 }
