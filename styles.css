@@ -734,7 +734,7 @@ body {
     height: 20px;
     
     /* Color Teal Oscuro (Cambia este valor si tienes otro tono) */
-    background-color: #38939b; 
+    background-color: #38939b !important;
     
     border-radius: 50%;
     pointer-events: none; /* Crucial: asegura que no bloquee los clics */
