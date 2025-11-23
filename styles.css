@@ -634,47 +634,29 @@ body {
   text-decoration: none;
 }
 /* ===========================
-      OUR TEAM SECTION
+      OUR TEAM SECTION - CÓDIGO FINAL
 =========================== */
 
-.our-team-section {
+/* Estilos de la Sección Contenedora */
+#our-team {
     background-color: #f5f0ec;
     padding: 60px 20px;
     text-align: center;
 }
 
-.team-title {
-    font-size: 2.5rem;
-    color: var(--c-oscuro);
-    margin-bottom: 40px;
-    font-weight: bold;
-}
-
-/* La clase .team-container en el HTML ya usa el grid de Bootstrap, así que estas reglas de Flexbox ya no son necesarias. */
-/* Si aún las usas, asegúrate de tener una regla var(--c-oscuro) definida en otra parte de tu CSS. */
-/* .team-container {
-     display: flex;
-     justify-content: center;
-     flex-wrap: wrap;
-     gap: 30px;
-} */
-
-
-/* Card: Modificada para asegurar altura uniforme y estructura interna de columna */
+/* Estilos de la Tarjeta */
 .team-card {
     background-color: #fff;
-    border: 1px solid var(--c-primario);
-    /* ELIMINADO: width: 300px; - Bootstrap maneja el ancho (col-lg-3) */
+    border: 1px solid #ccc; /* Usamos un color fijo si var(--c-primario) da problemas */
     padding: 20px;
     border-radius: 12px;
-    text-align: center;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     
-    /* Reglas para la uniformidad de altura */
+    /* Configuración Flexbox para mantener altura uniforme */
     display: flex;
     flex-direction: column;
-    height: 100%; /* Asegura que la tarjeta tome la altura completa de la columna d-flex */
+    height: 100%;
 }
 
 .team-card:hover {
@@ -682,41 +664,41 @@ body {
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
-.team-card img {
+/* Estilos de la Imagen */
+.team-photo {
     width: 100%;
-    height: 260px;
+    height: 280px; /* Altura fija para la imagen */
     object-fit: cover;
     border-radius: 12px;
     margin-bottom: 15px;
 }
 
-.team-card h4 { /* Cambiado de h3 a h4 para coincidir con tu HTML */
+/* Estilos del Título (h4) */
+.team-card h4 {
     font-size: 1.6rem;
-    color: var(--c-oscuro);
+    color: #333;
     margin-bottom: 5px;
 }
 
+/* Estilos del Rol/Título */
 .team-role {
-    color: var(--c-primario);
+    color: #A98765; /* Color decorativo para el rol */
     font-weight: bold;
     margin-bottom: 10px;
 }
 
-/* NUEVAS REGLAS: Limita la altura de la biografía y permite scroll */
+/* NUEVAS REGLAS: Estilos para el área de biografía con scroll */
 .team-bio-scroll {
-    /* Altura máxima del área de texto (ajusta si es necesario) */
-    max-height: 200px; 
-    overflow-y: auto; /* Muestra scrollbar vertical si el contenido excede la altura */
-    padding-right: 5px; /* Pequeño espacio para el scrollbar */
+    max-height: 180px; /* Altura máxima del área de texto (ajusta si es necesario) */
+    overflow-y: auto; /* Muestra scrollbar vertical */
+    padding-right: 5px; 
     margin-bottom: 10px;
-    font-size: 0.9rem;
-    
-    /* Opcional: Asegura que la biografía ocupe todo el espacio restante para empujar el footer */
-    flex-grow: 1; 
+    font-size: 0.95rem;
+    flex-grow: 1; /* Permite que este div ocupe todo el espacio vertical restante */
+    line-height: 1.5;
 }
 
-
-/* Estilos de la barra de desplazamiento para navegadores Webkit (Chrome, Safari, etc.) */
+/* Estilos para la barra de desplazamiento (solo visible en navegadores Webkit) */
 .team-bio-scroll::-webkit-scrollbar {
     width: 6px;
 }
@@ -724,22 +706,4 @@ body {
 .team-bio-scroll::-webkit-scrollbar-thumb {
     background: #ccc; 
     border-radius: 10px;
-}
-
-
-/* Responsive */
-@media (max-width: 576px) {
-    /* Aquí permitimos que Bootstrap maneje el ancho 100% en móvil */
-    /* .team-card ya no necesita un ancho fijo de 90% si Bootstrap lo maneja bien */
-    /* Dejamos esta media query vacía si confías en col-12, col-md-6 */
-}
-/* REGLAS DE PRUEBA TEMPORALES */
-#our-team {
-    background-color: red !important; /* ¡Debería ser rojo brillante! */
-    min-height: 500px !important;    /* Forzamos una altura mínima */
-    border: 5px solid blue !important;
-}
-
-.team-card {
-    background-color: yellow !important; /* Tarjetas amarillas */
 }
