@@ -370,17 +370,17 @@ body {
   .welcome-box-right h1 { font-size: 1.8rem; }
   .welcome-box-right p { font-size: 1rem; }
   .navbar-brand img { max-height: 40px; }
-  .hero-video { height: 70vh; }
+  /* Mostrar el video completo en móviles: evitar recortes usando contain.
+     Esto puede mostrar bandas negras, pero preserva toda la imagen. */
+  .hero-video { height: 70vh; background: #000; }
   .hero-video video {
-    /* Alinea la parte superior del video con el contenedor en móviles
-       y desplaza el foco hacia arriba para reducir recortes de rostro */
-    top: 0 !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    width: auto !important;
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
     height: 100% !important;
-    max-width: none !important;
-    object-position: center 35% !important;
+    object-fit: contain !important; /* evita recorte */
+    object-position: center center !important;
+    transform: none !important;
   }
   .hero-overlay { font-size: 1.5rem; padding: 0 15px; }
 }
