@@ -370,15 +370,18 @@ body {
   .welcome-box-right h1 { font-size: 1.8rem; }
   .welcome-box-right p { font-size: 1rem; }
   .navbar-brand img { max-height: 40px; }
-  /* Mostrar el video completo en móviles: evitar recortes usando contain.
-     Esto puede mostrar bandas negras, pero preserva toda la imagen. */
-  .hero-video { height: 70vh; background: #000; }
+  /* En móviles: hacer que el video sea un elemento en flujo (no absoluto),
+     que ocupe el ancho completo y mantenga su proporción. Limitar altura
+     máxima para que no sea demasiado grande en pantalla. Esto preserva
+     la vista de escritorio (donde el video sigue siendo absoluto). */
+  .hero-video { height: auto; background: #000; }
   .hero-video video {
-    position: absolute !important;
-    inset: 0 !important;
+    position: relative !important;
+    display: block !important;
     width: 100% !important;
-    height: 100% !important;
-    object-fit: contain !important; /* evita recorte */
+    height: auto !important;
+    max-height: 70vh !important;
+    object-fit: none !important;
     object-position: center center !important;
     transform: none !important;
   }
