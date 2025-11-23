@@ -167,6 +167,25 @@
   </video>
   <div class="hero-overlay"></div>
   </section>
+  
+  <!-- Small script: try to play muted autoplay videos if browser allows -->
+  <script>
+    (function(){
+      function tryPlay() {
+        document.querySelectorAll('video[autoplay][muted]').forEach(function(v){
+          var p = v.play();
+          if (p !== undefined) {
+            p.catch(function(err){
+              console.log('Video play prevented:', err);
+            });
+          }
+        });
+      }
+      document.addEventListener('DOMContentLoaded', tryPlay);
+      window.addEventListener('load', tryPlay);
+      window.addEventListener('focus', tryPlay);
+    })();
+  </script>
 
   <!-- About Us Section -->
 <section id="about" class="py-5">
