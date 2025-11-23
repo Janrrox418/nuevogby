@@ -767,3 +767,55 @@ body {
 a, button, .btn, .nav-link, .dropdown-item, .treatment-box {
     cursor: none; /* También puedes usar cursor: url('assets/blank.cur'), none; si tienes un cursor en blanco */
 }
+/* ===========================
+      ESTILOS HERO VIDEO BACKGROUND
+=========================== */
+
+/* Contenedor principal: Asegura que el contenido esté en el centro y por encima */
+.hero-video-background {
+    position: relative; /* Es necesario para posicionar los hijos (video y overlay) */
+    overflow: hidden;
+    min-height: 85vh; /* Puedes ajustar esta altura según el tamaño deseado */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* El elemento de video: Lo hace fijo y que cubra todo el contenedor */
+.hero-video-element {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 1; /* Detrás del texto y el overlay */
+    transform: translate(-50%, -50%); /* Centra el video */
+    object-fit: cover; /* Asegura que cubra todo el espacio sin distorsión */
+}
+
+/* Capa Oscura: Se superpone al video para mejorar la lectura del texto */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Gris/Negro semi-transparente */
+    z-index: 2; /* Encima del video */
+}
+
+/* Contenido de Bienvenida: Asegura que el texto y el botón estén al frente */
+.welcome-content {
+    position: relative;
+    z-index: 3; /* Encima de todo */
+    color: white; /* Color del texto sobre el fondo oscuro */
+}
+
+.welcome-title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
