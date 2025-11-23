@@ -666,10 +666,19 @@ body {
 
 /* Estilos de la Imagen */
 .team-photo {
-    width: 100%;
-    height: 280px; /* Altura fija para la imagen */
+    /* Define el tamaño del contenedor de la imagen */
+    width: 150px; 
+    height: 150px; 
+    margin-left: auto; /* Centrar imagen */
+    margin-right: auto; /* Centrar imagen */
+    
+    /* Asegura que la imagen rellene el espacio sin distorsión */
     object-fit: cover;
-    border-radius: 12px;
+    
+    /* ¡Lo hace circular! */
+    border-radius: 50%;
+    border: 3px solid var(--c-primario, #A98765); /* Opcional: añade un borde decorativo */
+    
     margin-bottom: 15px;
 }
 
