@@ -716,3 +716,46 @@ body {
     background: #ccc; 
     border-radius: 10px;
 }
+/* ===========================
+      CUSTOM MOUSE FOLLOWER
+=========================== */
+
+/* 1. Esconde el cursor por defecto en el cuerpo */
+body {
+    cursor: none;
+}
+
+/* 2. Estilos base del cursor personalizado */
+.custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20px; /* Tamaño inicial */
+    height: 20px;
+    
+    /* Color Teal Oscuro (Cambia este valor si tienes otro tono) */
+    background-color: #38939b; 
+    
+    border-radius: 50%;
+    pointer-events: none; /* Crucial: asegura que no bloquee los clics */
+    z-index: 9999;
+    
+    /* Para el efecto "brillante" o que se diferencia del fondo, similar al ejemplo */
+    mix-blend-mode: difference; 
+    
+    /* Centra el cursor en la punta del ratón y permite transiciones */
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
+}
+
+/* 3. Estilo para el efecto de expansión (cuando el ratón está sobre un link) */
+.custom-cursor.expanded {
+    width: 65px; /* Tamaño expandido al hacer hover */
+    height: 65px;
+    opacity: 0.5; /* Lo hacemos un poco transparente */
+}
+
+/* 4. Asegura que los elementos interactivos sigan ocultando el cursor por defecto */
+a, button, .btn, .nav-link, .dropdown-item {
+    cursor: none;
+}

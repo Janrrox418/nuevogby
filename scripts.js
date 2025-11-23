@@ -188,3 +188,29 @@ function adjustBodyPadding() {
 
 window.addEventListener('load', adjustBodyPadding);
 window.addEventListener('resize', adjustBodyPadding);
+    
+    // Selecciona el elemento del cursor
+    const cursor = document.querySelector('.custom-cursor');
+    
+    // Selecciona todos los elementos interactivos que activarán el efecto
+    const interactiveElements = document.querySelectorAll('a, button, .btn, .nav-link, .dropdown-item, .treatment-box'); 
+    
+    // --- 1. Mover el cursor personalizado ---
+    document.addEventListener('mousemove', (e) => {
+        // Actualiza la posición del cursor con la posición del ratón
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+    });
+
+    // --- 2. Gestionar el efecto hover (expandir/reducir) ---
+    interactiveElements.forEach(element => {
+        element.addEventListener('mouseenter', () => {
+            // Añade la clase 'expanded' al entrar
+            cursor.classList.add('expanded');
+        });
+
+        element.addEventListener('mouseleave', () => {
+            // Remueve la clase 'expanded' al salir
+            cursor.classList.remove('expanded');
+        });
+    });
