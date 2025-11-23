@@ -733,3 +733,13 @@ body {
     /* .team-card ya no necesita un ancho fijo de 90% si Bootstrap lo maneja bien */
     /* Dejamos esta media query vacía si confías en col-12, col-md-6 */
 }
+/* REGLAS DE PRUEBA TEMPORALES */
+#our-team {
+    background-color: red !important; /* ¡Debería ser rojo brillante! */
+    min-height: 500px !important;    /* Forzamos una altura mínima */
+    border: 5px solid blue !important;
+}
+
+.team-card {
+    background-color: yellow !important; /* Tarjetas amarillas */
+}
