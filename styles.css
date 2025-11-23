@@ -667,8 +667,8 @@ body {
 /* Estilos de la Imagen */
 .team-photo {
     /* Define el tamaño del contenedor de la imagen */
-    width: 150px; 
-    height: 150px; 
+    width: 250px; 
+    height: 250px; 
     margin-left: auto; /* Centrar imagen */
     margin-right: auto; /* Centrar imagen */
     
@@ -740,9 +740,6 @@ body {
     background-size: contain; /* Ajusta la imagen al contenedor */
     background-repeat: no-repeat; /* No repite la imagen */
     background-position: center; /* Centra la imagen dentro del div */
-    
-    /* ELIMINADO: background-color: #38939b; */
-    /* ELIMINADO: border-radius: 50%; */
     
     pointer-events: none; /* Crucial: asegura que no bloquee los clics */
     z-index: 9999;
