@@ -397,6 +397,34 @@ body {
   object-fit: cover;
 }
 
+/* Separator between videos */
+.video-separator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 1rem;
+  background: #ffffff;
+  color: #333333;
+  border-top: 1px solid rgba(0,0,0,0.05);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  text-align: center;
+  z-index: 1;
+}
+
+.video-separator .separator-text {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: clamp(1rem, 2.6vw, 1.6rem);
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 0.2px;
+  color: var(--c-oscuro);
+}
+
+@media (max-width: 576px) {
+  .video-separator { padding: 1.25rem 0.75rem; }
+  .video-separator .separator-text { font-size: 1rem; }
+}
+
 /* =======================================================
    10. ANIMACIONES GENERALES
 ======================================================= */
