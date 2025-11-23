@@ -370,16 +370,17 @@ body {
   .welcome-box-right h1 { font-size: 1.8rem; }
   .welcome-box-right p { font-size: 1rem; }
   .navbar-brand img { max-height: 40px; }
-  .hero-video { height: 60vh; }
+  .hero-video { height: 70vh; }
   .hero-video video {
     /* Alinea la parte superior del video con el contenedor en móviles
-       para evitar recortes importantes del rostro/área importante */
+       y desplaza el foco hacia arriba para reducir recortes de rostro */
     top: 0 !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
     width: auto !important;
     height: 100% !important;
-    object-position: center top !important;
+    max-width: none !important;
+    object-position: center 35% !important;
   }
   .hero-overlay { font-size: 1.5rem; padding: 0 15px; }
 }
