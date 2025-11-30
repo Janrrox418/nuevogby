@@ -411,31 +411,18 @@ body {
   object-fit: cover;
 }
 
-/* show/hide desktop vs mobile videos */
-.hero-video .hero-video-mobile { display: none; }
-.hero-video .hero-video-desktop { display: block; }
+/* Ocultar video móvil por defecto */
+.hero-video-mobile {
+  display: none;
+}
 
-@media (max-width: 576px) {
-  /* hide desktop video on small screens and show mobile video */
-  .hero-video .hero-video-desktop { display: block; }
-  .hero-video .hero-video-mobile { display: none; }
-
-  @media (max-width: 576px) {
-    /* Ensure the desktop video remains visible but behaves well on small screens
-       since we swap its source via JS. */
-    .hero-video .hero-video-desktop {
-      display: block !important;
-      position: relative !important;
-      inset: auto !important;
-      width: 100% !important;
-      height: auto !important;
-      max-height: 70vh !important;
-      object-fit: cover !important;
-      object-position: center top !important;
-      transform: none !important;
-      z-index: -2 !important;
-    }
-    .hero-video .hero-video-mobile { display: none !important; }
+/* En pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+  .hero-video-desktop {
+    display: none; /* Ocultar video de escritorio */
+  }
+  .hero-video-mobile {
+    display: block; /* Mostrar video móvil */
   }
 }
 
