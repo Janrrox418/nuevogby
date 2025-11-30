@@ -162,68 +162,20 @@
 
 <!-- Hero Video Section -->
 <section class="hero-video">
-  <!-- Desktop / large screens video -->
-  <video class="hero-video-desktop w-100" autoplay muted loop playsinline>
-    <source src="assets/videos/playaintro.mp4" type="video/mp4">
-    Tu navegador no soporta el video.
-  </video>
+    <!-- Video para escritorio -->
+    <video class="hero-video-desktop w-100" autoplay muted loop playsinline>
+        <source src="assets/videos/playaintro.mp4" type="video/mp4">
+        Tu navegador no soporta el video.
+    </video>
 
-  <!-- Mobile-only video (will be shown only on small screens) -->
-  <video class="hero-video-mobile w-100" autoplay muted loop playsinline>
-    <source src="assets/videos/lv-0-20250910211621_SykHnZlW.mp4" type="video/mp4">
-    Tu navegador no soporta el video.
-  </video>
+    <!-- Video para móviles -->
+    <video class="hero-video-mobile w-100" autoplay muted loop playsinline>
+        <source src="assets/videos/lv-0-20250910211621_SykHnZlW.mp4" type="video/mp4">
+        Tu navegador no soporta el video.
+    </video>
 
-  <div class="hero-overlay"></div>
+    <div class="hero-overlay"></div>
 </section>
-<!-- Script: swap hero video source on small screens to avoid duplicate videos -->
-<script>
-  (function(){
-    var desktopVideo = document.querySelector('.hero-video-desktop');
-    if (!desktopVideo) return;
-
-    // If a mobile-specific element exists, take its source and remove the element
-    var mobileEl = document.querySelector('.hero-video-mobile');
-    var mobileSrc = null;
-    if (mobileEl) {
-      var s = mobileEl.querySelector('source');
-      if (s && s.src) mobileSrc = s.getAttribute('src');
-      mobileEl.parentNode.removeChild(mobileEl);
-    }
-
-    // store original desktop source
-    var desktopSource = desktopVideo.querySelector('source');
-    if (!desktopSource) return;
-    var origSrc = desktopSource.getAttribute('src');
-
-    function applySource(src) {
-      if (!src) return;
-      desktopSource.setAttribute('src', src);
-      // reload the video
-      try {
-        desktopVideo.load();
-        var p = desktopVideo.play();
-        if (p && p.catch) p.catch(function(){/* ignore autoplay block */});
-      } catch(e) { console.warn(e); }
-    }
-
-    function update() {
-      var isSmall = window.matchMedia('(max-width: 576px)').matches;
-      if (isSmall && mobileSrc) {
-        if (desktopSource.getAttribute('src') !== mobileSrc) applySource(mobileSrc);
-      } else {
-        if (desktopSource.getAttribute('src') !== origSrc) applySource(origSrc);
-      }
-    }
-
-    window.addEventListener('load', update);
-    window.addEventListener('resize', function(){
-      // debounce resize
-      clearTimeout(window._heroResizeTimer);
-      window._heroResizeTimer = setTimeout(update, 200);
-    });
-  })();
-</script>
   
 
   <!-- About Us Section -->
