@@ -799,13 +799,7 @@ body {
     background: #ccc; 
     border-radius: 10px;
 }
-/* ===========================
-      CUSTOM MOUSE FOLLOWER (con imagen de Dermapen)
-=========================== */
 
-/* 1. Esconde el cursor por defecto en el cuerpo */
-/* Keep system cursor visible for interactive elements but hide default only when using custom dot.
-   We implement a small circular dot follower for visual polish and keep pointer behavior on links/buttons. */
 
 /* Ensure body uses default cursor; the small dot is decorative only */
 body { cursor: auto; }
