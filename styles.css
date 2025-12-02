@@ -18,11 +18,11 @@ body {
   margin: 0;
   padding-top: 50px;
 }
+/* CORRECCIÓN: Se cambió el padding de 110% a 130px.
+   El porcentaje (%) en padding-top se basa en el ANCHO, causando un espacio enorme.
+   Es mejor usar un valor fijo (px) o relativo al viewport (vh). */
 @media (max-width: 992px) {
-  body { padding-top: 110%; }
-} /* Este porcentaje parece muy alto, podrías considerar usar vh o px */
-@media (max-width: 576px) {
-  body { padding-top: 100px; }
+  body { padding-top: 130px; }
 }
 
 /* =======================================================
@@ -54,7 +54,9 @@ body {
 .navbar .imagen-flotante {
   height: clamp(60px, 12vw, 160px); /* mínimo 60px, preferido 12vw, máximo 160px */
   width: auto;
-  animation: caerExpandir 3s ease-in-out infinite;
+  /* SUGERENCIA: Se quitó 'infinite' para que la animación solo ocurra una vez.
+     Una animación infinita puede ser distractora y consumir recursos. */
+  animation: caerExpandir 3s ease-in-out;
 }
 
 
@@ -63,8 +65,7 @@ body {
   0% { opacity: 0; transform: translateY(-50px) scale(0.8); }
   20% { opacity: 1; transform: translateY(0) scale(1.05); }
   40% { transform: translateY(0) scale(1); }
-  80% { opacity: 1; transform: translateY(0) scale(1); }
-  100% { opacity: 0; transform: translateY(-50px) scale(0.8); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 /* Ajuste para móviles */
@@ -196,7 +197,8 @@ body {
   margin-top: 20px;
   color: var(--c-primario);
   opacity: 0;
-  animation: fadeInRight 4s ease-in-out infinite;
+  /* SUGERENCIA: Se quitó 'infinite' para que la animación solo ocurra una vez. */
+  animation: fadeInRight 4s ease-in-out forwards; /* 'forwards' mantiene el estado final */
   animation-delay: 1s;
 }
 
@@ -231,8 +233,7 @@ body {
 
 @keyframes fadeInRight {
   0% { opacity: 0; transform: translateX(100px); }
-  20%, 80% { opacity: 1; transform: translateX(0); }
-  100% { opacity: 0; transform: translateX(100px); }
+  100% { opacity: 1; transform: translateX(0); }
 }
 /* =======================================================
    5. CARDS (Other Treatments)
@@ -365,29 +366,13 @@ body {
   .footer-form { width: 100%; max-width: 300px; }
 }
 
-@media (max-width: 576px) {
-  .welcome-text-box { padding: 12px 15px; }
-  .welcome-box-right h1 { font-size: 1.8rem; }
-  .welcome-box-right p { font-size: 1rem; }
-  .navbar-brand img { max-height: 40px; }
-  /* En móviles: hacer que el video sea un elemento en flujo (no absoluto),
-     que ocupe el ancho completo y mantenga su proporción. Limitar altura
-     máxima para que no sea demasiado grande en pantalla. Esto preserva
-     la vista de escritorio (donde el video sigue siendo absoluto). */
-  .hero-video { height: auto; background: #000; }
-  .hero-video video {
-    position: relative !important;
-    display: block !important;
-    width: 100% !important;
-    height: auto !important;
-    max-height: 70vh !important;
-    object-fit: cover !important; /* scale and crop minimally to fill */
-    object-position: center top !important; /* prioritize top of frame */
-    transform: none !important;
-  }
-  .hero-overlay { font-size: 1.5rem; padding: 0 15px; }
-}
+/* =======================================================
+   9. HERO VIDEO (REFACTORIZADO)
+======================================================= */
 
+/* REFACTORIZACIÓN: Se unificaron los estilos de video de fondo en una sola clase.
+   Esto evita la duplicación de código entre .hero-video y .hero-video-background.
+   La clase .hero-video-element ya contenía la lógica principal. */
 .hero-video video, .hero-video-element {
     position: absolute;
     top: 50%;
@@ -400,11 +385,13 @@ body {
     object-fit: cover;
 }
 
-/* En pantallas pequeñas (móviles) */
-@media (max-width: 768px) {
-  .hero-video-desktop {
-    display: none; /* Ocultar video de escritorio */
-  }
+/* En móviles, el video se comporta como un elemento normal, no como fondo. */
+@media (max-width: 576px) {
+    .hero-video video, .hero-video-element {
+        position: relative; /* Quita el posicionamiento absoluto */
+        width: 100%;
+        transform: none; /* Resetea la transformación */
+    }
 }
 
 /* Separator between videos */
@@ -838,15 +825,8 @@ a, button, .btn, .nav-link, .dropdown-item, .treatment-box { cursor: pointer; }
     z-index: 2; /* Encima del video */
 }
 
-/* Contenido de Bienvenida: Asegura que el texto y el botón estén al frente */
 .welcome-content {
     position: relative;
     z-index: 3; /* Encima de todo */
     color: white; /* Color del texto sobre el fondo oscuro */
-}
-
-.welcome-title {
-    font-size: 3.5rem;
-    font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
