@@ -388,41 +388,22 @@ body {
   .hero-overlay { font-size: 1.5rem; padding: 0 15px; }
 }
 
-.hero-video {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero-video video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  z-index: -2;
-  transform: translate(-50%, -50%);
-  object-fit: cover;
-}
-
-/* Ocultar video móvil por defecto */
-.hero-video-mobile {
-  display: none;
+.hero-video video, .hero-video-element {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
 }
 
 /* En pantallas pequeñas (móviles) */
 @media (max-width: 768px) {
   .hero-video-desktop {
     display: none; /* Ocultar video de escritorio */
-  }
-  .hero-video-mobile {
-    display: block; /* Mostrar video móvil */
   }
 }
 
