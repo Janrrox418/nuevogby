@@ -186,7 +186,7 @@ body {
 }
 
 .welcome-title {
-  font-size: clamp(1.5rem, 5vw, 2.8rem); /* Tamaño reducido */
+  font-size: clamp(2.5rem, 7vw, 4.5rem); /* Tamaño aumentado */
   font-weight: 800;
   margin-bottom: 20px;
   animation: float 3s ease-in-out infinite;
