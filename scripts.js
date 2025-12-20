@@ -215,3 +215,54 @@ window.addEventListener('resize', adjustBodyPadding);
         });
       });
     }
+
+// ===== EFECTO DE NIEVE (GLOBAL) =====
+(function() {
+  var canvas = document.createElement('canvas');
+  canvas.style.position = 'fixed';
+  canvas.style.top = '0';
+  canvas.style.left = '0';
+  canvas.style.width = '100%';
+  canvas.style.height = '100%';
+  canvas.style.pointerEvents = 'none';
+  canvas.style.zIndex = '9999';
+  document.body.appendChild(canvas);
+
+  var ctx = canvas.getContext('2d');
+  var width = window.innerWidth;
+  var height = window.innerHeight;
+  canvas.width = width;
+  canvas.height = height;
+
+  var flakes = [];
+  for (var i = 0; i < 100; i++) {
+    flakes.push({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      r: Math.random() * 3 + 1,
+      d: Math.random() * 100
+    });
+  }
+
+  var angle = 0;
+  function animate() {
+    ctx.clearRect(0, 0, width, height);
+    ctx.fillStyle = "rgba(255, 255, 255, 0.8)";
+    ctx.beginPath();
+    angle += 0.01;
+    for (var i = 0; i < flakes.length; i++) {
+      var f = flakes[i];
+      f.y += Math.cos(angle + f.d) + 1 + f.r / 2;
+      f.x += Math.sin(angle) * 2;
+      ctx.moveTo(f.x, f.y);
+      ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2, true);
+      if (f.x > width + 5 || f.x < -5 || f.y > height) {
+        flakes[i] = { x: Math.random() * width, y: -10, r: f.r, d: f.d };
+      }
+    }
+    ctx.fill();
+    requestAnimationFrame(animate);
+  }
+  animate();
+  window.addEventListener('resize', function() { width = window.innerWidth; height = window.innerHeight; canvas.width = width; canvas.height = height; });
+})();
