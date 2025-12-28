@@ -158,8 +158,7 @@ function navbarOnScroll() {
   else navbar.classList.remove("hide");
 
   // Color de fondo al pasar del top
-  if (!pastTop) navbar.classList.remove("scrolled");
-  else if (!goingDown) navbar.classList.add("scrolled");
+  navbar.classList.add("scrolled");
 
   lastY = y <= 0 ? 0 : y;
   ticking = false;
