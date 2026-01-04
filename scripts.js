@@ -214,7 +214,7 @@ window.addEventListener('resize', adjustBodyPadding);
         });
       });
     }
-
+/*
 // ===== EFECTO DE NIEVE (GLOBAL) =====
 (function() {
   var canvas = document.createElement('canvas');
@@ -265,3 +265,4 @@ window.addEventListener('resize', adjustBodyPadding);
   animate();
   window.addEventListener('resize', function() { width = window.innerWidth; height = window.innerHeight; canvas.width = width; canvas.height = height; });
 })();
+*/
