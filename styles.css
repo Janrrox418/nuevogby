@@ -294,7 +294,7 @@ body {
 ======================================================= */
 .footer {
   background-color: var(--c-primario);
-  color: var(--c-negro);
+  color: #000;
   padding: 40px 20px;
 }
 
