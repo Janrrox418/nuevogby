@@ -2,7 +2,7 @@
    1. VARIABLES
 ======================================================= */
 :root {
-  --c-primario: #cccccc;
+  --c-primario: #666666;
   --c-oscuro: #001f3f;
   --c-blanco: #fff;
   --c-hover: #ffe0cc;
@@ -294,7 +294,7 @@ body {
 ======================================================= */
 .footer {
   background-color: var(--c-primario);
-  color: var(--c-blanco);
+  color: var(--c-negro);
   padding: 40px 20px;
 }
 
@@ -767,8 +767,8 @@ body { cursor: auto; }
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  background: rgba(204, 204, 204, 0.95); /* primary color */
-  box-shadow: 0 4px 10px rgba(204,204,204,0.25), 0 0 0 6px rgba(204,204,204,0.08);
+  background: rgba(102, 102, 102, 0.95); /* primary color */
+  box-shadow: 0 4px 10px rgba(102,102,102,0.25), 0 0 0 6px rgba(102,102,102,0.08);
   pointer-events: none;
   z-index: 9999;
   transform: translate(-50%, -50%) scale(1);
@@ -780,7 +780,7 @@ body { cursor: auto; }
 .custom-cursor.expanded {
   transform: translate(-50%, -50%) scale(2.2);
   opacity: 0.95;
-  box-shadow: 0 6px 18px rgba(204,204,204,0.28), 0 0 0 10px rgba(204,204,204,0.06);
+  box-shadow: 0 6px 18px rgba(102,102,102,0.28), 0 0 0 10px rgba(102,102,102,0.06);
 }
 
 /* Keep interactive elements with normal pointer so users get expected cursor feedback */
