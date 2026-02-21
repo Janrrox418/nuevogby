@@ -167,6 +167,7 @@ h1, h2, h3, h4, h5, h6, .navbar-brand, .welcome-title {
   font-size: 0.9rem;
   text-transform: uppercase; /* Estilo más premium */
   transition: background-color 0.3s, color 0.3s;
+  padding: 8px 15px !important; /* Aumentamos el espacio interno de cada enlace */
 }
 
 .navbar .dropdown-item:hover,
@@ -179,6 +180,13 @@ h1, h2, h3, h4, h5, h6, .navbar-brand, .welcome-title {
 .navbar .dropdown-item:active {
   background-color: var(--c-primario) !important;
   color: var(--c-blanco) !important;
+}
+
+/* Separación extra entre los items del menú en pantallas grandes (PC) */
+@media (min-width: 992px) {
+  .navbar-nav > .nav-item {
+    margin: 0 5px;
+  }
 }
 
 /* ===== Botón hamburguesa ===== */
