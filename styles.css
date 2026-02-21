@@ -1,20 +1,28 @@
 /* =======================================================
    1. VARIABLES
 ======================================================= */
+/* Importamos fuentes elegantes: Playfair Display (Títulos) y Montserrat (Cuerpo) */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
 :root {
-  --c-primario: #666666;
-  --c-oscuro: #001f3f;
-  --c-blanco: #fff;
-  --c-hover: #ffe0cc;
+  /* Paleta de colores inspirada en Barroso Beauty (Luxury Spa) */
+  --c-primario: #C5A086; /* Beige/Dorado suave elegante */
+  --c-oscuro: #1A1A1A;   /* Negro suave para contrastes */
+  --c-blanco: #FFFFFF;
+  --c-hover: #F9F3F0;    /* Tono crema muy pálido para hovers */
+  --c-texto: #4A4A4A;    /* Gris para texto de lectura */
+  
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Montserrat', sans-serif;
 }
 
 /* =======================================================
    2. BODY
 ======================================================= */
 body {
-  background-color: #fff;
-  color: #333;
-  font-family: 'Times New Roman', Times, serif, sans-serif;
+  background-color: var(--c-blanco);
+  color: var(--c-texto);
+  font-family: var(--font-body);
   margin: 0;
   padding-top: 50px;
 }
@@ -23,6 +31,11 @@ body {
    Es mejor usar un valor fijo (px) o relativo al viewport (vh). */
 @media (max-width: 992px) {
   body { padding-top: 130px; }
+}
+
+/* Títulos elegantes */
+h1, h2, h3, h4, h5, h6, .navbar-brand, .welcome-title {
+  font-family: var(--font-heading);
 }
 
 /* =======================================================
@@ -45,8 +58,8 @@ body {
 .navbar-hidden { transform: translateY(-110%); } /* Ocultar completamente */
 
 .navbar.scrolled {
-  background-color: var(--c-primario) !important;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  background-color: rgba(255, 255, 255, 0.95) !important; /* Blanco con ligera transparencia */
+  box-shadow: 0 2px 15px rgba(0,0,0,0.05); /* Sombra muy suave */
 }
 
 /* Logo flotante animado dentro de la navbar */
@@ -148,14 +161,18 @@ body {
 /* ===== Colores y hover de los items ===== */
 .navbar .dropdown-item,
 .navbar .nav-link {
-  color: #333 !important;
+  color: var(--c-oscuro) !important;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  font-size: 0.9rem;
+  text-transform: uppercase; /* Estilo más premium */
   transition: background-color 0.3s, color 0.3s;
 }
 
 .navbar .dropdown-item:hover,
 .navbar .nav-link:hover {
   background-color: var(--c-hover);
-  color: #000;
+  color: var(--c-primario) !important;
 }
 
 .navbar .dropdown-item.active,
@@ -182,7 +199,7 @@ body {
   text-align: center;
   flex-direction: column;
   position: relative;
-  background-color: var(--c-primario);
+  background-color: #f4f4f4; /* Fondo neutro si no hay video */
 }
 
 .welcome-title {
@@ -195,7 +212,7 @@ body {
 .welcome-subtitle {
   font-size: clamp(1.1rem, 4vw, 1.5rem); /* Un poco más grande y legible */
   margin-top: 20px;
-  color: var(--c-primario);
+  color: var(--c-blanco); /* Asumiendo fondo oscuro o video */
   opacity: 0;
   /* SUGERENCIA: Se quitó 'infinite' para que la animación solo ocurra una vez. */
   animation: fadeInRight 4s ease-in-out forwards; /* 'forwards' mantiene el estado final */
@@ -203,12 +220,12 @@ body {
 }
 
 .welcome-text-box {
-  border: 2px solid var(--c-blanco); /* Borde blanco para contraste */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Borde sutil */
   padding: clamp(1.5rem, 5vw, 3rem); /* Padding más ajustado */
-  border-radius: 4px; /* Bordes rectos */
+  border-radius: 0; /* Bordes rectos para elegancia */
   display: inline-block;
   text-align: center;
-  background: #e4c6b8; /* Mismo color pero con ligera transparencia */
+  background: rgba(255, 255, 255, 0.1); /* Glassmorphism más limpio */
   backdrop-filter: blur(4px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Sombra sutil */
   position: relative;
@@ -239,9 +256,9 @@ body {
    5. CARDS (Other Treatments)
 ======================================================= */
 .treatment-box {
-  background-color: #e4c6b8;
-  border: 1px solid var(--c-primario);
-  border-radius: 12px;
+  background-color: var(--c-blanco);
+  border: none; /* Sin bordes duros */
+  border-radius: 8px;
   padding: 2rem;
   max-width: 700px;
   min-height: 500px;
@@ -249,14 +266,15 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Sombra suave moderna */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .treatment-box h3 {
   margin-bottom: 1rem;
   font-size: 1.8rem;
-  color: var(--c-oscuro);
+  color: var(--c-primario);
+  font-family: var(--font-heading);
 }
 
 .treatment-box p { font-size: 1rem; color: #444; margin-bottom: 0.5rem; }
@@ -293,8 +311,8 @@ body {
    6. FOOTER
 ======================================================= */
 .footer {
-  background-color: var(--c-primario);
-  color: #000;
+  background-color: var(--c-oscuro); /* Footer oscuro elegante */
+  color: var(--c-blanco);
   padding: 40px 20px;
 }
 
@@ -329,15 +347,15 @@ body {
 
 .footer-form button {
   padding: 10px;
-  background-color: var(--c-primario);
-  color: var(--c-blanco);
-  border: none;
-  border-radius: 5px;
+  background-color: var(--c-blanco);
+  color: var(--c-oscuro);
+  border: 1px solid var(--c-blanco);
+  border-radius: 0;
   cursor: pointer;
   font-weight: bold;
   transition: background 0.3s ease;
 }
-.footer-form button:hover { background-color: #052c65; }
+.footer-form button:hover { background-color: transparent; color: var(--c-blanco); }
 
 /* =======================================================
    7. SOCIAL
@@ -445,17 +463,17 @@ body {
   justify-content: center;
   gap: 30px;
   padding: 40px 20px;
-  background-color: #f5f0ec;
+  background-color: #FAFAFA;
 }
 
 .procedure-card {
-  background-color: #fff;
-  border: 1px solid var(--c-primario);
-  border-radius: 12px;
+  background-color: var(--c-blanco);
+  border: none;
+  border-radius: 4px;
   width: 300px;
   padding: 20px;
   text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -473,13 +491,13 @@ body {
 
 .procedure-card h4 {
   font-size: 1.5rem;
-  color: var(--c-oscuro);
+  color: var(--c-primario);
   margin-bottom: 10px;
 }
 
 .procedure-card p {
   font-size: 1rem;
-  color: #444;
+  color: var(--c-texto);
   line-height: 1.5;
 }
 
@@ -671,13 +689,32 @@ body {
 .product-card-link {
   text-decoration: none;
 }
+
+/* =======================================================
+   16. BOTONES GENERALES (Estilo Barroso)
+   =======================================================*/
+.btn-primary {
+  background-color: var(--c-primario);
+  border-color: var(--c-primario);
+  border-radius: 0; /* Botones cuadrados son más elegantes */
+  padding: 12px 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.btn-primary:hover {
+  background-color: var(--c-oscuro);
+  border-color: var(--c-oscuro);
+}
+
 /* ===========================
       OUR TEAM SECTION - CÓDIGO FINAL
 =========================== */
 
 /* Estilos de la Sección Contenedora */
 #our-team {
-    background-color: #f5f0ec;
+    background-color: #FAFAFA;
     padding: 60px 20px;
     text-align: center;
 }
@@ -685,10 +722,10 @@ body {
 /* Estilos de la Tarjeta */
 .team-card {
     background-color: #fff;
-    border: 1px solid #ccc; /* Usamos un color fijo si var(--c-primario) da problemas */
+    border: none;
     padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     
     /* Configuración Flexbox para mantener altura uniforme */
@@ -715,7 +752,7 @@ body {
     
     /* ¡Lo hace circular! */
     border-radius: 50%;
-    border: 3px solid var(--c-primario, #A98765); /* Opcional: añade un borde decorativo */
+    border: 2px solid var(--c-primario); /* Borde más fino */
     
     margin-bottom: 15px;
 }
@@ -723,13 +760,13 @@ body {
 /* Estilos del Título (h4) */
 .team-card h4 {
     font-size: 1.6rem;
-    color: #333;
+    color: var(--c-oscuro);
     margin-bottom: 5px;
 }
 
 /* Estilos del Rol/Título */
 .team-role {
-    color: #A98765; /* Color decorativo para el rol */
+    color: var(--c-primario); /* Color decorativo para el rol */
     font-weight: bold;
     margin-bottom: 10px;
 }
@@ -767,7 +804,7 @@ body { cursor: auto; }
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  background: rgba(102, 102, 102, 0.95); /* primary color */
+  background: var(--c-primario); /* Usar el color de la marca */
   box-shadow: 0 4px 10px rgba(102,102,102,0.25), 0 0 0 6px rgba(102,102,102,0.08);
   pointer-events: none;
   z-index: 9999;
