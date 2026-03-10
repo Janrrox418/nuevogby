@@ -24,13 +24,11 @@ body {
   color: var(--c-texto);
   font-family: var(--font-body);
   margin: 0;
-  padding-top: 50px;
 }
 /* CORRECCIÓN: Se cambió el padding de 110% a 130px.
    El porcentaje (%) en padding-top se basa en el ANCHO, causando un espacio enorme.
    Es mejor usar un valor fijo (px) o relativo al viewport (vh). */
 @media (max-width: 992px) {
-  body { padding-top: 130px; }
 }
 
 /* Títulos elegantes */
@@ -65,7 +63,7 @@ h1, h2, h3, h4, h5, h6, .navbar-brand, .welcome-title {
 /* Logo flotante animado dentro de la navbar */
 .navbar-brand img,
 .navbar .imagen-flotante {
-  height: clamp(60px, 12vw, 160px); /* mínimo 60px, preferido 12vw, máximo 160px */
+  height: clamp(80px, 8vw, 120px); /* Ajustado para mejor responsividad */
   width: auto;
   /* SUGERENCIA: Se quitó 'infinite' para que la animación solo ocurra una vez.
      Una animación infinita puede ser distractora y consumir recursos. */
@@ -167,7 +165,7 @@ h1, h2, h3, h4, h5, h6, .navbar-brand, .welcome-title {
   font-size: 0.9rem;
   text-transform: uppercase; /* Estilo más premium */
   transition: background-color 0.3s, color 0.3s;
-  padding: 8px 15px !important; /* Aumentamos el espacio interno de cada enlace */
+  padding: 8px 10px !important; /* Espacio horizontal reducido */
 }
 
 .navbar .dropdown-item:hover,
@@ -185,7 +183,7 @@ h1, h2, h3, h4, h5, h6, .navbar-brand, .welcome-title {
 /* Separación extra entre los items del menú en pantallas grandes (PC) */
 @media (min-width: 992px) {
   .navbar-nav > .nav-item {
-    margin: 0 5px;
+    margin: 0 2px; /* Margen reducido */
   }
 }
 
