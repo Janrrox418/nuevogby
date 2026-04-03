@@ -748,17 +748,16 @@ h1, h2, h3, h4, h5, h6, .navbar-brand, .welcome-title {
 /* Estilos de la Imagen */
 .team-photo {
     /* Define el tamaño del contenedor de la imagen */
-    width: 250px; 
-    height: 250px; 
+    width: 100%;
+    max-width: 280px;
+    height: 320px; /* Un formato ligeramente más vertical suele ser más elegante */
     margin-left: auto; /* Centrar imagen */
     margin-right: auto; /* Centrar imagen */
     
     /* Asegura que la imagen rellene el espacio sin distorsión */
     object-fit: cover;
-    
-    /* ¡Lo hace circular! */
-    border-radius: 50%;
-    border: 2px solid var(--c-primario); /* Borde más fino */
+    border-radius: 0; /* Cambiado a cuadrado para estilo premium */
+    border: 1px solid var(--c-primario); /* Borde minimalista */
     
     margin-bottom: 15px;
 }
