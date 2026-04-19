@@ -43,32 +43,132 @@
   <!-- ===== NAVBAR ===== -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container-fluid">
-      <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle menu">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+      <!-- Logo -->
       <a class="navbar-brand" href="index.html">
         <img src="assets/logoletra.png" alt="GBYSkincare" class="imagen-flotante">
       </a>
+
+      <!-- Hamburger Button -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navigation Menu -->
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="index.html#home">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="index.html#about">About Us</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="treatments/procedures.html" id="treatmentsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Treatments</a>
+          <!-- Procedures dropdown -->
+          <li class="nav-item dropdown" data-bs-auto-close="outside">
+            <a class="nav-link dropdown-toggle" href="treatments/procedures.html" id="treatmentsDropdown"
+               role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Treatments
+            </a>
             <ul class="dropdown-menu" aria-labelledby="treatmentsDropdown">
+              <li class="dropdown-submenu">
+                <a class="dropdown-item dropdown-toggle" href="javascript:void(0)">Dermal Fillers</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="Dermal fillers/lips-filler.html">Lips Filler</a></li>
+                  <li><a class="dropdown-item" href="Dermal fillers/juvederm.html">Juvéderm®</a></li>
+                  <li><a class="dropdown-item" href="Dermal fillers/sculptra.html">Sculptra</a></li>
+                  <li><a class="dropdown-item" href="Dermal fillers/radiesse.html">Radiesse</a></li>
+                  <li><a class="dropdown-item" href="Dermal fillers/voluma.html">Voluma</a></li>
+                </ul>
+              </li>
+              <li class="dropdown-submenu">
+                <a class="dropdown-item dropdown-toggle" href="javascript:void(0)">Neurotoxins</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="Neurotoxins/dysport.html">Dysport</a></li>
+                  <li><a class="dropdown-item" href="Neurotoxins/xeomin.html">Xeomin</a></li>
+                  <li><a class="dropdown-item" href="Neurotoxins/jeuveau.html">Jeuveau</a></li>
+                  <li><a class="dropdown-item" href="Neurotoxins/botox.html">Botox</a></li>
+                </ul>
+              </li>
               <li><a class="dropdown-item" href="treatments/facials-protocols.html">Facials Protocols</a></li>
               <li><a class="dropdown-item" href="treatments/acne-treatment.html">Acne Treatment</a></li>
+              <li><a class="dropdown-item" href="treatments/microneedling.html">Microneedling</a></li>
+              <li><a class="dropdown-item" href="treatments/skin-tightening.html">Skin Tightening</a></li>
+              <li><a class="dropdown-item" href="treatments/chemical-peel.html">Chemical peel</a></li>
+              <li><a class="dropdown-item" href="treatments/skin-3d-scan.html">Skin 3D Scan</a></li>
+              <li><a class="dropdown-item" href="treatments/co2lift-pro.html">CO2liftpro</a></li>
+              <li><a class="dropdown-item" href="treatments/prp.html">Platelet Rich Plasma (PRP)</a></li>
+              <li><a class="dropdown-item" href="treatments/oxygeneo.html">Glo2facial</a></li>
+              <li><a class="dropdown-item" href="treatments/hydrafacial.html">HydraFacial®</a></li>
+              <li><a class="dropdown-item" href="treatments/dermaplaning.html">Dermaplaning</a></li>
+              <li><a class="dropdown-item" href="treatments/body-countouring.html">Body Contouring</a></li>
+              <li><a class="dropdown-item" href="treatments/light-therapy.html">Light Therapy</a></li>
               <li><hr class="dropdown-divider"></li>
+
+                <!-- Dermal Fillers con submenú -->
+    <li class="dropdown-submenu">
+      <a class="dropdown-item dropdown-toggle" href="javascript:void(0)">Dermal Fillers</a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="Dermal fillers/lips-filler.html">Lips Filler</a></li>
+        <li><a class="dropdown-item" href="Dermal fillers/juvederm.html">Juvéderm®</a></li>
+        <li><a class="dropdown-item" href="Dermal fillers/sculptra.html">Sculptra</a></li>
+        <li><a class="dropdown-item" href="Dermal fillers/radiesse.html">Radiesse</a></li>
+        <li><a class="dropdown-item" href="Dermal fillers/voluma.html">Voluma</a></li>
+
+      </ul>
+    </li> 
+    <!-- Neurotixin con submenú -->
+    <li class="dropdown-submenu">
+      <a class="dropdown-item dropdown-toggle" href="javascript:void(0)">Neurotoxins</a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="Neurotoxins/dysport.html">Dysport</a></li>
+        <li><a class="dropdown-item" href="Neurotoxins/xeomin.html">Xeomin</a></li>
+        <li><a class="dropdown-item" href="Neurotoxins/jeuveau.html">Jeuveau</a></li>
+        <li><a class="dropdown-item" href="Neurotoxins/botox.html">Botox</a></li>
+      </ul>
+    </li> 
               <li><a class="dropdown-item" href="index.html#other-treatments">Other Treatments</a></li>
             </ul>
           </li>
+          <!-- Spa Service -->
+          <li class="nav-item dropdown" data-bs-auto-close="outside">
+            <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="SpaserviceDropdown"
+               role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Spa Service
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="SpaserviceDropdown">
+              <li><a class="dropdown-item" href="spa_service/eyebrow-lamination.html">Eyebrow lamination</a></li>
+              <li><a class="dropdown-item" href="spa_service/head-service.html">Head Service</a></li>
+              <li><a class="dropdown-item" href="spa_service/hair-loss-solutions.html">Hair loss solutions</a></li>
+              <li><a class="dropdown-item" href="spa_service/scalp-treatments.html">Keravive Scalp Treatments</a></li>
+              <li><a class="dropdown-item" href="spa_service/Facial-Massage.html">Facial Massage</a></li>
+              <li><a class="dropdown-item" href="spa_service/touchless-technology">Touchless Technology</a></li>
+
+            </ul>
+          </li>
+          <!-- Wellness Service Dropdown -->
+          <li class="nav-item dropdown" data-bs-auto-close="outside">
+            <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="wellnessDropdown"
+               role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Wellness Service
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="wellnessDropdown">
+              <li><a class="dropdown-item" href="wellness_service/iv-therapy.html">IV Therapy</a></li>
+              <li><a class="dropdown-item" href="wellness_service/wellness-longevity.html">Wellness & Longevity</a></li>
+            </ul>
+          </li>
           <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" id="navbarMoreDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              More
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarMoreDropdown">
+              <li><a class="dropdown-item" href="membership.html">Membership</a></li>
+              <li><a class="dropdown-item" href="gift-cards.html">Gift Cards</a></li>
+              <li><a class="dropdown-item active" href="policies.html">Policies</a></li>
+            </ul>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
+
 
   <!-- ===== HERO SECTION ===== -->
   <header class="py-5 bg-light" style="margin-top: 120px;">
