@@ -2,218 +2,200 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Membership - GBYSkincare</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Join the Glow VIP Facial Membership at GBYSkincare. Enjoy exclusive savings, perks, and priority booking for your skincare journey.">
-  
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Membership | GBYSkincare</title>
+  <meta name="description" content="Elevate your skincare with The Skin Ritual Membership. Consistency, intention, and professional results at GBYSkincare.">
 
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- AOS Animations CSS -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
   <!-- Custom Styles -->
   <link rel="stylesheet" href="styles.css">
+  <style>
+    .membership-card {
+      border: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+    }
+    .membership-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.1) !important;
+    }
+    .ritual-price {
+      color: var(--c-primario);
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 500;
+    }
+    .ritual-title {
+      font-size: 1.5rem;
+      min-height: 3.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
 </head>
 <body>
   <!-- ===== NAVBAR ===== -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container-fluid">
-      <!-- Logo -->
+      <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
       <a class="navbar-brand" href="index.html">
         <img src="assets/logoletra.png" alt="GBYSkincare" class="imagen-flotante">
       </a>
-
-      <!-- Hamburger Button -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <!-- Navigation Menu -->
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="index.html#home">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="index.html#about">About Us</a></li>
-          <!-- Procedures dropdown -->
-          <li class="nav-item dropdown" data-bs-auto-close="outside">
-            <a class="nav-link dropdown-toggle" href="treatments/procedures.html" id="treatmentsDropdown"
-               role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Treatments
-            </a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="treatments/procedures.html" id="treatmentsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Treatments</a>
             <ul class="dropdown-menu" aria-labelledby="treatmentsDropdown">
-              <li class="dropdown-submenu">
-                <a class="dropdown-item dropdown-toggle" href="javascript:void(0)">Dermal Fillers</a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="Dermal fillers/lips-filler.html">Lips Filler</a></li>
-                  <li><a class="dropdown-item" href="Dermal fillers/juvederm.html">Juvéderm®</a></li>
-                  <li><a class="dropdown-item" href="Dermal fillers/sculptra.html">Sculptra</a></li>
-                  <li><a class="dropdown-item" href="Dermal fillers/radiesse.html">Radiesse</a></li>
-                  <li><a class="dropdown-item" href="Dermal fillers/voluma.html">Voluma</a></li>
-                </ul>
-              </li>
-              <li class="dropdown-submenu">
-                <a class="dropdown-item dropdown-toggle" href="javascript:void(0)">Neurotoxins</a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="Neurotoxins/dysport.html">Dysport</a></li>
-                  <li><a class="dropdown-item" href="Neurotoxins/xeomin.html">Xeomin</a></li>
-                  <li><a class="dropdown-item" href="Neurotoxins/jeuveau.html">Jeuveau</a></li>
-                  <li><a class="dropdown-item" href="Neurotoxins/botox.html">Botox</a></li>
-                </ul>
-              </li>
               <li><a class="dropdown-item" href="treatments/facials-protocols.html">Facials Protocols</a></li>
               <li><a class="dropdown-item" href="treatments/acne-treatment.html">Acne Treatment</a></li>
-              <li><a class="dropdown-item" href="treatments/microneedling.html">Microneedling</a></li>
-              <li><a class="dropdown-item" href="treatments/skin-tightening.html">Skin Tightening</a></li>
-              <li><a class="dropdown-item" href="treatments/chemical-peel.html">Chemical peel</a></li>
-              <li><a class="dropdown-item" href="treatments/skin-3d-scan.html">Skin 3D Scan</a></li>
-              <li><a class="dropdown-item" href="treatments/co2lift-pro.html">CO2liftpro</a></li>
-              <li><a class="dropdown-item" href="treatments/prp.html">Platelet Rich Plasma (PRP)</a></li>
-              <li><a class="dropdown-item" href="treatments/oxygeneo.html">Glo2facial</a></li>
-              <li><a class="dropdown-item" href="treatments/hydrafacial.html">HydraFacial®</a></li>
-              <li><a class="dropdown-item" href="treatments/dermaplaning.html">Dermaplaning</a></li>
-              <li><a class="dropdown-item" href="treatments/body-countouring.html">Body Contouring</a></li>
-              <li><a class="dropdown-item" href="treatments/light-therapy.html">Light Therapy</a></li>
               <li><hr class="dropdown-divider"></li>
-
-                <!-- Dermal Fillers con submenú -->
-    <li class="dropdown-submenu">
-      <a class="dropdown-item dropdown-toggle" href="javascript:void(0)">Dermal Fillers</a>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="Dermal fillers/lips-filler.html">Lips Filler</a></li>
-        <li><a class="dropdown-item" href="Dermal fillers/juvederm.html">Juvéderm®</a></li>
-        <li><a class="dropdown-item" href="Dermal fillers/sculptra.html">Sculptra</a></li>
-        <li><a class="dropdown-item" href="Dermal fillers/radiesse.html">Radiesse</a></li>
-        <li><a class="dropdown-item" href="Dermal fillers/voluma.html">Voluma</a></li>
-
-      </ul>
-    </li> 
-    <!-- Neurotixin con submenú -->
-    <li class="dropdown-submenu">
-      <a class="dropdown-item dropdown-toggle" href="javascript:void(0)">Neurotoxins</a>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="Neurotoxins/dysport.html">Dysport</a></li>
-        <li><a class="dropdown-item" href="Neurotoxins/xeomin.html">Xeomin</a></li>
-        <li><a class="dropdown-item" href="Neurotoxins/jeuveau.html">Jeuveau</a></li>
-        <li><a class="dropdown-item" href="Neurotoxins/botox.html">Botox</a></li>
-      </ul>
-    </li> 
               <li><a class="dropdown-item" href="index.html#other-treatments">Other Treatments</a></li>
             </ul>
           </li>
-          <!-- Spa Service -->
-          <li class="nav-item dropdown" data-bs-auto-close="outside">
-            <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="SpaserviceDropdown"
-               role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Spa Service
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="SpaserviceDropdown">
-              <li><a class="dropdown-item" href="spa_service/eyebrow-lamination.html">Eyebrow lamination</a></li>
-              <li><a class="dropdown-item" href="spa_service/head-service.html">Head Service</a></li>
-              <li><a class="dropdown-item" href="spa_service/hair-loss-solutions.html">Hair loss solutions</a></li>
-              <li><a class="dropdown-item" href="spa_service/scalp-treatments.html">Keravive Scalp Treatments</a></li>
-              <li><a class="dropdown-item" href="spa_service/Facial-Massage.html">Facial Massage</a></li>
-              <li><a class="dropdown-item" href="spa_service/touchless-technology.html">Touchless Technology</a></li>
-            </ul>
-          </li>
-          <!-- Wellness Service Dropdown -->
-          <li class="nav-item dropdown" data-bs-auto-close="outside">
-            <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="wellnessDropdown"
-               role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Wellness Service
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="wellnessDropdown">
-              <li><a class="dropdown-item" href="wellness_service/iv-therapy.html">IV Therapy</a></li>
-            </ul>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="membership.html">Membership</a></li>
           <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle active" href="#" id="navbarMoreDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              More
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarMoreDropdown">
-              <li><a class="dropdown-item active" href="membership.html">Membership</a></li>
-              <li><a class="dropdown-item" href="gift-cards.html">Gift Cards</a></li>
-              <li><a class="dropdown-item" href="policies.html">Policies</a></li>
-            </ul>
-          </li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- ===== MEMBERSHIP SECTION ===== -->
-  <section class="py-5" style="margin-top:100px;">
-    <div class="container">
+  <!-- ===== HERO SECTION ===== -->
+  <header class="py-5 bg-light" style="margin-top: 120px;">
+    <div class="container text-center" data-aos="fade-up">
+      <h1 class="display-4 fw-bold mb-3">💎 The Skin Ritual Membership</h1>
+      <p class="lead text-muted mx-auto" style="max-width: 800px;">
+        A Monthly Commitment to Elevated, Intentional Skincare
+      </p>
+    </div>
+  </header>
+
+  <!-- ===== PHILOSOPHY ===== -->
+  <section class="py-5">
+    <div class="container text-center" data-aos="fade-up">
       <div class="row justify-content-center">
-        <div class="col-lg-10" data-aos="fade-up">
-          <div class="text-center mb-5">
-            <h1 class="display-4 mb-3">Glow VIP Facial Membership</h1>
-            <p class="lead text-muted">Elevate your skincare routine with exclusive benefits.</p>
-          </div>
+        <div class="col-lg-8">
+          <p class="lead">At GbySkincare, we believe lasting results are not achieved through a single treatment—but through consistency, intention, and refined care over time.</p>
+          <p>The Skin Ritual Membership is designed for clients who value maintaining their results while supporting their skin through a personalized, ongoing approach.</p>
+          <p class="fw-bold text-primary mt-4" style="letter-spacing: 1px;">MEMBERSHIP IS LIMITED TO MAINTAIN A TRULY ELEVATED EXPERIENCE.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-          <!-- Membership Details Card -->
-          <div class="card shadow-sm mb-5 border-0">
-            <div class="card-body p-4 p-md-5 bg-light rounded">
-              <h2 class="h3 mb-4 text-center">Membership Details</h2>
-              <ul class="list-unstyled fs-5">
-                <li class="mb-3"><strong>• Choose:</strong> Deluxe Hydrafacial or Glo2Facial at each packet</li>
-                <li class="mb-3"><strong>• Glow VIP Price:</strong> $250 each packet</li>
-                <li class="mb-3"><strong>• Regular Price:</strong> $300 each packet</li>
-                <li class="mb-3"><strong>• Minimum Commitment:</strong> 3 sessions</li>
-                <li class="mb-3"><strong>• Payment:</strong> Paid in full upfront</li>
-                <li class="mb-3"><strong>• Total Investment:</strong> $750</li>
+  <!-- ===== RITUALS GRID ===== -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="row g-4 justify-content-center">
+        
+        <!-- Essential Ritual -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="card h-100 shadow-sm p-4 membership-card">
+            <div class="card-body text-center d-flex flex-column">
+              <h3 class="fw-bold ritual-title mb-3">✨ The Essential Ritual</h3>
+              <div class="ritual-price mb-4">$199 <span class="fs-6 text-muted fw-normal">/ month</span></div>
+              <p class="small text-muted mb-4">A refined introduction to consistent skincare, designed to maintain balance, hydration, and overall skin health.</p>
+              <ul class="text-start small mb-5 flex-grow-1">
+                <li class="mb-2">One monthly personalized treatment (HydraFacial® or customized skin ritual)</li>
+                <li class="mb-2">10% savings on additional treatments</li>
+                <li class="mb-2">Priority booking</li>
+                <li class="mb-2">Ongoing skincare guidance</li>
               </ul>
+              <a href="https://drchrono.com/scheduling/offices/dGhpcyBpcyAxNiBjaGFyc3n0U9QHOc5Ipn6hde0qdUM=" target="_blank" class="btn btn-primary w-100">👉 Join Essential Ritual</a>
             </div>
           </div>
+        </div>
 
-          <!-- Why You'll Love Being VIP -->
-          <div class="mb-5">
-            <h2 class="h3 mb-4 text-center">Why You’ll Love Being VIP</h2>
-            <div class="row g-4">
-              <div class="col-md-6">
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item border-0 ps-0">✨ Save $150 per package</li>
-                  <li class="list-group-item border-0 ps-0">✨ Complimentary Hydrafacial Lip or Eye Perks are earned with each completed membership package and may be redeemed during any Hydrafacial or Glo2Facial session.<br><small class="text-muted">(Valued at $90 per treatment)</small></li>
-                </ul>
-              </div>
-              <div class="col-md-6">
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item border-0 ps-0">✨ 15% off all skincare products</li>
-                </ul>
-              </div>
+        <!-- Signature Ritual -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="card h-100 shadow p-4 membership-card border-top border-primary border-4">
+            <div class="card-body text-center d-flex flex-column">
+              <h3 class="fw-bold ritual-title mb-3">💎 The Signature Ritual ⭐</h3>
+              <div class="ritual-price mb-4">$299 <span class="fs-6 text-muted fw-normal">/ month</span></div>
+              <p class="small text-muted mb-4">A results-driven approach for clients seeking consistency and visible, ongoing improvement.</p>
+              <ul class="text-start small mb-5 flex-grow-1">
+                <li class="mb-2">One monthly advanced treatment (HydraFacial®, chemical peel, or customized treatment)</li>
+                <li class="mb-2">15% savings on additional treatments</li>
+                <li class="mb-2">Priority booking</li>
+                <li class="mb-2">Exclusive member-only offerings</li>
+                <li class="mb-2">Personalized skincare plan with ongoing adjustments</li>
+              </ul>
+              <a href="https://drchrono.com/scheduling/offices/dGhpcyBpcyAxNiBjaGFyc3n0U9QHOc5Ipn6hde0qdUM=" target="_blank" class="btn btn-primary w-100">👉 Join Signature Ritual</a>
             </div>
           </div>
+        </div>
 
-          <hr class="my-5">
-
-          <!-- Terms & Conditions -->
-          <div class="mb-5">
-            <h3 class="h4 mb-3">Membership Terms & Conditions</h3>
-            <p>The Glow VIP Facial Membership requires a minimum commitment of three (3) facial sessions and must be paid in full at the time of purchase. All memberships are non-refundable, non-transferable, and may not be shared.</p>
-            <p>Membership services are valid exclusively for Hydrafacial or Glo2Facial treatments, selected at each visit. Membership pricing, services, and benefits apply only to the enrolled member and hold no cash value.</p>
-            <p>Complimentary Hydrafacial Lip or Eye Perks are earned with each completed membership treatment and may be redeemed during any Hydrafacial or Glo2Facial session. Earned perks are valid for a total of six (6) months from the membership start date, consisting of a three (3) month membership term plus an additional three (3) month grace period. Any unused services or perks will expire after six (6) months.</p>
-            <p>Membership benefits may not be paused, extended, transferred, or redeemed for cash or credit. Skincare discounts apply to retail products only and may not be combined with other promotions, discounts, or offers.</p>
-            <p>All appointments are subject to availability and studio scheduling policies. Missed or late-cancelled appointments may result in forfeiture of services or perks in accordance with studio policy.</p>
-            <p>GBY Skincare reserves the right to modify, suspend, or discontinue membership offerings, pricing, or benefits at any time, in accordance with Florida law, with reasonable notice provided when applicable.</p>
+        <!-- Smart Facial Ritual -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="card h-100 shadow-sm p-4 membership-card">
+            <div class="card-body text-center d-flex flex-column">
+              <h3 class="fw-bold ritual-title mb-3">👑 The Smart Facial Ritual</h3>
+              <div class="ritual-price mb-4">$449 <span class="fs-6 text-muted fw-normal">/ month</span></div>
+              <p class="small text-muted mb-4">A fully elevated, technology-driven facial experience designed to refine, restore, and revitalize the skin.</p>
+              <ul class="text-start small mb-5 flex-grow-1">
+                <li class="mb-2">Advanced exfoliation with HydraFacial® technology</li>
+                <li class="mb-2">Infusion of curated, botanical-based professional serums</li>
+                <li class="mb-2">Ultrasound-enhanced absorption using Glo2Facial technology</li>
+                <li class="mb-2">Oxygenation therapy to support skin vitality and radiance</li>
+                <li class="mb-2">A fully customized facial experience tailored to your skin’s needs</li>
+              </ul>
+              <a href="https://drchrono.com/scheduling/offices/dGhpcyBpcyAxNiBjaGFyc3n0U9QHOc5Ipn6hde0qdUM=" target="_blank" class="btn btn-primary w-100">👉 Join Smart Facial Ritual</a>
+            </div>
           </div>
+        </div>
 
-          <!-- Disclaimer -->
-          <div class="alert alert-light border text-center" role="alert">
-            <strong>✨ Disclaimer:</strong> Membership services are cosmetic in nature and are not medical treatments. Individual results may vary.
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== THE EXPERIENCE & ENHANCE ===== -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-5 align-items-center mb-5">
+        <div class="col-md-6" data-aos="fade-right">
+          <h2 class="mb-4">The Experience</h2>
+          <p>The Smart Facial Ritual is a comprehensive skin renewal experience—combining advanced exfoliation, targeted infusion, and oxygenation to support clarity, hydration, and overall skin vitality.</p>
+          <p>Designed to leave the skin feeling refreshed, balanced, and visibly radiant.</p>
+        </div>
+        <div class="col-md-6" data-aos="fade-left">
+          <div class="p-5 bg-dark text-white rounded shadow">
+            <h3 class="mb-4">🖤 Enhance Your Ritual</h3>
+            <p>Members may choose to incorporate additional treatments or wellness offerings as part of their personalized plan, based on individual goals and provider guidance.</p>
           </div>
+        </div>
+      </div>
 
+      <div class="text-center py-5 border-top" data-aos="zoom-in">
+        <h3 class="mb-4">✨ The GbySkincare Approach</h3>
+        <p class="lead max-w-700 mx-auto">This membership is more than maintenance—it is a commitment to refined, consistent care.</p>
+        <p class="fw-bold text-primary mt-3">Because when your skincare becomes a ritual, your results are not only maintained—they are elevated.</p>
+      </div>
+
+      <!-- IMPORTANT INFO -->
+      <div class="row mt-5" data-aos="fade-up">
+        <div class="col-lg-10 mx-auto">
+          <div class="p-4 bg-light border-0 rounded small text-muted">
+            <p><strong>⚖️ Important Information:</strong> Membership services are personalized and results may vary. Services are not intended to diagnose, treat, cure, or prevent any disease. Certain services may be provided in collaboration with a licensed medical provider when required. All treatments are subject to individual consultation and professional guidance.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ===== FOOTER ===== -->
-  <footer id="contact" class="footer">
+  <footer class="footer">
     <div class="container text-center py-4">
-      <p>&copy; 2025 GBYSkincare – All rights reserved</p>
+      <p>&copy; 2025 GBYSkincare - All rights reserved</p>
     </div>
   </footer>
 
