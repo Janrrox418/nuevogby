@@ -13,33 +13,55 @@
   <!-- Custom Styles -->
   <link rel="stylesheet" href="styles.css">
   <style>
+    /* Unificando a un solo tipo de letra y color */
+    #membership-content, 
+    #membership-content h1, 
+    #membership-content h2, 
+    #membership-content h3, 
+    #membership-content h4, 
+    #membership-content h5, 
+    #membership-content p, 
+    #membership-content li,
+    .ritual-price {
+      font-family: var(--font-body) !important;
+      color: var(--c-oscuro) !important;
+      line-height: 1.25 !important; /* Textos más pegados */
+      margin-bottom: 0.5rem !important; /* Márgenes reducidos */
+    }
+
     .membership-card {
       border: none;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       background-color: #fff;
       display: flex;
       flex-direction: column;
+      padding: 1.5rem !important;
     }
     .membership-card:hover {
       transform: translateY(-10px);
       box-shadow: 0 15px 35px rgba(0,0,0,0.1) !important;
     }
     .ritual-price {
-      color: var(--c-primario);
-      font-family: var(--font-heading);
       font-size: 2rem;
       font-weight: 500;
+      margin-top: 0.5rem;
     }
     .ritual-title {
       font-size: 1.5rem;
-      min-height: 3.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .membership-card ul {
+      padding-left: 1rem;
+      margin-top: 1rem;
+    }
+    .membership-card li {
+      margin-bottom: 0.3rem !important;
     }
   </style>
 </head>
-<body>
+<body id="membership-content">
   <!-- ===== NAVBAR ===== -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container-fluid">
@@ -173,7 +195,7 @@
   <!-- ===== HERO SECTION ===== -->
   <header class="py-5 bg-light" style="margin-top: 120px;">
     <div class="container text-center" data-aos="fade-up">
-      <h1 class="display-4 fw-bold mb-3">💎 The Skin Ritual Membership</h1>
+      <h1 class="display-4 fw-bold mb-3">The Skin Ritual Membership</h1>
       <p class="lead text-muted mx-auto" style="max-width: 800px;">
         A Monthly Commitment to Elevated, Intentional Skincare
       </p>
@@ -202,7 +224,7 @@
         <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
           <div class="card h-100 shadow-sm p-4 membership-card">
             <div class="card-body text-center d-flex flex-column">
-              <h3 class="fw-bold ritual-title mb-3">✨ The Essential Ritual</h3>
+              <h3 class="fw-bold ritual-title mb-3">The Essential Ritual</h3>
               <div class="ritual-price mb-4">$199 <span class="fs-6 text-muted fw-normal">/ month</span></div>
               <p class="small text-muted mb-4">A refined introduction to consistent skincare, designed to maintain balance, hydration, and overall skin health.</p>
               <ul class="text-start small mb-5 flex-grow-1">
@@ -211,7 +233,7 @@
                 <li class="mb-2">Priority booking</li>
                 <li class="mb-2">Ongoing skincare guidance</li>
               </ul>
-              <a href="" target="_blank" class="btn btn-primary w-100">👉 Join Essential Ritual</a>
+              <a href="" target="_blank" class="btn btn-primary w-100">Join Essential Ritual</a>
             </div>
           </div>
         </div>
@@ -220,7 +242,7 @@
         <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
           <div class="card h-100 shadow p-4 membership-card border-top border-primary border-4">
             <div class="card-body text-center d-flex flex-column">
-              <h3 class="fw-bold ritual-title mb-3">💎 The Signature Ritual ⭐</h3>
+              <h3 class="fw-bold ritual-title mb-3">The Signature Ritual </h3>
               <div class="ritual-price mb-4">$299 <span class="fs-6 text-muted fw-normal">/ month</span></div>
               <p class="small text-muted mb-4">A results-driven approach for clients seeking consistency and visible, ongoing improvement.</p>
               <ul class="text-start small mb-5 flex-grow-1">
@@ -230,7 +252,7 @@
                 <li class="mb-2">Exclusive member-only offerings</li>
                 <li class="mb-2">Personalized skincare plan with ongoing adjustments</li>
               </ul>
-              <a href="" target="_blank" class="btn btn-primary w-100">👉 Join Signature Ritual</a>
+              <a href="" target="_blank" class="btn btn-primary w-100">Join Signature Ritual</a>
             </div>
           </div>
         </div>
@@ -239,7 +261,7 @@
         <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
           <div class="card h-100 shadow-sm p-4 membership-card">
             <div class="card-body text-center d-flex flex-column">
-              <h3 class="fw-bold ritual-title mb-3">👑 The Smart Facial Ritual</h3>
+              <h3 class="fw-bold ritual-title mb-3">The Smart Facial Ritual</h3>
               <div class="ritual-price mb-4">$449 <span class="fs-6 text-muted fw-normal">/ month</span></div>
               <p class="small text-muted mb-4">A fully elevated, technology-driven facial experience designed to refine, restore, and revitalize the skin.</p>
               <ul class="text-start small mb-5 flex-grow-1">
@@ -249,7 +271,7 @@
                 <li class="mb-2">Oxygenation therapy to support skin vitality and radiance</li>
                 <li class="mb-2">A fully customized facial experience tailored to your skin’s needs</li>
               </ul>
-              <a href="" target="_blank" class="btn btn-primary w-100">👉 Join Smart Facial Ritual</a>
+              <a href="" target="_blank" class="btn btn-primary w-100">Join Smart Facial Ritual</a>
             </div>
           </div>
         </div>
@@ -276,7 +298,7 @@
       </div>
 
       <div class="text-center py-5 border-top" data-aos="zoom-in">
-        <h3 class="mb-4">✨ The GbySkincare Approach</h3>
+        <h3 class="mb-4">The GbySkincare Approach</h3>
         <p class="lead max-w-700 mx-auto">This membership is more than maintenance—it is a commitment to refined, consistent care.</p>
         <p class="fw-bold text-primary mt-3">Because when your skincare becomes a ritual, your results are not only maintained—they are elevated.</p>
       </div>
@@ -285,7 +307,7 @@
       <div class="row mt-5" data-aos="fade-up">
         <div class="col-lg-10 mx-auto">
           <div class="p-4 bg-light border-0 rounded small text-muted">
-            <p><strong>⚖️ Important Information:</strong> Membership services are personalized and results may vary. Services are not intended to diagnose, treat, cure, or prevent any disease. Certain services may be provided in collaboration with a licensed medical provider when required. All treatments are subject to individual consultation and professional guidance.</p>
+            <p><strong>Important Information:</strong> Membership services are personalized and results may vary. Services are not intended to diagnose, treat, cure, or prevent any disease. Certain services may be provided in collaboration with a licensed medical provider when required. All treatments are subject to individual consultation and professional guidance.</p>
           </div>
         </div>
       </div>
