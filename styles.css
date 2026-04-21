@@ -216,11 +216,12 @@ h1, h2, h3, h4, h5, h6, .navbar-brand, .welcome-title {
 }
 
 .welcome-title {
-  font-size: clamp(1.8rem, 5vw, 3.2rem); /* Ajustado para una frase más larga */
-  font-weight: 700;
-  margin-bottom: 30px;
-  line-height: 1.3;
-  max-width: 900px;
+  font-size: clamp(1.2rem, 2.8vw, 1.8rem); /* Tamaño más contenido y sofisticado */
+  font-weight: 500; /* Peso medio para mayor elegancia */
+  margin-bottom: 25px;
+  line-height: 1.5; /* Mayor espacio entre líneas para legibilidad */
+  max-width: 750px; /* Contenedor más estrecho para un look más centrado */
+  letter-spacing: 0.5px;
   margin-left: auto;
   margin-right: auto;
   animation: float 3s ease-in-out infinite;
