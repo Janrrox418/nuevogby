@@ -145,20 +145,31 @@ let ticking = false;
 function navbarOnScroll() {
   const y = window.scrollY;
   const goingDown = y > lastY;
-  const pastTop = y > 80;
+  const pastTop = y > 50;
+  const isHomePage = !!document.getElementById('heroCarousel');
 
   // Si el menú móvil está abierto, no esconder navbar
   if (navCollapse && navCollapse.classList.contains("show")) {
     navbar.classList.remove("hide");
+    navbar.classList.remove("navbar-hidden");
     lastY = y <= 0 ? 0 : y;
     return;
   }
 
-  if (goingDown) navbar.classList.add("hide");
-  else navbar.classList.remove("hide");
-
-  // Color de fondo al pasar del top
-  navbar.classList.add("scrolled");
+  if (pastTop) {
+    navbar.classList.remove("navbar-hidden");
+    navbar.classList.add("scrolled");
+    
+    if (goingDown) navbar.classList.add("hide");
+    else navbar.classList.remove("hide");
+  } else {
+    // Estamos en la parte superior (Top)
+    if (isHomePage) {
+      navbar.classList.add("navbar-hidden");
+    }
+    navbar.classList.remove("scrolled");
+    navbar.classList.remove("hide");
+  }
 
   lastY = y <= 0 ? 0 : y;
   ticking = false;
@@ -170,6 +181,9 @@ window.addEventListener("scroll", () => {
     ticking = true;
   }
 }, { passive: true });
+
+// Ejecutar al cargar para establecer estado inicial
+navbarOnScroll();
 
 // ===== AJUSTAR PADDING DEL BODY SEGÚN ALTURA DEL NAVBAR =====
 function adjustBodyPadding() {
