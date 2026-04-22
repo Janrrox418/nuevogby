@@ -207,8 +207,8 @@ h1, h2, h3, h4, h5, h6, .navbar-brand, .welcome-title {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 80vh;
-  padding: 80px 2rem 2rem; /* Ajuste de padding para no chocar con navbar */
+  min-height: 100vh;
+  padding: 2rem;
   text-align: center;
   flex-direction: column;
   position: relative;
@@ -216,7 +216,7 @@ h1, h2, h3, h4, h5, h6, .navbar-brand, .welcome-title {
 }
 
 .welcome-title {
-  font-size: clamp(1.2rem, 2.8vw, 1.8rem); /* Tamaño más contenido y sofisticado */
+  font-size: clamp(1.6rem, 4.2vw, 2.5rem); /* Letras más grandes para mayor impacto visual */
   font-weight: 500; /* Peso medio para mayor elegancia */
   margin-bottom: 25px;
   line-height: 1.5; /* Mayor espacio entre líneas para legibilidad */
@@ -846,7 +846,7 @@ a, button, .btn, .nav-link, .dropdown-item, .treatment-box { cursor: pointer; }
 .hero-video-background, .hero-carousel-container {
     position: relative;
     overflow: hidden;
-    min-height: 85vh;
+    min-height: 100vh; /* Ocupa el 100% de la altura de la pantalla */
     display: flex;
     justify-content: center;
     align-items: center;

@@ -189,12 +189,16 @@ navbarOnScroll();
 function adjustBodyPadding() {
   const navbar = document.querySelector('.navbar');
   if (navbar) {
-    const navbarHeight = navbar.offsetHeight; // Obtener la altura de la barra de navegación
+    const navbarHeight = navbar.offsetHeight;
     const welcomeSection = document.getElementById('welcome');
-    if (welcomeSection) {
-      welcomeSection.style.paddingTop = `${navbarHeight + 20}px`; // Añadir padding a la sección de bienvenida + un extra
-    } else { // Para otras páginas, aplicar al body
-      document.body.style.paddingTop = `${navbarHeight}px`; 
+    const isHomePage = !!document.getElementById('heroCarousel');
+
+    if (isHomePage && welcomeSection) {
+      // En el index no queremos padding superior para que el carrusel sea full-screen
+      welcomeSection.style.paddingTop = "0";
+      document.body.style.paddingTop = "0";
+    } else {
+      document.body.style.paddingTop = `${navbarHeight}px`;
     }
   }
 }
