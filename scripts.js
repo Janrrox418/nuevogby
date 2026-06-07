@@ -134,6 +134,32 @@ dropdowns.forEach((dropdown) => {
     });
   });
 
+  // ===== FLOATING REVIEW WIDGET TOGGLE =====
+  const toggleReviewBtn = document.getElementById('toggle-review-panel');
+  const closeReviewBtn = document.getElementById('close-review-panel');
+  const reviewPanel = document.getElementById('review-panel');
+
+  if (toggleReviewBtn && reviewPanel) {
+    toggleReviewBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      reviewPanel.classList.toggle('show');
+    });
+  }
+
+  if (closeReviewBtn && reviewPanel) {
+    closeReviewBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      reviewPanel.classList.remove('show');
+    });
+  }
+
+  // Close panel when clicking outside
+  document.addEventListener('click', (e) => {
+    if (reviewPanel && reviewPanel.classList.contains('show') && !reviewPanel.contains(e.target)) {
+      reviewPanel.classList.remove('show');
+    }
+  });
+
 });
 
 // ===== NAVBAR: ESCONDER EN SCROLL HACIA ABAJO, MOSTRAR EN SCROLL HACIA ARRIBA =====
