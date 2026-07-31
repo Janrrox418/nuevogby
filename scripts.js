@@ -310,3 +310,134 @@ window.addEventListener('resize', adjustBodyPadding);
   window.addEventListener('resize', function() { width = window.innerWidth; height = window.innerHeight; canvas.width = width; canvas.height = height; });
 })();
 */
+
+/* ==========================
+   LÓGICA DEL SISTEMA DE RESERVAS
+=========================== */
+let bookingData = {};
+
+function nextStep(currentStep, targetStep) {
+  // Validación estricta del Paso 1 (Campos requeridos)
+  if (currentStep === 1) {
+    const name = document.getElementById('client-name').value;
+    const date = document.getElementById('client-date').value;
+    const time = document.getElementById('client-time').value;
+    
+    if (!name || !date || !time) {
+      alert("Please complete your Name, Date, and Time to proceed.");
+      return;
+    }
+  }
+
+  // Transición de visualización de contenedores
+  document.getElementById(`step-${currentStep}`).classList.add('d-none');
+  document.getElementById(`step-${currentStep}`).classList.remove('active');
+  
+  document.getElementById(`step-${targetStep}`).classList.remove('d-none');
+  document.getElementById(`step-${targetStep}`).classList.add('active');
+
+  // Actualización dinámica de la Barra de Progreso
+  document.querySelectorAll('.step-indicator').forEach(indicator => {
+    if (parseInt(indicator.getAttribute('data-step')) <= targetStep) {
+      indicator.classList.add('active');
+    } else {
+      indicator.classList.remove('active');
+    }
+  });
+  
+  // Retorno al tope del contenedor para mejor UX
+  document.getElementById('booking-system').scrollIntoView({ behavior: 'smooth' });
+}
+
+function prepareConfirmation() {
+  // Recolección de datos del Paso 1
+  bookingData.name = document.getElementById('client-name').value;
+  bookingData.date = document.getElementById('client-date').value;
+  bookingData.time = document.getElementById('client-time').value;
+
+  // Recolección de datos iterativa del Paso 2
+  const getCheckedValue = (name) => {
+    const ele = document.querySelector(`input[name="${name}"]:checked`);
+    return ele ? ele.value : 'Not Selected';
+  };
+
+  bookingData.ambiance = getCheckedValue('ambiance');
+  bookingData.music = getCheckedValue('music');
+  bookingData.aroma = getCheckedValue('aroma');
+  bookingData.beverage = getCheckedValue('beverage');
+  bookingData.temperature = getCheckedValue('temperature');
+  bookingData.intention = getCheckedValue('intention');
+  bookingData.feeling = getCheckedValue('feeling');
+
+  // Inyección de variables en el DOM del Paso 3 (Resumen)
+  document.getElementById('summary-name').innerText = bookingData.name;
+  document.getElementById('summary-ambiance').innerText = bookingData.ambiance;
+  document.getElementById('summary-music').innerText = bookingData.music;
+  document.getElementById('summary-aroma').innerText = bookingData.aroma;
+  document.getElementById('summary-beverage').innerText = bookingData.beverage;
+  document.getElementById('summary-temp').innerText = bookingData.temperature;
+  document.getElementById('summary-intention').innerText = bookingData.intention;
+  document.getElementById('summary-feeling').innerText = bookingData.feeling;
+  
+  // Formateo de Fecha (Evitando saltos de zona horaria local)
+  const dateObj = new Date(bookingData.date + 'T00:00:00'); 
+  const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+  document.getElementById('summary-date').innerText = dateObj.toLocaleDateString('en-US', options);
+  
+  // Formateo de Hora a formato 12h (AM/PM)
+  const timeSplit = bookingData.time.split(':');
+  let hours = parseInt(timeSplit[0]);
+  const minutes = timeSplit[1];
+  const ampm = hours >= 12 ? 'PM' : 'AM';
+  hours = hours % 12;
+  hours = hours ? hours : 12; 
+  document.getElementById('summary-time').innerText = hours + ':' + minutes + ' ' + ampm;
+
+  // Transición al Paso 3
+  nextStep(2, 3);
+}
+
+function submitBookingData() {
+  // Bloqueo de botón para prevenir peticiones múltiples
+  const btn = document.getElementById('btn-save-experience');
+  btn.innerText = "Processing...";
+  btn.disabled = true;
+
+  // Petición HTTP (POST) hacia el Gateway de Formspree
+  fetch("https://formspree.io/f/xdkdvrky", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    body: JSON.stringify({
+      subject: `New Signature Experience Booking: ${bookingData.name}`,
+      Name: bookingData.name,
+      Date: bookingData.date,
+      Time: bookingData.time,
+      Ambiance: bookingData.ambiance,
+      Music: bookingData.music,
+      Aroma: bookingData.aroma,
+      Beverage: bookingData.beverage,
+      Temperature: bookingData.temperature,
+      Intention: bookingData.intention,
+      DesiredFeeling: bookingData.feeling
+    })
+  })
+  .then(response => {
+    if (response.ok) {
+      document.getElementById('final-name').innerText = bookingData.name;
+      nextStep(3, 4); // Éxito: Avanzar al Paso 4
+    } else {
+      alert("Oops! There was a problem submitting your form. Please try again.");
+    }
+  })
+  .catch(error => {
+    alert("Oops! There was a problem submitting your form.");
+  })
+  .finally(() => {
+    // Restauración del estado del botón
+    btn.innerText = "Save My Experience";
+    btn.disabled = false;
+  });
+}

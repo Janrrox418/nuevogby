@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Book Your Experience | GBYSkincare</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- CSS externo centralizado -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-light">
+  
+  <!-- Navbar (Actualizado para retornar al Index) -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-hidden" style="background-color: rgba(0,0,0,0.8);">
+    <div class="container-fluid">
+      <!-- Logo -->
+      <a class="navbar-brand position-relative" href="index.html">
+        <img src="assets/logoletra.png" alt="GBYSkincare Logo" class="imagen-flotante" style="max-height: 50px;">
+      </a>
+      
+      <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Abrir menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#about">About us</a></li>
+          <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div> 
+  </nav>
+
+  <!-- Espaciador para evitar solapamiento con el Navbar fijo -->
+  <div style="height: 100px;"></div>
+
+  <!-- ==========================
+       SECCIÓN BOOKING SYSTEM
+  =========================== -->
+  <section id="booking-system" class="py-5 bg-white shadow-sm rounded mx-auto mb-5" style="max-width: 800px; border: 1px solid #e0e0e0;">
+    <div class="container">
+      
+      <!-- Barra de Progreso -->
+      <div class="d-flex justify-content-between align-items-center mb-5 position-relative progress-container">
+        <div class="progress-line position-absolute top-50 start-0 w-100 translate-middle-y z-0"></div>
+        <div class="step-indicator active z-1" data-step="1">1<span class="step-label">WELCOME</span></div>
+        <div class="step-indicator z-1" data-step="2">2<span class="step-label">SELECT</span></div>
+        <div class="step-indicator z-1" data-step="3">3<span class="step-label">CONFIRM</span></div>
+        <div class="step-indicator z-1" data-step="4">4<span class="step-label">COMPLETE</span></div>
+      </div>
+
+      <!-- PASO 1: WELCOME -->
+      <div id="step-1" class="booking-step active fade-in">
+        <div class="text-center mb-4">
+          <img src="assets/logoletra.png" alt="GBYSkincare Logo" style="max-width: 150px;">
+          <h2 class="display-6 mt-4" style="color: #1a365d;">Welcome to Your Signature Experience</h2>
+          <p class="text-primary fw-bold">by GBY Skincare Health + Wellness</p>
+          <p class="text-muted">We're delighted to welcome you. Every detail of your visit has been thoughtfully prepared to create a personalized wellness experience.</p>
+        </div>
+
+        <div class="quote-box text-center p-4 mb-4 rounded bg-light border border-primary border-opacity-25">
+          <h6 class="text-primary text-uppercase tracking-wide">At GBY, We Believe</h6>
+          <p class="fst-italic mb-1">"Skincare is not vanity. It is wellness."</p>
+          <p class="fst-italic mb-0">"We all age — that is life. How we age is our choice."</p>
+        </div>
+
+        <p class="text-center text-muted mb-4">Please personalize your Signature Experience before your arrival.</p>
+
+        <form id="booking-form-step1" class="p-4 border rounded shadow-sm">
+          <div class="mb-3">
+            <label class="form-label text-muted small fw-bold text-uppercase">First Name</label>
+            <input type="text" id="client-name" class="form-control form-control-lg" placeholder="Your first name" required>
+          </div>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label text-muted small fw-bold text-uppercase">Appointment Date</label>
+              <input type="date" id="client-date" class="form-control form-control-lg" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label text-muted small fw-bold text-uppercase">Appointment Time</label>
+              <input type="time" id="client-time" class="form-control form-control-lg" required>
+            </div>
+          </div>
+          <button type="button" class="btn btn-primary btn-lg w-100 mt-4 rounded-pill" onclick="nextStep(1, 2)">Personalize My Signature Experience</button>
+        </form>
+      </div>
+
+      <!-- PASO 2: SELECT -->
+      <div id="step-2" class="booking-step d-none fade-in">
+        <div class="text-center mb-5">
+          <h2 style="color: #1a365d;">Personalize Your Experience</h2>
+          <p class="text-muted">Please select one option for each step below.</p>
+        </div>
+
+        <form id="booking-form-step2">
+          <!-- 1. Ambiance -->
+          <h4 class="mb-3 d-flex align-items-center"><span class="badge bg-dark rounded-circle me-2">1</span> Choose Your Ambiance</h4>
+          <div class="row g-3 mb-5">
+            <div class="col-12"><input type="radio" name="ambiance" id="amb1" value="Golden Renewal" class="d-none" required><label for="amb1" class="selection-card"><div class="color-box bg-warning"></div><div><h5 class="mb-0">Golden Renewal</h5><small class="fst-italic">"Warm, restorative and quietly luxurious."</small></div></label></div>
+            <div class="col-12"><input type="radio" name="ambiance" id="amb2" value="Ocean Calm" class="d-none"><label for="amb2" class="selection-card"><div class="color-box bg-info"></div><div><h5 class="mb-0">Ocean Calm</h5><small class="fst-italic">"Fresh, peaceful and deeply calming."</small></div></label></div>
+            <div class="col-12"><input type="radio" name="ambiance" id="amb3" value="Rose Confidence" class="d-none"><label for="amb3" class="selection-card"><div class="color-box" style="background-color: #f5b7b1;"></div><div><h5 class="mb-0">Rose Confidence</h5><small class="fst-italic">"Graceful, uplifting and beautifully confident."</small></div></label></div>
+            <div class="col-12"><input type="radio" name="ambiance" id="amb4" value="Lavender Wisdom" class="d-none"><label for="amb4" class="selection-card"><div class="color-box" style="background-color: #d7bde2;"></div><div><h5 class="mb-0">Lavender Wisdom</h5><small class="fst-italic">"Serene, balanced and restorative."</small></div></label></div>
+            <div class="col-12"><input type="radio" name="ambiance" id="amb5" value="Coral Vitality" class="d-none"><label for="amb5" class="selection-card"><div class="color-box" style="background-color: #f1948a;"></div><div><h5 class="mb-0">Coral Vitality</h5><small class="fst-italic">"Bright, energizing and full of vitality."</small></div></label></div>
+            <div class="col-12"><input type="radio" name="ambiance" id="amb6" value="Beach Escape" class="d-none"><label for="amb6" class="selection-card"><div class="color-box" style="background-color: #e5e7e9;"></div><div><h5 class="mb-0">Beach Escape</h5><small class="fst-italic">"A tranquil escape inspired by the Naples coast."</small></div></label></div>
+          </div>
+
+          <!-- 2. Music -->
+          <h4 class="mb-3 d-flex align-items-center"><span class="badge bg-dark rounded-circle me-2">2</span> Choose Your Music</h4>
+          <div class="row g-3 mb-5">
+            <div class="col-12"><input type="radio" name="music" id="mus1" value="Soft Acoustic" class="d-none" required><label for="mus1" class="selection-card"><div><h5 class="mb-0">Soft Acoustic</h5><small class="text-muted">Gentle acoustic guitar<br><span class="fst-italic">Peaceful and comforting</span></small></div></label></div>
+            <div class="col-12"><input type="radio" name="music" id="mus2" value="Relaxing Piano" class="d-none"><label for="mus2" class="selection-card"><div><h5 class="mb-0">Relaxing Piano</h5><small class="text-muted">Elegant piano melodies<br><span class="fst-italic">Calm and luxurious</span></small></div></label></div>
+            <div class="col-12"><input type="radio" name="music" id="mus3" value="Ocean Waves" class="d-none"><label for="mus3" class="selection-card"><div><h5 class="mb-0">Ocean Waves</h5><small class="text-muted">Natural beach waves<br><span class="fst-italic">Naples-inspired relaxation</span></small></div></label></div>
+            <div class="col-12"><input type="radio" name="music" id="mus4" value="Spa Instrumental" class="d-none"><label for="mus4" class="selection-card"><div><h5 class="mb-0">Spa Instrumental</h5><small class="text-muted">Soft spa music<br><span class="fst-italic">Wellness and mindfulness</span></small></div></label></div>
+            <div class="col-12"><input type="radio" name="music" id="mus5" value="Classical Strings" class="d-none"><label for="mus5" class="selection-card"><div><h5 class="mb-0">Classical Strings</h5><small class="text-muted">Elegant orchestral strings<br><span class="fst-italic">Sophisticated atmosphere</span></small></div></label></div>
+            <div class="col-12"><input type="radio" name="music" id="mus6" value="Ambient Relaxation" class="d-none"><label for="mus6" class="selection-card"><div><h5 class="mb-0">Ambient Relaxation</h5><small class="text-muted">Soft atmospheric sounds<br><span class="fst-italic">Quiet and restorative</span></small></div></label></div>
+            <div class="col-12"><input type="radio" name="music" id="mus7" value="Silent Room" class="d-none"><label for="mus7" class="selection-card"><div><h5 class="mb-0">Silent Room</h5><small class="text-muted">No music<br><span class="fst-italic">Pure quiet for deep rest</span></small></div></label></div>
+          </div>
+
+          <!-- 3. Aroma -->
+          <h4 class="mb-3 d-flex align-items-center"><span class="badge bg-dark rounded-circle me-2">3</span> Choose Your Aroma</h4>
+          <div class="row g-3 mb-5">
+            <div class="col-12"><input type="radio" name="aroma" id="aro1" value="Vanilla Amber" class="d-none" required><label for="aro1" class="selection-card py-3">Vanilla Amber</label></div>
+            <div class="col-12"><input type="radio" name="aroma" id="aro2" value="Rose Geranium" class="d-none"><label for="aro2" class="selection-card py-3">Rose Geranium</label></div>
+            <div class="col-12"><input type="radio" name="aroma" id="aro3" value="Lavender Chamomile" class="d-none"><label for="aro3" class="selection-card py-3">Lavender Chamomile</label></div>
+            <div class="col-12"><input type="radio" name="aroma" id="aro4" value="Citrus Neroli" class="d-none"><label for="aro4" class="selection-card py-3">Citrus Neroli</label></div>
+            <div class="col-12"><input type="radio" name="aroma" id="aro5" value="Eucalyptus Sea Salt" class="d-none"><label for="aro5" class="selection-card py-3">Eucalyptus Sea Salt</label></div>
+            <div class="col-12"><input type="radio" name="aroma" id="aro6" value="Fragrance-Free" class="d-none"><label for="aro6" class="selection-card py-3">Fragrance-Free</label></div>
+          </div>
+
+          <!-- 4. Beverage -->
+          <h4 class="mb-3 d-flex align-items-center"><span class="badge bg-dark rounded-circle me-2">4</span> Choose Your Beverage</h4>
+          <div class="row g-3 mb-5">
+            <div class="col-12"><input type="radio" name="beverage" id="bev1" value="Sparkling Water" class="d-none" required><label for="bev1" class="selection-card py-3">Sparkling Water</label></div>
+            <div class="col-12"><input type="radio" name="beverage" id="bev2" value="Still Water" class="d-none"><label for="bev2" class="selection-card py-3">Still Water</label></div>
+            <div class="col-12"><input type="radio" name="beverage" id="bev3" value="Herbal Tea" class="d-none"><label for="bev3" class="selection-card py-3">Herbal Tea</label></div>
+            <div class="col-12"><input type="radio" name="beverage" id="bev4" value="Espresso" class="d-none"><label for="bev4" class="selection-card py-3">Espresso</label></div>
+            <div class="col-12"><input type="radio" name="beverage" id="bev5" value="Cappuccino" class="d-none"><label for="bev5" class="selection-card py-3">Cappuccino</label></div>
+            <div class="col-12"><input type="radio" name="beverage" id="bev6" value="No Beverage" class="d-none"><label for="bev6" class="selection-card py-3">No Beverage</label></div>
+          </div>
+
+          <!-- 5. Room Temperature -->
+          <h4 class="mb-3 d-flex align-items-center"><span class="badge bg-dark rounded-circle me-2">5</span> Room Temperature</h4>
+          <div class="row g-3 mb-5">
+            <div class="col-12"><input type="radio" name="temperature" id="temp1" value="Warm" class="d-none" required><label for="temp1" class="selection-card py-3">Warm</label></div>
+            <div class="col-12"><input type="radio" name="temperature" id="temp2" value="Neutral" class="d-none"><label for="temp2" class="selection-card py-3">Neutral</label></div>
+            <div class="col-12"><input type="radio" name="temperature" id="temp3" value="Cool" class="d-none"><label for="temp3" class="selection-card py-3">Cool</label></div>
+          </div>
+
+          <!-- 6. Wellness Intention -->
+          <h4 class="mb-3 d-flex align-items-center"><span class="badge bg-dark rounded-circle me-2">6</span> Today's Wellness Intention</h4>
+          <div class="row g-3 mb-5">
+            <div class="col-12"><input type="radio" name="intention" id="int1" value="Relax & Recharge" class="d-none" required><label for="int1" class="selection-card py-3">Relax & Recharge</label></div>
+            <div class="col-12"><input type="radio" name="intention" id="int2" value="Healthy Glow" class="d-none"><label for="int2" class="selection-card py-3">Healthy Glow</label></div>
+            <div class="col-12"><input type="radio" name="intention" id="int3" value="Hydration" class="d-none"><label for="int3" class="selection-card py-3">Hydration</label></div>
+            <div class="col-12"><input type="radio" name="intention" id="int4" value="Brightening" class="d-none"><label for="int4" class="selection-card py-3">Brightening</label></div>
+            <div class="col-12"><input type="radio" name="intention" id="int5" value="Skin Rejuvenation" class="d-none"><label for="int5" class="selection-card py-3">Skin Rejuvenation</label></div>
+            <div class="col-12"><input type="radio" name="intention" id="int6" value="Calm Sensitive Skin" class="d-none"><label for="int6" class="selection-card py-3">Calm Sensitive Skin</label></div>
+          </div>
+
+          <!-- 7. Desired Feeling -->
+          <h4 class="mb-3 d-flex align-items-center"><span class="badge bg-dark rounded-circle me-2">7</span> How would you like to feel when you leave today?</h4>
+          <div class="row g-3 mb-5">
+            <div class="col-12"><input type="radio" name="feeling" id="feel1" value="Refreshed" class="d-none" required><label for="feel1" class="selection-card py-3">Refreshed</label></div>
+            <div class="col-12"><input type="radio" name="feeling" id="feel2" value="Relaxed" class="d-none"><label for="feel2" class="selection-card py-3">Relaxed</label></div>
+            <div class="col-12"><input type="radio" name="feeling" id="feel3" value="Confident" class="d-none"><label for="feel3" class="selection-card py-3">Confident</label></div>
+            <div class="col-12"><input type="radio" name="feeling" id="feel4" value="Glowing" class="d-none"><label for="feel4" class="selection-card py-3">Glowing</label></div>
+            <div class="col-12"><input type="radio" name="feeling" id="feel5" value="Rejuvenated" class="d-none"><label for="feel5" class="selection-card py-3">Rejuvenated</label></div>
+          </div>
+
+          <button type="button" class="btn btn-primary btn-lg w-100 rounded-pill mb-3" onclick="prepareConfirmation()">Confirm My Experience</button>
+          <button type="button" class="btn btn-outline-secondary btn-lg w-100 rounded-pill" onclick="nextStep(2, 1)">Back</button>
+          <p class="text-center text-muted small mt-3">Please make a selection for each step above.</p>
+        </form>
+      </div>
+
+      <!-- PASO 3: CONFIRM -->
+      <div id="step-3" class="booking-step d-none fade-in">
+        <div class="text-center mb-5">
+          <h2 style="color: #1a365d;">Your Signature Experience</h2>
+          <p class="text-muted"><strong id="summary-name" class="text-dark"></strong>, please review your personalized selections.</p>
+        </div>
+
+        <div class="border rounded p-4 shadow-sm mb-4 bg-white">
+          <!-- Ambiance Summary -->
+          <div class="d-flex align-items-center border-bottom pb-3 mb-3">
+            <div id="summary-color-box" class="color-box bg-secondary me-3" style="width: 50px; height: 50px; border-radius: 10px;"></div>
+            <div>
+              <span class="text-primary fw-bold text-uppercase small">Ambiance</span>
+              <h4 class="mb-0" id="summary-ambiance" style="color: #1a365d;">-</h4>
+            </div>
+          </div>
+
+          <!-- Table Data -->
+          <table class="table table-borderless table-sm mb-0">
+            <tbody>
+              <tr class="border-bottom"><td class="text-muted text-uppercase small py-3">Music</td><td class="text-end fw-bold py-3" id="summary-music">-</td></tr>
+              <tr class="border-bottom"><td class="text-muted text-uppercase small py-3">Aroma</td><td class="text-end fw-bold py-3" id="summary-aroma">-</td></tr>
+              <tr class="border-bottom"><td class="text-muted text-uppercase small py-3">Beverage</td><td class="text-end fw-bold py-3" id="summary-beverage">-</td></tr>
+              <tr class="border-bottom"><td class="text-muted text-uppercase small py-3">Room Temperature</td><td class="text-end fw-bold py-3" id="summary-temp">-</td></tr>
+              <tr class="border-bottom"><td class="text-muted text-uppercase small py-3">Wellness Intention</td><td class="text-end fw-bold py-3" id="summary-intention">-</td></tr>
+              <tr class="border-bottom"><td class="text-muted text-uppercase small py-3">Desired Feeling</td><td class="text-end fw-bold py-3" id="summary-feeling">-</td></tr>
+              <tr class="border-bottom"><td class="text-muted text-uppercase small py-3">Appointment Date</td><td class="text-end fw-bold py-3" id="summary-date">-</td></tr>
+              <tr><td class="text-muted text-uppercase small py-3">Appointment Time</td><td class="text-end fw-bold py-3" id="summary-time">-</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="text-center p-4 mb-4 rounded bg-light border border-primary border-opacity-25">
+          <p class="mb-1">Your Signature Experience has been prepared especially for you.</p>
+          <p class="mb-0">We look forward to welcoming you to GBY Skincare Health + Wellness.</p>
+        </div>
+
+        <button type="button" id="btn-save-experience" class="btn btn-primary btn-lg w-100 rounded-pill mb-3" onclick="submitBookingData()">Save My Experience</button>
+        <button type="button" class="btn btn-outline-secondary btn-lg w-100 rounded-pill" onclick="nextStep(3, 2)">Edit My Selections</button>
+      </div>
+
+      <!-- PASO 4: COMPLETE -->
+      <div id="step-4" class="booking-step d-none fade-in">
+        <div class="text-center mb-5">
+          <h2 style="color: #1a365d;">Thank You, <span id="final-name" class="text-primary"></span></h2>
+          <p class="text-muted">Your Signature Experience has been prepared especially for you. We look forward to welcoming you to GBY Skincare Health + Wellness.</p>
+        </div>
+
+        <div class="p-4 mb-4 rounded bg-light border border-primary border-opacity-25">
+          <h6 class="text-primary text-uppercase tracking-wide small">Before Your Visit</h6>
+          <p class="mb-0">Please arrive without makeup or with minimal makeup whenever possible.</p>
+        </div>
+
+        <div class="text-center mb-5">
+          <p class="fw-bold mb-0">GBY Skincare Health + Wellness</p>
+          <p class="mb-0">837 5th Avenue South, Suite 201-C</p>
+          <p class="mb-0">Naples, FL 34102</p>
+          <p class="mb-0"><a href="tel:239-200-6264" class="text-decoration-none">239-200-6264</a></p>
+          <p class="mb-0"><a href="http://www.gbyskincare.com" class="text-decoration-none">www.gbyskincare.com</a></p>
+          <p class="mb-0"><a href="mailto:GBYaesthetic@gbyskincare.com" class="text-decoration-none">GBYaesthetic@gbyskincare.com</a></p>
+        </div>
+
+        <div class="border rounded p-4 shadow-sm text-center">
+          <h4 style="color: #1a365d;">Flexible Payment Options</h4>
+          <p class="text-muted mb-4">Would you like to explore flexible monthly payment options for your skincare journey?</p>
+          
+          <!-- ============================================== -->
+          <!-- ESPACIO PARA INYECTAR EL SCRIPT DE CHERRY AQUI -->
+          <!-- ============================================== -->
+          <div id="cherry-widget-container">
+              <button class="btn btn-outline-primary btn-lg w-100 rounded-pill fw-bold">Explore Cherry Payment Options</button>
+          </div>
+          <!-- ============================================== -->
+
+        </div>
+
+        <div class="text-center mt-5 text-muted fst-italic">
+          <p class="mb-1">"Skincare is not vanity. It is wellness."</p>
+          <p class="mb-0">"We all age — that is life. How we age is our choice."</p>
+        </div>
+      </div>
+
+      <!-- Footer Privacy Text -->
+      <div class="text-center mt-5 pt-3 border-top">
+        <small class="text-muted" style="font-size: 0.7rem;">Your information is used only to personalize your GBY visit. We do not share your selections.</small>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer (Heredado de index.html) -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div>
+        <h4>Address</h4>
+        <p>837 5th Avenue South, Second floor Office Suite 201<br>Naples, Florida, 34102</p>
+      </div>
+      <div>
+        <h4>Contact Us</h4>
+        <p>📞 +1 (239)-2006264</p>
+        <p>📧 gbyaesthetic@gbyskincare.com</p>
+      </div>
+      <div>
+        <h4>Get in Touch</h4>
+        <form class="footer-form" action="https://formspree.io/f/xdkdvrky" method="POST">
+          <input type="text" name="firstName" placeholder="First Name*" required>
+          <input type="text" name="lastName" placeholder="Last Name*" required>
+          <input type="email" name="email" placeholder="Email*" required>
+          <textarea name="message" placeholder="Message" required></textarea>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+    <div class="social-buttons">
+      <a href="https://wa.me/12392006264?text=Welcome,%20to%20Gbyskincare%20How%20we%20can%20help%20you" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=100088137746606&ref=pl_edit_xav_ig_profile_page_web" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+      </a>
+      <a href="https://www.instagram.com/gbyskincare" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram">
+      </a>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS & Centralized Script -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="scripts.js" defer></script>
+</body>
+</html>
