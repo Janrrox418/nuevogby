@@ -329,19 +329,12 @@ function nextStep(currentStep, targetStep) {
     }
   }
 
-  // Transición de visualización de contenedores
+  // Transición de contenedores (el CSS keyframes se encarga de la opacidad)
   document.getElementById(`step-${currentStep}`).classList.add('d-none');
   document.getElementById(`step-${currentStep}`).classList.remove('active');
-  document.getElementById(`step-${currentStep}`).classList.remove('show');
   
-  const targetElement = document.getElementById(`step-${targetStep}`);
-  targetElement.classList.remove('d-none');
-  targetElement.classList.add('active');
-  
-  // SOLUCIÓN: Forzar la opacidad al 100% anulando el bloqueo del fade-in
-  setTimeout(() => {
-    targetElement.classList.add('show');
-  }, 50); // Pequeño retraso para permitir que el navegador renderice el display block primero
+  document.getElementById(`step-${targetStep}`).classList.remove('d-none');
+  document.getElementById(`step-${targetStep}`).classList.add('active');
 
   // Actualización dinámica de la Barra de Progreso
   document.querySelectorAll('.step-indicator').forEach(indicator => {
