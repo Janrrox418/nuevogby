@@ -332,9 +332,16 @@ function nextStep(currentStep, targetStep) {
   // Transición de visualización de contenedores
   document.getElementById(`step-${currentStep}`).classList.add('d-none');
   document.getElementById(`step-${currentStep}`).classList.remove('active');
+  document.getElementById(`step-${currentStep}`).classList.remove('show');
   
-  document.getElementById(`step-${targetStep}`).classList.remove('d-none');
-  document.getElementById(`step-${targetStep}`).classList.add('active');
+  const targetElement = document.getElementById(`step-${targetStep}`);
+  targetElement.classList.remove('d-none');
+  targetElement.classList.add('active');
+  
+  // SOLUCIÓN: Forzar la opacidad al 100% anulando el bloqueo del fade-in
+  setTimeout(() => {
+    targetElement.classList.add('show');
+  }, 50); // Pequeño retraso para permitir que el navegador renderice el display block primero
 
   // Actualización dinámica de la Barra de Progreso
   document.querySelectorAll('.step-indicator').forEach(indicator => {
