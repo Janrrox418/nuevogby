@@ -441,3 +441,93 @@ function submitBookingData() {
     btn.disabled = false;
   });
 }
+
+/* =======================================================
+   REDIRECCIÓN FORZADA DEL FORMULARIO DE CONTACTO A LA APP NATIVA (BOOKING.HTML)
+======================================================== */
+document.addEventListener("DOMContentLoaded", function () {
+  const contactAppForm = document.getElementById('contact-app-form');
+  
+  if (contactAppForm) {
+    contactAppForm.addEventListener('submit', function (e) {
+      e.preventDefault(); // Detiene la recarga nativa de la página
+      
+      const btn = this.querySelector('button[type="submit"]');
+      btn.innerText = "Redirecting to Booking...";
+      btn.disabled = true;
+
+      const formData = new FormData(this);
+      
+      // 1. Envía los datos del formulario a Formspree silenciosamente
+      fetch("https://formspree.io/f/xdkdvrky", {
+        method: "POST",
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      }).then(() => {
+        // 2. Éxito: Redirige internamente a nuestra aplicación de reservas
+        window.location.href = "booking.html"; 
+      }).catch(() => {
+        // Fallo de red: Fuerza la redirección a la app de todos modos para no frenar al cliente
+        window.location.href = "booking.html";
+      });
+    });
+  }
+});
+
+/* =======================================================
+   CARGA PEREZOSA (LAZY LOAD) DEL WIDGET DE CHERRY EN MODALS
+======================================================== */
+document.addEventListener("DOMContentLoaded", function () {
+  let cherryScriptLoaded = false;
+
+  // Función maestra para cargar Cherry solo cuando se necesite
+  function loadCherryWidget() {
+    if (cherryScriptLoaded) return; // Evita cargarlo dos veces
+    
+    // 1. Creamos la función base requerida por Cherry
+    window._hw = window._hw || function () {
+      (window._hw.q = window._hw.q || []).push(arguments);
+    };
+
+    // 2. Inyectamos tus configuraciones exactas
+    window._hw("init", {
+      debug: false,
+      variables: {
+          slug: 'gby-skincare-health-wellness',
+          name: "Gbyskincare",
+          images: [26],
+          customLogo: '',
+          defaultPurchaseAmount: 750,
+          customImage: '', 
+          imageCategory: 'medspa',
+          language: 'en',
+      },
+      styles: {
+          primaryColor: '#1a8cff',
+          secondaryColor: '#1a8cff10',
+          fontFamily: 'Montserrat',
+          headerFontFamily: 'Montserrat',
+      }
+    }, ['hero','calculator','howitworks','faq']);
+
+    // 3. Descargamos el script dinámicamente
+    const script = document.createElement('script');
+    script.src = "https://files.withcherry.com/widgets/widget.js";
+    script.async = true;
+    document.body.appendChild(script);
+
+    cherryScriptLoaded = true;
+  }
+
+  // Detectar apertura del Modal en index.html
+  const modalIndex = document.getElementById('cherryModalIndex');
+  if (modalIndex) {
+    modalIndex.addEventListener('shown.bs.modal', loadCherryWidget);
+  }
+
+  // Detectar apertura del Modal en booking.html
+  const modalBooking = document.getElementById('cherryModal');
+  if (modalBooking) {
+    modalBooking.addEventListener('shown.bs.modal', loadCherryWidget);
+  }
+});

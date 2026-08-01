@@ -218,17 +218,15 @@
         <div class="col-lg-6">
           <div class="contact-form h-100">
             <h3>Send Us a Message</h3>
-            <form action="https://formspree.io/f/xdkdvrky" method="POST">
-              <div class="mb-3"><input type="text" name="firstName" class="form-control" placeholder="First Name*" required></div>
-              <div class="mb-3"><input type="text" name="lastName" class="form-control" placeholder="Last Name*" required></div>
-              <div class="mb-3"><input type="email" name="email" class="form-control" placeholder="Email*" required></div>
-              <div class="mb-3"><textarea name="message" class="form-control" rows="6" placeholder="Message" required></textarea></div>
-              
-              <!-- Redirección directa hacia la App después del submit -->
-              <input type="hidden" name="_next" value="URL_DE_LA_APP_LOVABLE_AQUI">
-              
-              <button type="submit" class="btn btn-primary w-100">Submit</button>
-            </form>
+            <!-- Formulario Actualizado en contact.html -->
+<form id="contact-app-form">
+  <div class="mb-3"><input type="text" name="firstName" class="form-control" placeholder="First Name*" required></div>
+  <div class="mb-3"><input type="text" name="lastName" class="form-control" placeholder="Last Name*" required></div>
+  <div class="mb-3"><input type="email" name="email" class="form-control" placeholder="Email*" required></div>
+  <div class="mb-3"><textarea name="message" class="form-control" rows="6" placeholder="Message" required></textarea></div>
+  
+  <button type="submit" class="btn btn-primary w-100">Submit</button>
+</form>
           </div>
         </div>
       </div>
