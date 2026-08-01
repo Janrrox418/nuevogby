@@ -465,10 +465,10 @@ document.addEventListener("DOMContentLoaded", function () {
         headers: { 'Accept': 'application/json' }
       }).then(() => {
         // 2. Éxito: Redirige internamente a nuestra aplicación de reservas
-        window.location.href = "booking.html"; 
+        window.location.href = "Booking.html"; 
       }).catch(() => {
         // Fallo de red: Fuerza la redirección a la app de todos modos para no frenar al cliente
-        window.location.href = "booking.html";
+        window.location.href = "Booking.html";
       });
     });
   }
