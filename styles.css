@@ -1049,3 +1049,47 @@ input[type="radio"]:checked + .selection-card {
   margin-right: 15px;
   flex-shrink: 0;
 }
+
+/* ==========================
+   AJUSTES DE PROPORCIÓN PARA CHERRY WIDGET
+=========================== */
+
+/* 1. Expansión máxima del contenedor Modal */
+#cherryModal .modal-dialog,
+#cherryModalIndex .modal-dialog {
+  max-width: 1140px; 
+  width: 95%; /* Garantiza márgenes laterales en pantallas pequeñas */
+}
+
+/* 2. Bloqueo de desbordamiento horizontal en el cuerpo del Modal */
+#cherryModal .modal-body,
+#cherryModalIndex .modal-body {
+  overflow-x: hidden !important;
+  padding: 1rem; /* Añade respiración alrededor del widget */
+}
+
+/* 3. Contención forzada de los contenedores inyectados por Cherry */
+#cherryModal .modal-body #all,
+#cherryModal .modal-body #hero,
+#cherryModal .modal-body #calculator,
+#cherryModal .modal-body #howitworks,
+#cherryModal .modal-body #testimony,
+#cherryModal .modal-body #faq,
+#cherryModalIndex .modal-body #all,
+#cherryModalIndex .modal-body #hero,
+#cherryModalIndex .modal-body #calculator,
+#cherryModalIndex .modal-body #howitworks,
+#cherryModalIndex .modal-body #testimony,
+#cherryModalIndex .modal-body #faq {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  overflow-x: hidden !important;
+}
+
+/* 4. Ajuste de los iframes internos que Cherry pueda generar */
+#cherryModal .modal-body iframe,
+#cherryModalIndex .modal-body iframe {
+  max-width: 100% !important;
+  width: 100% !important;
+}
