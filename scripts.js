@@ -443,7 +443,7 @@ function submitBookingData() {
 }
 
 /* =======================================================
-   REDIRECCIÓN FORZADA DEL FORMULARIO DE CONTACTO A LA APP NATIVA (BOOKING.HTML)
+   ENVÍO DE FORMULARIO DE CONTACTO (SIN REDIRECCIÓN)
 ======================================================== */
 document.addEventListener("DOMContentLoaded", function () {
   const contactAppForm = document.getElementById('contact-app-form');
@@ -453,7 +453,8 @@ document.addEventListener("DOMContentLoaded", function () {
       e.preventDefault(); // Detiene la recarga nativa de la página
       
       const btn = this.querySelector('button[type="submit"]');
-      btn.innerText = "Redirecting to Booking...";
+      const originalText = btn.innerText;
+      btn.innerText = "Sending...";
       btn.disabled = true;
 
       const formData = new FormData(this);
@@ -463,12 +464,22 @@ document.addEventListener("DOMContentLoaded", function () {
         method: "POST",
         body: formData,
         headers: { 'Accept': 'application/json' }
-      }).then(() => {
-        // 2. Éxito: Redirige internamente a nuestra aplicación de reservas
-        window.location.href = "Booking.html"; 
-      }).catch(() => {
-        // Fallo de red: Fuerza la redirección a la app de todos modos para no frenar al cliente
-        window.location.href = "Booking.html";
+      }).then(response => {
+        if (response.ok) {
+          // 2. Éxito: Confirma envío y limpia el formulario
+          alert("Thank you! Your message has been sent successfully.");
+          contactAppForm.reset();
+        } else {
+          // Error del servidor de correos
+          alert("Oops! There was a problem submitting your form. Please try again.");
+        }
+      }).catch(error => {
+        // Fallo de red / internet
+        alert("Oops! There was a network error. Please try again.");
+      }).finally(() => {
+        // 3. Restaura el botón a su estado original
+        btn.innerText = originalText;
+        btn.disabled = false;
       });
     });
   }
