@@ -13,7 +13,7 @@
 </head>
 <body class="bg-light">
   
-  <!-- Navbar (Actualizado para retornar al Index) -->
+  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-hidden" style="background-color: rgba(0,0,0,0.8);">
     <div class="container-fluid">
       <!-- Logo -->
@@ -124,12 +124,12 @@
           <!-- 3. Aroma -->
           <h4 class="mb-3 d-flex align-items-center"><span class="badge bg-dark rounded-circle me-2">3</span> Choose Your Aroma</h4>
           <div class="row g-3 mb-5">
-            <div class="col-12"><input type="radio" name="aroma" id="aro1" value="Vanilla Amber" class="d-none" required><label for="aro1" class="selection-card py-3">Vanilla Amber</label></div>
-            <div class="col-12"><input type="radio" name="aroma" id="aro2" value="Rose Geranium" class="d-none"><label for="aro2" class="selection-card py-3">Rose Geranium</label></div>
-            <div class="col-12"><input type="radio" name="aroma" id="aro3" value="Lavender Chamomile" class="d-none"><label for="aro3" class="selection-card py-3">Lavender Chamomile</label></div>
-            <div class="col-12"><input type="radio" name="aroma" id="aro4" value="Citrus Neroli" class="d-none"><label for="aro4" class="selection-card py-3">Citrus Neroli</label></div>
-            <div class="col-12"><input type="radio" name="aroma" id="aro5" value="Eucalyptus Sea Salt" class="d-none"><label for="aro5" class="selection-card py-3">Eucalyptus Sea Salt</label></div>
-            <div class="col-12"><input type="radio" name="aroma" id="aro6" value="Fragrance-Free" class="d-none"><label for="aro6" class="selection-card py-3">Fragrance-Free</label></div>
+            <div class="col-12"><input type="radio" name="aroma" id="aro1" value="Vanilla Amber" class="d-none" required><label for="aro1" class="selection-card"><div><h5 class="mb-0">Vanilla Amber</h5><small class="text-muted fst-italic">Warm, soft, sophisticated</small></div></label></div>
+            <div class="col-12"><input type="radio" name="aroma" id="aro2" value="Rose Geranium" class="d-none"><label for="aro2" class="selection-card"><div><h5 class="mb-0">Rose Geranium</h5><small class="text-muted fst-italic">Floral, elegant, uplifting</small></div></label></div>
+            <div class="col-12"><input type="radio" name="aroma" id="aro3" value="Lavender Chamomile" class="d-none"><label for="aro3" class="selection-card"><div><h5 class="mb-0">Lavender Chamomile</h5><small class="text-muted fst-italic">Calming, soft, restorative</small></div></label></div>
+            <div class="col-12"><input type="radio" name="aroma" id="aro4" value="Citrus Neroli" class="d-none"><label for="aro4" class="selection-card"><div><h5 class="mb-0">Citrus Neroli</h5><small class="text-muted fst-italic">Fresh, bright, refined</small></div></label></div>
+            <div class="col-12"><input type="radio" name="aroma" id="aro5" value="Eucalyptus Sea Salt" class="d-none"><label for="aro5" class="selection-card"><div><h5 class="mb-0">Eucalyptus Sea Salt</h5><small class="text-muted fst-italic">Clean, refreshing, coastal</small></div></label></div>
+            <div class="col-12"><input type="radio" name="aroma" id="aro6" value="Fragrance-Free" class="d-none"><label for="aro6" class="selection-card"><div><h5 class="mb-0">Fragrance-Free</h5><small class="text-muted fst-italic">No added fragrance</small></div></label></div>
           </div>
 
           <!-- 4. Beverage -->
@@ -143,7 +143,7 @@
             <div class="col-12"><input type="radio" name="beverage" id="bev6" value="No Beverage" class="d-none"><label for="bev6" class="selection-card py-3">No Beverage</label></div>
           </div>
 
-          <!-- 5. Room Temperature -->
+          <!-- 5. Bed Temperature -->
           <h4 class="mb-3 d-flex align-items-center"><span class="badge bg-dark rounded-circle me-2">5</span> Bed Temperature</h4>
           <div class="row g-3 mb-5">
             <div class="col-12"><input type="radio" name="temperature" id="temp1" value="Warm" class="d-none" required><label for="temp1" class="selection-card py-3">Warm</label></div>
@@ -201,7 +201,7 @@
               <tr class="border-bottom"><td class="text-muted text-uppercase small py-3">Music</td><td class="text-end fw-bold py-3" id="summary-music">-</td></tr>
               <tr class="border-bottom"><td class="text-muted text-uppercase small py-3">Aroma</td><td class="text-end fw-bold py-3" id="summary-aroma">-</td></tr>
               <tr class="border-bottom"><td class="text-muted text-uppercase small py-3">Beverage</td><td class="text-end fw-bold py-3" id="summary-beverage">-</td></tr>
-              <tr class="border-bottom"><td class="text-muted text-uppercase small py-3">Room Temperature</td><td class="text-end fw-bold py-3" id="summary-temp">-</td></tr>
+              <tr class="border-bottom"><td class="text-muted text-uppercase small py-3">Bed Temperature</td><td class="text-end fw-bold py-3" id="summary-temp">-</td></tr>
               <tr class="border-bottom"><td class="text-muted text-uppercase small py-3">Wellness Intention</td><td class="text-end fw-bold py-3" id="summary-intention">-</td></tr>
               <tr class="border-bottom"><td class="text-muted text-uppercase small py-3">Desired Feeling</td><td class="text-end fw-bold py-3" id="summary-feeling">-</td></tr>
               <tr class="border-bottom"><td class="text-muted text-uppercase small py-3">Appointment Date</td><td class="text-end fw-bold py-3" id="summary-date">-</td></tr>
@@ -219,7 +219,6 @@
         <button type="button" class="btn btn-outline-secondary btn-lg w-100 rounded-pill" onclick="nextStep(3, 2)">Edit My Selections</button>
       </div>
 
-      
       <!-- PASO 4: COMPLETE -->
       <div id="step-4" class="booking-step d-none">
         <div class="text-center mb-5">
@@ -281,12 +280,6 @@
         </div>
       </div>
       <!-- FIN DEL MODAL -->
-
-        <div class="text-center mt-5 text-muted fst-italic">
-          <p class="mb-1">"Skincare is not vanity. It is wellness."</p>
-          <p class="mb-0">"We all age — that is life. How we age is our choice."</p>
-        </div>
-      </div>
 
       <!-- Footer Privacy Text -->
       <div class="text-center mt-5 pt-3 border-top">
