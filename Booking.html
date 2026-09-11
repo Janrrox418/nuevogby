@@ -103,7 +103,7 @@
           <div class="row g-3 mb-5">
             <div class="col-12"><input type="radio" name="ambiance" id="amb1" value="Golden Renewal" class="d-none" required><label for="amb1" class="selection-card"><div class="color-box bg-warning"></div><div><h5 class="mb-0">Golden Renewal</h5><small class="fst-italic">"Warm, restorative and quietly luxurious."</small></div></label></div>
             <div class="col-12"><input type="radio" name="ambiance" id="amb2" value="Ocean Calm" class="d-none"><label for="amb2" class="selection-card"><div class="color-box bg-info"></div><div><h5 class="mb-0">Ocean Calm</h5><small class="fst-italic">"Fresh, peaceful and deeply calming."</small></div></label></div>
-            <div class="col-12"><input type="radio" name="ambiance" id="amb3" value="Sage Serenity Fresh" class="d-none"><label for="amb3" class="selection-card"><div class="color-box" style="background-color: #e2eae0;"></div><div><h5 class="mb-0">Sage Serenity Fresh</h5><small class="fst-italic">"Grounded and naturally restorative."</small></div></label></div>
+            <div class="col-12"><input type="radio" name="ambiance" id="amb3" value="Sage Serenity Fresh" class="d-none"><label for="amb3" class="selection-card"><div class="color-box" style="background-color: #6a9a6a;"></div><div><h5 class="mb-0">Sage Serenity Fresh</h5><small class="fst-italic">"Grounded and naturally restorative."</small></div></label></div>
             <div class="col-12"><input type="radio" name="ambiance" id="amb4" value="Lavender Wisdom" class="d-none"><label for="amb4" class="selection-card"><div class="color-box" style="background-color: #d7bde2;"></div><div><h5 class="mb-0">Lavender Wisdom</h5><small class="fst-italic">"Serene, balanced and restorative."</small></div></label></div>
             <div class="col-12"><input type="radio" name="ambiance" id="amb5" value="Coral Vitality" class="d-none"><label for="amb5" class="selection-card"><div class="color-box" style="background-color: #f1948a;"></div><div><h5 class="mb-0">Coral Vitality</h5><small class="fst-italic">"Bright, energizing and full of vitality."</small></div></label></div>
             <div class="col-12"><input type="radio" name="ambiance" id="amb6" value="Beach Escape" class="d-none"><label for="amb6" class="selection-card"><div class="color-box" style="background-color: #e5e7e9;"></div><div><h5 class="mb-0">Beach Escape</h5><small class="fst-italic">"A tranquil escape inspired by the Naples coast."</small></div></label></div>
@@ -125,20 +125,30 @@
           <div class="row g-3 mb-5">
             <div class="col-12"><input type="radio" name="aroma" id="aro2" value="Rose Geranium" class="d-none"><label for="aro2" class="selection-card"><div><h5 class="mb-0">Rose Geranium</h5><small class="text-muted fst-italic">Floral, elegant, uplifting</small></div></label></div>
             <div class="col-12"><input type="radio" name="aroma" id="aro3" value="Lavender Chamomile" class="d-none"><label for="aro3" class="selection-card"><div><h5 class="mb-0">Lavender Chamomile</h5><small class="text-muted fst-italic">Calming, soft, restorative</small></div></label></div>
-            <div class="col-12"><input type="radio" name="aroma" id="aro4" value="Citrus Neroli" class="d-none"><label for="aro4" class="selection-card"><div><h5 class="mb-0">Citrus Neroli</h5><small class="text-muted fst-italic">Fresh, bright, refined</small></div></label></div>
             <div class="col-12"><input type="radio" name="aroma" id="aro5" value="Eucalyptus Sea Salt" class="d-none"><label for="aro5" class="selection-card"><div><h5 class="mb-0">Eucalyptus Sea Salt</h5><small class="text-muted fst-italic">Clean, refreshing, coastal</small></div></label></div>
             <div class="col-12"><input type="radio" name="aroma" id="aro6" value="Fragrance-Free" class="d-none"><label for="aro6" class="selection-card"><div><h5 class="mb-0">Fragrance-Free</h5><small class="text-muted fst-italic">No added fragrance</small></div></label></div>
           </div>
 
           <!-- 4. Beverage -->
-          <h4 class="mb-3 d-flex align-items-center"><span class="badge bg-dark rounded-circle me-2">4</span>GBY Glow Tea</h4>
-          <div class="row g-3 mb-5">
-            <div class="col-12"><input type="radio" name="beverage" id="bev1" value="Sparkling Water" class="d-none" required><label for="bev1" class="selection-card py-3">Sparkling Water</label></div>
-            <div class="col-12"><input type="radio" name="beverage" id="bev2" value="Still Water" class="d-none"><label for="bev2" class="selection-card py-3">Still Water</label></div>
-            <div class="col-12"><input type="radio" name="beverage" id="bev4" value="American Coffee" class="d-none"><label for="bev4" class="selection-card py-3">American Coffee</label></div>
-            <div class="col-12"><input type="radio" name="beverage" id="bev5" value="Cappuccino" class="d-none"><label for="bev5" class="selection-card py-3">Cappuccino</label></div>
-            <div class="col-12"><input type="radio" name="beverage" id="bev6" value="No Beverage" class="d-none"><label for="bev6" class="selection-card py-3">No Beverage</label></div>
-          </div>
+<h4 class="mb-3 d-flex align-items-center"><span class="badge bg-dark rounded-circle me-2">4</span>Beverages</h4>
+<div class="row g-3 mb-5">
+
+  <div class="col-12"><input type="radio" name="beverage" id="bev1" value="Sparkling Water" class="d-none" required><label for="bev1" class="selection-card py-3">Sparkling Water</label></div>
+  
+  <div class="col-12">
+    <input type="radio" name="beverage" id="bev2" value="GBY Glow Tea" class="d-none" required>
+    <label for="bev2" class="selection-card py-3">
+      <div class="fw-bold">GBY Glow Tea</div>
+      <div class="small text-muted mt-1" style="font-weight: normal;">A calming infusion of butterfly pea flower, coconut water, and a splash of lemon</div>
+    </label>
+  </div>
+  
+  <div class="col-12"><input type="radio" name="beverage" id="bev3" value="Still Water" class="d-none"><label for="bev3" class="selection-card py-3">Still Water</label></div>
+  <div class="col-12"><input type="radio" name="beverage" id="bev4" value="American Coffee" class="d-none"><label for="bev4" class="selection-card py-3">American Coffee</label></div>
+  <div class="col-12"><input type="radio" name="beverage" id="bev5" value="Cappuccino" class="d-none"><label for="bev5" class="selection-card py-3">Cappuccino</label></div>
+  <div class="col-12"><input type="radio" name="beverage" id="bev6" value="No Beverage" class="d-none"><label for="bev6" class="selection-card py-3">No Beverage</label></div>
+
+</div>
 
           <!-- 5. Bed Temperature -->
           <h4 class="mb-3 d-flex align-items-center"><span class="badge bg-dark rounded-circle me-2">5</span> Bed Temperature</h4>
